@@ -1,7 +1,10 @@
 package com.ucab.cmcapp.logic.commands;
 
+import com.ucab.cmcapp.common.entities.Dispositivo;
 import com.ucab.cmcapp.common.entities.User;
 import com.ucab.cmcapp.common.entities.Usuario;
+import com.ucab.cmcapp.logic.commands.dispositivo.atomic.AddDispositivoCommand;
+import com.ucab.cmcapp.logic.commands.dispositivo.atomic.GetDispositivoByIdCommand;
 import com.ucab.cmcapp.logic.commands.user.atomic.AddUserCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.AddUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByIdCommand;
@@ -63,5 +66,14 @@ public class CommandFactory
     public static GetUsuarioByIdCommand createGetUsuarioByIdCommand (DBHandler handler, long userId )
     {
         return new GetUsuarioByIdCommand(handler, userId);
+    }
+
+    //dispositivo
+    public static AddDispositivoCommand createAddDispositivoCommand (DBHandler handler, Dispositivo dispositivo){
+        return new AddDispositivoCommand(dispositivo, handler);
+    }
+
+    public static GetDispositivoByIdCommand createGetDispositivoByIdCommand (DBHandler handler, long dispositivoId){
+        return new GetDispositivoByIdCommand(handler, dispositivoId);
     }
 }

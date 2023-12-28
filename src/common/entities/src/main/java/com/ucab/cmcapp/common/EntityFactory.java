@@ -71,4 +71,12 @@ public class EntityFactory
         return new P_Q( id_querella, id_agresor, id_victima);
 
     }
+
+    public static Dispositivo createDispositivo (){
+        return  new Dispositivo();
+    }
+
+    public static Dispositivo createDispositivo (long id_dispositivo){
+        return new Dispositivo(id_dispositivo);
+    }
 }

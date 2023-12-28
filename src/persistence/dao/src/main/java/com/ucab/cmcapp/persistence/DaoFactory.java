@@ -27,4 +27,8 @@ public class DaoFactory
         return new P_QDao(handler);
     }
 
+    public  static DispositivoDao createDispositivoDao ( DBHandler handler ){
+        return new DispositivoDao( handler );
+    }
+
 }
