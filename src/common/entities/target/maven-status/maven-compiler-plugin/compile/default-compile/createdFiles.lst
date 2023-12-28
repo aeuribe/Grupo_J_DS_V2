@@ -1,0 +1,7 @@
+com\ucab\cmcapp\common\entities\User.class
+com\ucab\cmcapp\common\EntityFactory.class
+com\ucab\cmcapp\common\entities\Persona.class
+com\ucab\cmcapp\common\entities\P_Q.class
+com\ucab\cmcapp\common\entities\Usuario.class
+com\ucab\cmcapp\common\entities\Querella.class
+com\ucab\cmcapp\common\entities\UserType.class
