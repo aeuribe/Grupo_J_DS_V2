@@ -31,4 +31,8 @@ public class DaoFactory
         return new DispositivoDao( handler );
     }
 
+    public  static Historial_ConexionDao createHistorial_ConexionDao ( DBHandler handler ){
+        return new Historial_ConexionDao( handler );
+    }
+
 }

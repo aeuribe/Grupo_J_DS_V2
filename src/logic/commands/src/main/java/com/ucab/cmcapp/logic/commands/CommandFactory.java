@@ -1,8 +1,11 @@
 package com.ucab.cmcapp.logic.commands;
 
 import com.ucab.cmcapp.common.entities.Dispositivo;
+import com.ucab.cmcapp.common.entities.Historial_Conexion;
 import com.ucab.cmcapp.common.entities.User;
 import com.ucab.cmcapp.common.entities.Usuario;
+import com.ucab.cmcapp.logic.commands.Historial_Conexion.atomic.AddHistorial_ConexionCommand;
+import com.ucab.cmcapp.logic.commands.Historial_Conexion.atomic.GetHistorial_ConexionByIdCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.AddDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.GetDispositivoByIdCommand;
 import com.ucab.cmcapp.logic.commands.user.atomic.AddUserCommand;
@@ -69,11 +72,20 @@ public class CommandFactory
     }
 
     //dispositivo
-    public static AddDispositivoCommand createAddDispositivoCommand (DBHandler handler, Dispositivo dispositivo){
+    public static AddDispositivoCommand createAddDispositivoCommand (Dispositivo dispositivo, DBHandler handler){
         return new AddDispositivoCommand(dispositivo, handler);
     }
 
     public static GetDispositivoByIdCommand createGetDispositivoByIdCommand (DBHandler handler, long dispositivoId){
         return new GetDispositivoByIdCommand(handler, dispositivoId);
+    }
+
+    //Historial_Conexion
+    public static AddHistorial_ConexionCommand createAddHistorial_ConexionCommand(Historial_Conexion historial, DBHandler handler) {
+        return new AddHistorial_ConexionCommand(historial, handler);
+    }
+
+    public static GetHistorial_ConexionByIdCommand createGetHistorial_ConexionByIdCommand(DBHandler handler, long id) {
+        return new GetHistorial_ConexionByIdCommand(handler, id);
     }
 }

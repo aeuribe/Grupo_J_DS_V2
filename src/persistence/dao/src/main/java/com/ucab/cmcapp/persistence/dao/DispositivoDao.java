@@ -14,7 +14,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 public class DispositivoDao extends BaseDao<Dispositivo>{
-    private static Logger _logger = LoggerFactory.getLogger( UserDao.class );
+    private static Logger _logger = LoggerFactory.getLogger( DispositivoDao.class );
     private EntityManager _em;
     private CriteriaBuilder _builder;
 
@@ -31,7 +31,7 @@ public class DispositivoDao extends BaseDao<Dispositivo>{
     public Dispositivo getDispositivoById( long id )
     {
         Dispositivo result = EntityFactory.createDispositivo();
-        _logger.debug( String.format( "Get in UserDao.getDispositivoById: parameter {%s}", id ) );
+        _logger.debug( String.format( "Get in DispositivoDao.getDispositivoById: parameter {%s}", id ) );
         try
         {
             CriteriaQuery<Dispositivo> query = _builder.createQuery( Dispositivo.class );
@@ -44,11 +44,11 @@ public class DispositivoDao extends BaseDao<Dispositivo>{
         }
         catch ( NoResultException e )
         {
-            _logger.error( String.format( "Error UserDao.getDispositivoById: No Result {%s}", e.getMessage() ) );
+            _logger.error( String.format( "Error DispositivoDao.getDispositivoById: No Result {%s}", e.getMessage() ) );
         }
         catch ( Exception e )
         {
-            _logger.error( String.format( "Error UserDao.getDispositivoById: {%s}", e.getMessage() ) );
+            _logger.error( String.format( "Error DispositivoDao.getDispositivoById: {%s}", e.getMessage() ) );
             throw new CupraException( e.getMessage() );
         }
         //region Instrumentation

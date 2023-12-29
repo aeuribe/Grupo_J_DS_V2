@@ -41,7 +41,7 @@ public class EntityFactory
         return new Persona();
     }
 
-    public static Persona createPersona(Long _id_persona){
+    public static Persona createPersona(long _id_persona){
         return new Persona(_id_persona);
     }
 
@@ -78,5 +78,13 @@ public class EntityFactory
 
     public static Dispositivo createDispositivo (long id_dispositivo){
         return new Dispositivo(id_dispositivo);
+    }
+
+    public static Historial_Conexion createHistorial_Conexion (){
+        return  new Historial_Conexion();
+    }
+
+    public static Historial_Conexion createHistorial_Conexion (long id_historial){
+        return new Historial_Conexion(id_historial);
     }
 }

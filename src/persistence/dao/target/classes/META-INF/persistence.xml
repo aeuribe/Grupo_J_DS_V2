@@ -11,6 +11,8 @@
         <class>com.ucab.cmcapp.common.entities.Persona</class>
         <class>com.ucab.cmcapp.common.entities.Querella</class>
         <class>com.ucab.cmcapp.common.entities.P_Q</class>
+        <class>com.ucab.cmcapp.common.entities.Dispositivo</class>
+        <class>com.ucab.cmcapp.common.entities.Historial_Conexion</class>
 
         <properties>
             <property name="hibernate.generate_statistics" value="true"/>
@@ -20,8 +22,8 @@
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="false" />
             <!--property name="hibernate.hbm2ddl.auto" value="none" /-->
-            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
-            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
+            <!--property name="hibernate.hbm2ddl.auto" value="create-drop"/-->
+            <!--property name="javax.persistence.schema-generation.database.action" value="drop-and-create" /-->
          </properties>
 
     </persistence-unit>
