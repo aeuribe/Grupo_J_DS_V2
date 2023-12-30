@@ -39,4 +39,8 @@ public class DaoFactory
         return new Zona_de_SeguridadDao( handler );
     }
 
+    public static D_ZDao createD_ZDao (DBHandler handler){
+        return new D_ZDao(handler);
+    }
+
 }

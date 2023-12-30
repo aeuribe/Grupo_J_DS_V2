@@ -95,4 +95,12 @@ public class EntityFactory
     public static Zona_de_Seguridad createZona_de_Seguridad (long id_zona){
         return new Zona_de_Seguridad(id_zona);
     }
+
+    public static D_Z createD_Z (){
+        return new D_Z();
+    }
+
+    public static D_Z createD_Z (Zona_de_Seguridad id_zona, Dispositivo id_dispositivo){
+        return new D_Z(id_zona, id_dispositivo);
+    }
 }
