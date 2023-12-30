@@ -40,7 +40,7 @@ public class CreateDispositivoCommand extends Command<Dispositivo>
         try
         {
             getHandler().beginTransaction();
-            _addDispositivoCommand = CommandFactory.createAddDispositivoCommand(getHandler(), _dispositivo);
+            _addDispositivoCommand = CommandFactory.createAddDispositivoCommand(_dispositivo, getHandler());
             _addDispositivoCommand.execute();
             _result = _addDispositivoCommand.getReturnParam();
             getHandler().finishTransaction();

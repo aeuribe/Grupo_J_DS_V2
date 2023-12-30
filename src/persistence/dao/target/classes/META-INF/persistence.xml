@@ -12,6 +12,12 @@
         <class>com.ucab.cmcapp.common.entities.Querella</class>
         <class>com.ucab.cmcapp.common.entities.P_Q</class>
         <class>com.ucab.cmcapp.common.entities.Dispositivo</class>
+<<<<<<< HEAD
+=======
+        <class>com.ucab.cmcapp.common.entities.Historial_Conexion</class>
+        <class>com.ucab.cmcapp.common.entities.Zona_de_Seguridad</class>
+        <class>com.ucab.cmcapp.common.entities.D_Z</class>
+>>>>>>> dev_daniela
 
         <properties>
             <property name="hibernate.generate_statistics" value="true"/>

@@ -1,11 +1,19 @@
-C:\Users\ae_ur\OneDrive\Desktop\Development\Proyecto DS Git\Grupo_J_DS\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\composite\CreateUserCommand.java
-C:\Users\ae_ur\OneDrive\Desktop\Development\Proyecto DS Git\Grupo_J_DS\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\atomic\AddUsuarioCommand.java
-C:\Users\ae_ur\OneDrive\Desktop\Development\Proyecto DS Git\Grupo_J_DS\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Command.java
-C:\Users\ae_ur\OneDrive\Desktop\Development\Proyecto DS Git\Grupo_J_DS\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\atomic\AddUserCommand.java
-C:\Users\ae_ur\OneDrive\Desktop\Development\Proyecto DS Git\Grupo_J_DS\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\composite\GetUsuarioCommand.java
-C:\Users\ae_ur\OneDrive\Desktop\Development\Proyecto DS Git\Grupo_J_DS\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\composite\GetUserCommand.java
-C:\Users\ae_ur\OneDrive\Desktop\Development\Proyecto DS Git\Grupo_J_DS\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\atomic\GetUserByIdCommand.java
-C:\Users\ae_ur\OneDrive\Desktop\Development\Proyecto DS Git\Grupo_J_DS\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\atomic\GetUsuarioByIdCommand.java
-C:\Users\ae_ur\OneDrive\Desktop\Development\Proyecto DS Git\Grupo_J_DS\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\CommandFactory.java
-C:\Users\ae_ur\OneDrive\Desktop\Development\Proyecto DS Git\Grupo_J_DS\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\atomic\GetUserByEmailCommand.java
-C:\Users\ae_ur\OneDrive\Desktop\Development\Proyecto DS Git\Grupo_J_DS\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\composite\CreateUsuarioCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\dispositivo\composite\GetDispositivoCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Historial_Conexion\composite\GetHistorial_ConexionCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\CommandFactory.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\dispositivo\composite\CreateDispositivoCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Historial_Conexion\atomic\GetHistorial_ConexionByIdCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\composite\CreateUsuarioCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\atomic\AddUserCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\atomic\GetUserByEmailCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\atomic\GetUserByIdCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\atomic\GetUsuarioByIdCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\dispositivo\atomic\AddDispositivoCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\composite\CreateUserCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\dispositivo\atomic\GetDispositivoByIdCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Command.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\composite\GetUserCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\atomic\AddUsuarioCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\composite\GetUsuarioCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Historial_Conexion\atomic\AddHistorial_ConexionCommand.java
+C:\Users\Daniela\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Historial_Conexion\composite\CreateHistorial_ConexionCommand.java
