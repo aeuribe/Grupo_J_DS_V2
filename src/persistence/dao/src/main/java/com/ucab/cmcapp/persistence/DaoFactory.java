@@ -52,7 +52,7 @@ public class DaoFactory
         return new EventoDao( handler );
     }
 
-    public static AlertaDao createAlertoDao (DBHandler handler ){
+    public static AlertaDao createAlertaDao (DBHandler handler ){
         return new AlertaDao( handler );
     }
 }
