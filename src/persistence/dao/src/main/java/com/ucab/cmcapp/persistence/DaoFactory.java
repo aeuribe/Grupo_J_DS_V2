@@ -1,5 +1,6 @@
 package com.ucab.cmcapp.persistence;
 
+import com.ucab.cmcapp.common.entities.Posicionamiento;
 import com.ucab.cmcapp.persistence.dao.*;
 
 public class DaoFactory
@@ -43,4 +44,16 @@ public class DaoFactory
         return new D_ZDao(handler);
     }
 
+    public static PosicionamientoDao createPosicionamientoDao ( DBHandler handler ){
+        return new PosicionamientoDao( handler );
+    }
+
+    public static EventoDao createEventoDao ( DBHandler handler ){
+        return new EventoDao( handler );
+    }
+
+    public static AlertaDao createAlertoDao (DBHandler handler ){
+        return new AlertaDao( handler );
+    }
 }
+
