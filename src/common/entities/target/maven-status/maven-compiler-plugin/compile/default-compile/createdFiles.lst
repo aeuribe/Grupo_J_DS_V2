@@ -1,5 +1,7 @@
+com\ucab\cmcapp\common\entities\Dispositivo.class
 com\ucab\cmcapp\common\entities\User.class
 com\ucab\cmcapp\common\EntityFactory.class
+com\ucab\cmcapp\common\entities\Historial_Conexion.class
 com\ucab\cmcapp\common\entities\Persona.class
 com\ucab\cmcapp\common\entities\P_Q.class
 com\ucab\cmcapp\common\entities\Usuario.class
