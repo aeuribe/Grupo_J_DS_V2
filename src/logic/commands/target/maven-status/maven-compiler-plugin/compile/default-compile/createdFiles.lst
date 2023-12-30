@@ -9,10 +9,14 @@ com\ucab\cmcapp\logic\commands\usuario\atomic\AddUsuarioCommand.class
 com\ucab\cmcapp\logic\commands\user\composite\GetUserCommand.class
 com\ucab\cmcapp\logic\commands\usuario\composite\GetUsuarioCommand.class
 com\ucab\cmcapp\logic\commands\usuario\atomic\GetUsuarioByIdCommand.class
+com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\composite\GetZona_de_SeguridadCommand.class
 com\ucab\cmcapp\logic\commands\CommandFactory.class
 com\ucab\cmcapp\logic\commands\Historial_Conexion\composite\CreateHistorial_ConexionCommand.class
 com\ucab\cmcapp\logic\commands\user\composite\CreateUserCommand.class
 com\ucab\cmcapp\logic\commands\usuario\composite\CreateUsuarioCommand.class
+com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\atomic\GetZona_de_SeguridadByIdCommand.class
+com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\atomic\AddZona_de_SeguridadCommand.class
+com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\composite\CreateZona_de_SeguridadCommand.class
 com\ucab\cmcapp\logic\commands\user\atomic\GetUserByIdCommand.class
 com\ucab\cmcapp\logic\commands\dispositivo\atomic\AddDispositivoCommand.class
 com\ucab\cmcapp\logic\commands\user\atomic\AddUserCommand.class

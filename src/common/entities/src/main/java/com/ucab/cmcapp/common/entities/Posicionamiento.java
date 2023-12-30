@@ -1,12 +1,27 @@
 package com.ucab.cmcapp.common.entities;
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table( name = "Posicionamiento")
 public class Posicionamiento {
 
+    @Id
+    @Column ( name = "id_posicionamiento")
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long _id_posicionamiento;
+
+    @ManyToOne
+    @JoinColumn (name = "id_dispositivo")
     private Dispositivo _id_dispositivo;
+
+    @Column (name = "latitud")
     private Double _latitud;
+
+    @Column (name = "longitud")
     private Double _longitud;
+
+    @Column (name = "fecha")
     private Date _fecha;
 
     public Posicionamiento() {
