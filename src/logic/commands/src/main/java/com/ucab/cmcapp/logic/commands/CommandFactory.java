@@ -1,11 +1,10 @@
 package com.ucab.cmcapp.logic.commands;
 
-import com.ucab.cmcapp.common.entities.Dispositivo;
-import com.ucab.cmcapp.common.entities.Historial_Conexion;
-import com.ucab.cmcapp.common.entities.User;
-import com.ucab.cmcapp.common.entities.Usuario;
+import com.ucab.cmcapp.common.entities.*;
 import com.ucab.cmcapp.logic.commands.Historial_Conexion.atomic.AddHistorial_ConexionCommand;
 import com.ucab.cmcapp.logic.commands.Historial_Conexion.atomic.GetHistorial_ConexionByIdCommand;
+import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.AddZona_de_SeguridadCommand;
+import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.GetZona_de_SeguridadByIdCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.AddDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.GetDispositivoByIdCommand;
 import com.ucab.cmcapp.logic.commands.user.atomic.AddUserCommand;
@@ -87,5 +86,13 @@ public class CommandFactory
 
     public static GetHistorial_ConexionByIdCommand createGetHistorial_ConexionByIdCommand(DBHandler handler, long id) {
         return new GetHistorial_ConexionByIdCommand(handler, id);
+    }
+
+    public static AddZona_de_SeguridadCommand createAddZona_de_SeguridadCommand(Zona_de_Seguridad zona, DBHandler handler) {
+        return new AddZona_de_SeguridadCommand(zona, handler);
+    }
+
+    public static GetZona_de_SeguridadByIdCommand createGetZona_de_SeguridadByIdCommand(DBHandler handler, long id) {
+        return new GetZona_de_SeguridadByIdCommand(handler, id);
     }
 }

@@ -13,6 +13,7 @@
         <class>com.ucab.cmcapp.common.entities.P_Q</class>
         <class>com.ucab.cmcapp.common.entities.Dispositivo</class>
         <class>com.ucab.cmcapp.common.entities.Historial_Conexion</class>
+        <class>com.ucab.cmcapp.common.entities.Zona_de_Seguridad</class>
 
         <properties>
             <property name="hibernate.generate_statistics" value="true"/>

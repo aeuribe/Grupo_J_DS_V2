@@ -87,4 +87,12 @@ public class EntityFactory
     public static Historial_Conexion createHistorial_Conexion (long id_historial){
         return new Historial_Conexion(id_historial);
     }
+
+    public static Zona_de_Seguridad createZona_de_Seguridad (){
+        return new Zona_de_Seguridad();
+    }
+
+    public static Zona_de_Seguridad createZona_de_Seguridad (long id_zona){
+        return new Zona_de_Seguridad(id_zona);
+    }
 }

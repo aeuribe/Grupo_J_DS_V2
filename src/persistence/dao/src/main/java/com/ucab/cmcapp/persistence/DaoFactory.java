@@ -35,4 +35,8 @@ public class DaoFactory
         return new Historial_ConexionDao( handler );
     }
 
+    public  static Zona_de_SeguridadDao createZona_de_SeguridadDao ( DBHandler handler ){
+        return new Zona_de_SeguridadDao( handler );
+    }
+
 }
