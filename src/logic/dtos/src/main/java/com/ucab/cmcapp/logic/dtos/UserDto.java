@@ -12,8 +12,7 @@ public class UserDto extends BaseDto
     private UserTypeDto _userType;
 
 
-    public UserDto()
-    {
+    public UserDto() {
     }
 
     public UserDto( long id )
