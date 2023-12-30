@@ -103,4 +103,31 @@ public class EntityFactory
     public static D_Z createD_Z (Zona_de_Seguridad id_zona, Dispositivo id_dispositivo){
         return new D_Z(id_zona, id_dispositivo);
     }
+
+    //posicionamiento
+    public  static Posicionamiento createPosicionamiento (){
+        return new Posicionamiento();
+    }
+
+    public static Posicionamiento createPosicionamiento(long id_posicionamiento){
+        return  new Posicionamiento(id_posicionamiento);
+    }
+
+    //alerta
+    public static Alerta craeteAlerta () {
+        return new Alerta();
+    }
+
+    public static Alerta createAlerta(long id_alerta){
+        return new Alerta(id_alerta);
+    }
+
+    //evento
+    public static Evento createEvento(){
+        return new Evento();
+    }
+
+    public static Evento createEvento(long id_evento){
+        return new Evento();
+    }
 }
