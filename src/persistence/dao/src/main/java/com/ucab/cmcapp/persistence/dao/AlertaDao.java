@@ -30,7 +30,7 @@ public class AlertaDao extends BaseDao<Alerta>{
 
     public Alerta getAlertaById( long id_alerta )
     {
-        Alerta result = EntityFactory.craeteAlerta();
+        Alerta result = EntityFactory.createAlerta();
         _logger.debug( String.format( "Get in AlertaDao.getAlertaById: parameter {%s}", id_alerta ) );
         try
         {

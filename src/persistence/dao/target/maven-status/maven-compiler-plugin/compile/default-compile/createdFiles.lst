@@ -1,10 +1,13 @@
 com\ucab\cmcapp\persistence\dao\QuerellaDao.class
 com\ucab\cmcapp\persistence\dao\UserDao.class
 com\ucab\cmcapp\persistence\dao\Zona_de_SeguridadDao.class
+com\ucab\cmcapp\persistence\dao\EventoDao.class
 com\ucab\cmcapp\persistence\dao\PersonaDao.class
 com\ucab\cmcapp\persistence\DaoFactory.class
 com\ucab\cmcapp\persistence\dao\P_QDao.class
 com\ucab\cmcapp\persistence\dao\UsuarioDao.class
+com\ucab\cmcapp\persistence\dao\AlertaDao.class
+com\ucab\cmcapp\persistence\dao\PosicionamientoDao.class
 com\ucab\cmcapp\persistence\DBHandler.class
 com\ucab\cmcapp\persistence\dao\D_ZDao.class
 com\ucab\cmcapp\persistence\dao\BaseDao.class

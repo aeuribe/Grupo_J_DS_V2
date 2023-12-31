@@ -15,6 +15,9 @@
         <class>com.ucab.cmcapp.common.entities.Historial_Conexion</class>
         <class>com.ucab.cmcapp.common.entities.Zona_de_Seguridad</class>
         <class>com.ucab.cmcapp.common.entities.D_Z</class>
+        <class>com.ucab.cmcapp.common.entities.Alerta</class>
+        <class>com.ucab.cmcapp.common.entities.Evento</class>
+        <class>com.ucab.cmcapp.common.entities.Posicionamiento</class>
 
         <properties>
             <property name="hibernate.generate_statistics" value="true"/>
@@ -24,8 +27,8 @@
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="false" />
             <!--property name="hibernate.hbm2ddl.auto" value="none" /-->
-            <!--property name="hibernate.hbm2ddl.auto" value="create-drop"/-->
-            <!--property name="javax.persistence.schema-generation.database.action" value="drop-and-create" /-->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
          </properties>
 
     </persistence-unit>

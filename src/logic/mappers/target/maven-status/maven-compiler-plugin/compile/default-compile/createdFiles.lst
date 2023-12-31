@@ -1,7 +1,10 @@
 com\ucab\cmcapp\logic\mappers\Zona_de_SeguridadMapper.class
-com\ucab\cmcapp\logic\mappers\Historial_ConexionMapper.class
 com\ucab\cmcapp\logic\mappers\P_QMapper.class
+com\ucab\cmcapp\logic\mappers\AlertaMapper.class
 com\ucab\cmcapp\logic\mappers\PersonaMapper.class
+com\ucab\cmcapp\logic\mappers\PosicionamientoMapper.class
+com\ucab\cmcapp\logic\mappers\EventoMapper.class
+com\ucab\cmcapp\logic\mappers\Historial_ConexionMapper.class
 com\ucab\cmcapp\logic\mappers\UsuarioMapper.class
 com\ucab\cmcapp\logic\mappers\BaseMapper.class
 com\ucab\cmcapp\logic\mappers\UserMapper.class
