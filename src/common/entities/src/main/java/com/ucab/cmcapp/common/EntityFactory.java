@@ -114,7 +114,7 @@ public class EntityFactory
     }
 
     //alerta
-    public static Alerta craeteAlerta () {
+    public static Alerta createAlerta () {
         return new Alerta();
     }
 

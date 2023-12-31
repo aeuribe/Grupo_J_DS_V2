@@ -5,8 +5,18 @@ import com.ucab.cmcapp.logic.commands.Historial_Conexion.atomic.AddHistorial_Con
 import com.ucab.cmcapp.logic.commands.Historial_Conexion.atomic.GetHistorial_ConexionByIdCommand;
 import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.AddZona_de_SeguridadCommand;
 import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.GetZona_de_SeguridadByIdCommand;
+import com.ucab.cmcapp.logic.commands.alerta.atomic.AddAlertaCommand;
+import com.ucab.cmcapp.logic.commands.alerta.atomic.GetAlertaByIdCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.AddDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.GetDispositivoByIdCommand;
+import com.ucab.cmcapp.logic.commands.evento.atomic.AddEventoCommand;
+import com.ucab.cmcapp.logic.commands.evento.atomic.GetEventoByIdCommand;
+import com.ucab.cmcapp.logic.commands.persona.atomic.AddPersonaCommand;
+import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByIdCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.AddPosicionamientoCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.GetPosicionamientoByIdCommand;
+import com.ucab.cmcapp.logic.commands.querella.atomic.AddQuerellaCommand;
+import com.ucab.cmcapp.logic.commands.querella.atomic.GetQuerellaByIdCommand;
 import com.ucab.cmcapp.logic.commands.user.atomic.AddUserCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.AddUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByIdCommand;
@@ -94,5 +104,50 @@ public class CommandFactory
 
     public static GetZona_de_SeguridadByIdCommand createGetZona_de_SeguridadByIdCommand(DBHandler handler, long id) {
         return new GetZona_de_SeguridadByIdCommand(handler, id);
+    }
+
+    //posicionamiento
+    public static AddPosicionamientoCommand createAddPosicionamientoCommand (Posicionamiento posicionamiento, DBHandler handler) {
+        return new AddPosicionamientoCommand(posicionamiento, handler);
+    }
+
+    public static GetPosicionamientoByIdCommand createGetPosicionamientoByIdCommand (DBHandler handler, long id){
+        return new GetPosicionamientoByIdCommand( handler, id );
+    }
+
+    //evento
+    public static AddEventoCommand createAddEventoCommand (Evento evento, DBHandler handler){
+        return new AddEventoCommand( evento, handler );
+    }
+
+    public static GetEventoByIdCommand createGetEventoByIdCommand (DBHandler handler, long id){
+        return new GetEventoByIdCommand( handler, id );
+    }
+
+    //alerta
+    public static AddAlertaCommand createAddAlertaCommand (Alerta alerta, DBHandler handler){
+        return new AddAlertaCommand (alerta, handler);
+    }
+
+    public static GetAlertaByIdCommand createGetAlertaByIdCommand (DBHandler handler, long id){
+        return new GetAlertaByIdCommand (handler, id);
+    }
+
+    //persona
+    public static AddPersonaCommand createAddPersonaCommand (Persona persona, DBHandler handler){
+        return new AddPersonaCommand(persona, handler);
+    }
+
+    public static GetPersonaByIdCommand createGetPersonaByIdCommand (DBHandler handler, long id){
+        return new GetPersonaByIdCommand(handler, id);
+    }
+
+    //querella
+    public static AddQuerellaCommand createAddQuerellaCommand (Querella persona, DBHandler handler){
+        return new AddQuerellaCommand(persona, handler);
+    }
+
+    public static GetQuerellaByIdCommand createGetQuerellaByIdCommand (DBHandler handler, long id){
+        return new GetQuerellaByIdCommand(handler, id);
     }
 }

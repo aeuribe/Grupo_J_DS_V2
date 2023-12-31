@@ -6,8 +6,8 @@ public class PosicionamientoDto extends BaseDto
 {
     private long _id_posicionamiento;
     private DispositivoDto _dispositivo;
-    private String _latitud;
-    private String _logitud;
+    private Double _latitud;
+    private Double _logitud;
     private Date _fecha;
 
     public PosicionamientoDto(){
@@ -34,19 +34,19 @@ public class PosicionamientoDto extends BaseDto
         this._dispositivo = _dispositivo;
     }
 
-    public String get_latitud() {
+    public Double get_latitud() {
         return _latitud;
     }
 
-    public void set_latitud(String _latitud) {
+    public void set_latitud(Double _latitud) {
         this._latitud = _latitud;
     }
 
-    public String get_logitud() {
+    public Double get_logitud() {
         return _logitud;
     }
 
-    public void set_logitud(String _logitud) {
+    public void set_logitud(Double _logitud) {
         this._logitud = _logitud;
     }
 

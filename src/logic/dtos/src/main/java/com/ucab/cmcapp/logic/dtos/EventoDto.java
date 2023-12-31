@@ -1,11 +1,14 @@
 package com.ucab.cmcapp.logic.dtos;
 
+import java.util.Date;
+
 public class EventoDto extends BaseDto
 {
     private long _id_evento;
     private DispositivoDto _id_dispositivo;
-    private String _nombre;
-    private String _descripcion;
+    private Date _fecha;
+    private String _hora;
+    private String _tipo;
 
     public EventoDto() {
     }
@@ -30,19 +33,27 @@ public class EventoDto extends BaseDto
         this._id_dispositivo = _id_dispositivo;
     }
 
-    public String get_nombre() {
-        return _nombre;
+    public Date get_fecha() {
+        return _fecha;
     }
 
-    public void set_nombre(String _nombre) {
-        this._nombre = _nombre;
+    public void set_fecha(Date _fecha) {
+        this._fecha = _fecha;
     }
 
-    public String get_descripcion() {
-        return _descripcion;
+    public String get_hora() {
+        return _hora;
     }
 
-    public void set_descripcion(String _descripcion) {
-        this._descripcion = _descripcion;
+    public void set_hora(String _hora) {
+        this._hora = _hora;
+    }
+
+    public String get_tipo() {
+        return _tipo;
+    }
+
+    public void set_tipo(String _tipo) {
+        this._tipo = _tipo;
     }
 }
