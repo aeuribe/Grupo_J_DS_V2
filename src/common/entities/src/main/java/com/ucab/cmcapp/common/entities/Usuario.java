@@ -35,6 +35,10 @@ public class Usuario {
         this._persona = _persona;
     }
 
+    public Usuario(String _correo_electronico) {
+        this._correo_electronico = _correo_electronico;
+    }
+
     public Persona get_persona() {
         return _persona;
     }

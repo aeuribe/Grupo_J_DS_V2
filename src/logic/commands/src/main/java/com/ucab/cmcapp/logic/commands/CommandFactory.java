@@ -19,6 +19,7 @@ import com.ucab.cmcapp.logic.commands.querella.atomic.AddQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.GetQuerellaByIdCommand;
 import com.ucab.cmcapp.logic.commands.user.atomic.AddUserCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.AddUsuarioCommand;
+import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByEmailCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByIdCommand;
 import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByIdCommand;
 import com.ucab.cmcapp.logic.commands.user.composite.CreateUserCommand;
@@ -68,6 +69,16 @@ public class CommandFactory
 
     public static CreateUsuarioCommand createCreateUsuarioCommand(Usuario usuario){
         return new CreateUsuarioCommand(usuario);
+    }
+
+    //usuario
+
+    public static GetUsuarioByEmailCommand createGetUsuarioByEmailCommand (Usuario usuario){
+        return new GetUsuarioByEmailCommand( usuario );
+    }
+
+    public static GetUsuarioByEmailCommand createGetUsuarioByEmailCommand (Usuario usuario, DBHandler handler){
+        return new GetUsuarioByEmailCommand( usuario, handler);
     }
 
     public static AddUsuarioCommand createAddUsuarioCommand(Usuario usuario, DBHandler handler)

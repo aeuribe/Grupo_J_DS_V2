@@ -53,6 +53,10 @@ public class EntityFactory
         return new Usuario(_id_usuario);
     }
 
+    public static Usuario createUsuario( String _email){
+        return new Usuario(_email);
+    }
+
 
     public static Querella createQuerella () {
         return new Querella();

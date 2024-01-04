@@ -48,7 +48,7 @@ public class GetUserByEmailCommand extends Command<User>
         //endregion
         _user = _dao.getUserByEmail(_user.getEmail());
         //region Instrumentation DEBUG
-        _logger.debug( "Leavin  GetUserByEmailCommand.execute" );
+        _logger.debug( "Leaving  GetUserByEmailCommand.execute" );
         //endregion
     }
 

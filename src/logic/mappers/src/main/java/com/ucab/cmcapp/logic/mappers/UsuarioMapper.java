@@ -1,6 +1,7 @@
 package com.ucab.cmcapp.logic.mappers;
 
 import com.ucab.cmcapp.common.EntityFactory;
+import com.ucab.cmcapp.common.entities.User;
 import com.ucab.cmcapp.common.entities.Usuario;
 import com.ucab.cmcapp.logic.dtos.UsuarioDto;
 import org.slf4j.Logger;
@@ -78,4 +79,22 @@ public class UsuarioMapper extends BaseMapper
 
         return entity;
     }
+
+    public static Usuario mapDtoToEntityEmail(String email )
+    {
+        Usuario entity = EntityFactory.createUsuario( email );
+
+        //region Instrumentation DEBUG
+        _logger.debug( "Get in UsuarioMapper.mapDtoToEntityEmail: email {}", email );
+        //endregion
+
+        entity.set_correo_electronico( email );
+
+        //region Instrumentation DEBUG
+        _logger.debug( "Leaving UsuarioMapper.mapDtoToEntityEmail: entity {}", entity );
+        //endregion
+
+        return entity;
+    }
+    
 }

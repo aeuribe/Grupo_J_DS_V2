@@ -14,6 +14,7 @@ com\ucab\cmcapp\logic\commands\querella\atomic\AddQuerellaCommand.class
 com\ucab\cmcapp\logic\commands\CommandFactory.class
 com\ucab\cmcapp\logic\commands\evento\composite\GetEventoCommand.class
 com\ucab\cmcapp\logic\commands\posicionamiento\composite\GetPosicionamientoCommand.class
+com\ucab\cmcapp\logic\commands\usuario\atomic\GetUsuarioByEmailCommand.class
 com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\atomic\AddZona_de_SeguridadCommand.class
 com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\composite\CreateZona_de_SeguridadCommand.class
 com\ucab\cmcapp\logic\commands\user\atomic\GetUserByIdCommand.class
