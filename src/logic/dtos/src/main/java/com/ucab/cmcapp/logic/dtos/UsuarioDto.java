@@ -2,7 +2,6 @@ package com.ucab.cmcapp.logic.dtos;
 
 public class UsuarioDto extends BaseDto{
 
-    private long _id_usuario;
     private String _correo_electronico;
     private String _password;
     private String rol;
@@ -16,16 +15,13 @@ public class UsuarioDto extends BaseDto{
     }
 
 
-    public UsuarioDto(long id) {
-        super(id);
+    public UsuarioDto(long _id_usuario) {
+        super(_id_usuario);
     }
 
     public UsuarioDto() {
     }
 
-    public long get_id_usuario() {
-        return _id_usuario;
-    }
 
     public String get_correo_electronico() {
         return _correo_electronico;
@@ -39,9 +35,6 @@ public class UsuarioDto extends BaseDto{
         return _persona;
     }
 
-    public void set_id_usuario(long _id_usuario) {
-        this._id_usuario = _id_usuario;
-    }
 
     public void set_correo_electronico(String _correo_electronico) {
         this._correo_electronico = _correo_electronico;

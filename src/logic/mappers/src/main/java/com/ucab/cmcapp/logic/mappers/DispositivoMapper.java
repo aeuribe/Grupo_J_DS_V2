@@ -23,13 +23,14 @@ public class DispositivoMapper extends BaseMapper{
         _logger.debug( "Get in DispositivoMapper.mapDtoToEntity: dto {}", dto );
         //endregion
 
-        entity.set_id_dispositivo(dto.get_id_dispositivo());
+
+        entity.set_id_dispositivo(dto.getId());
         entity.set_marca(dto.get_marca());
         entity.set_modelo(dto.get_modelo());
         entity.set_numero_telefonico(dto.get_nunero_telefonico());
 
 
-        if ( Objects.nonNull( dto.get_id_dispositivo() ) )
+        if ( Objects.nonNull( dto.getId() ) )
         {
             entity.set_id_usuario( UsuarioMapper.mapDtoToEntity( dto.get_id_usuario() ) );
         }
@@ -49,7 +50,7 @@ public class DispositivoMapper extends BaseMapper{
         _logger.debug( "Get in DispositivoMapper.mapEntityToDto: entity {}", entity );
         //endregion
 
-        dto.set_id_dispositivo(entity.get_id_dispositivo() );
+        dto.setId(entity.get_id_dispositivo() );
         dto.set_marca( entity.get_marca() );
         dto.set_modelo( entity.get_marca() );
         dto.set_nunero_telefonico( entity.get_numero_telefonico() );

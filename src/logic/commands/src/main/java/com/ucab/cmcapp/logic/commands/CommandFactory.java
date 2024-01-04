@@ -25,6 +25,7 @@ import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByIdCommand;
 import com.ucab.cmcapp.logic.commands.user.composite.CreateUserCommand;
 import com.ucab.cmcapp.logic.commands.user.composite.GetUserCommand;
 import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByEmailCommand;
+import com.ucab.cmcapp.logic.commands.usuario.composite.GetUsuarioCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
 
@@ -73,6 +74,10 @@ public class CommandFactory
 
     //usuario
 
+    public static GetUsuarioCommand createGetUsuarioCommand(Usuario usuario)
+    {
+        return new GetUsuarioCommand(usuario);
+    }
     public static GetUsuarioByEmailCommand createGetUsuarioByEmailCommand (Usuario usuario){
         return new GetUsuarioByEmailCommand( usuario );
     }

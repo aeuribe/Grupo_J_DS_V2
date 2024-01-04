@@ -24,7 +24,7 @@ public class UsuarioMapper extends BaseMapper
         _logger.debug( "Get in UsuarioMapper.mapDtoToEntity: dto {}", dto );
         //endregion
 
-        entity.set_id_usuario( dto.get_id_usuario());
+        entity.set_id_usuario( dto.getId());
         entity.set_password( dto.get_password());
         entity.set_rol( dto.getRol());
         entity.set_correo_electronico( dto.get_correo_electronico());
@@ -48,8 +48,7 @@ public class UsuarioMapper extends BaseMapper
         //region Instrumentation DEBUG
         _logger.debug( "Get in UsuarioMapper.mapEntityToDto: entity {}", entity );
         //endregion
-
-        dto.set_id_usuario ( entity.get_id_usuario());
+        dto.setId(entity.get_id_usuario());
         dto.set_correo_electronico ( entity.get_correo_electronico() );
         dto.set_password( entity.get_password());
         dto.setRol( entity.get_rol());

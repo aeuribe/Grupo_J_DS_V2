@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class PersonaDto extends BaseDto
 {
-    private Long _id_persona;
     private String _primer_nombre;
     private String _primer_apellido;
     private String _segundo_nombre;
@@ -16,12 +15,8 @@ public class PersonaDto extends BaseDto
     {
     }
 
-    public PersonaDto(long id) {
-        super(id);
-    }
-
-    public void set_id_persona(Long _id_persona) {
-        this._id_persona = _id_persona;
+    public PersonaDto(long _id_persona) {
+        super(_id_persona);
     }
 
     public void set_primer_nombre(String _primer_nombre) {
@@ -46,10 +41,6 @@ public class PersonaDto extends BaseDto
 
     public void set_fec_nac(Date _fec_nac) {
         this._fec_nac = _fec_nac;
-    }
-
-    public Long get_id_persona() {
-        return _id_persona;
     }
 
     public String get_primer_nombre() {
