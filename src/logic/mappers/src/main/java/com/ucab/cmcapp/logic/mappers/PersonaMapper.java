@@ -12,17 +12,17 @@ import java.text.ParseException;
 
 public class PersonaMapper extends BaseMapper{
 
-    private static Logger _logger = LoggerFactory.getLogger( PersonaMapper.class );
+    private static Logger _logger = LoggerFactory.getLogger( UsuarioMapper.class );
 
-    public static Persona mapDtoToEntity( PersonaDto dto ) throws ParseException
+    public static Persona mapDtoToEntity( PersonaDto dto )
     {
-        Persona entity = EntityFactory.createPersona();
+        Persona entity = EntityFactory.createPersona( dto.getId() );
 
         //region Instrumentation DEBUG
         _logger.debug( "Get in PersonaMapper.mapDtoToEntity: dto {}", dto );
         //endregion
 
-        entity.set_id_persona( dto.getId() );
+    //    entity.set_id_persona( dto.getId() );
         entity.set_sexo( dto.get_sexo());
         entity.set_primer_nombre( dto.get_primer_nombre());
         entity.set_primer_apellido( dto.get_primer_apellido());
@@ -54,7 +54,7 @@ public class PersonaMapper extends BaseMapper{
         dto.set_fec_nac( entity.getFec_nac());
 
         //region Instrumentation DEBUG
-        _logger.debug( "Leaving UserMapper.mapEntityToDto: dto {}", dto );
+        _logger.debug( "Leaving PersonaMapper.mapEntityToDto: dto {}", dto );
         //endregion
         return dto;
     }

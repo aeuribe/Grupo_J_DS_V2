@@ -33,7 +33,7 @@ public class UsuarioService extends BaseService
         UsuarioDto response;
         GetUsuarioCommand command = null;
         //region Instrumentation DEBUG
-        _logger.debug( "Get in UsuarioService.getUser" );
+        _logger.debug( "Get in UsuarioService.getUuario" );
         //endregion
 
         try
@@ -56,7 +56,7 @@ public class UsuarioService extends BaseService
                 command.closeHandlerSession();
         }
 
-        _logger.debug( "Leaving UsuarioService.getUser" );
+        _logger.debug( "Leaving UsuarioService.getUsuario" );
         return response;
     }
 
@@ -91,7 +91,7 @@ public class UsuarioService extends BaseService
                 command.closeHandlerSession();
         }
 
-        _logger.debug( "Leaving UsuarioService.getUser" );
+        _logger.debug( "Leaving UsuarioService.getUsuario" );
         return response;
     }
 
@@ -102,7 +102,7 @@ public class UsuarioService extends BaseService
         UsuarioDto response;
         CreateUsuarioCommand command = null;
         //region Instrumentation DEBUG
-        _logger.debug( "Get in UsuarioService.addUser" );
+        _logger.debug( "Get in UsuarioService.addUsuario" );
         //endregion
 
         try
@@ -125,7 +125,7 @@ public class UsuarioService extends BaseService
                 command.closeHandlerSession();
         }
 
-        _logger.debug( "Leaving UsuarioService.addUser" );
+        _logger.debug( "Leaving UsuarioService.addUsuario" );
         return response;
     }
 }

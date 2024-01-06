@@ -14,7 +14,8 @@ public class Persona {
     @Id
     @Column (name = "id_persona")
     @GeneratedValue( strategy = GenerationType.IDENTITY )
-    private Long _id_persona;
+    private long _id_persona;
+
 
     @Column (name = "p_nombre")
     private String _primer_nombre;

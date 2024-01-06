@@ -14,17 +14,21 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 
-public class PersonaDao extends BaseDao<Persona>{
+public class PersonaDao extends BaseDao<Persona>
+{
     private static Logger _logger = LoggerFactory.getLogger( PersonaDao.class );
     private EntityManager _em;
     private CriteriaBuilder _builder;
 
-    public PersonaDao() {
+
+    public PersonaDao()
+    {
         super();
     }
 
-    public PersonaDao(DBHandler handler) {
-        super(handler);
+    public PersonaDao(DBHandler handler)
+    {
+        super( handler );
 
         _em = getDBHandler().getSession();
         _builder = _em.getCriteriaBuilder();

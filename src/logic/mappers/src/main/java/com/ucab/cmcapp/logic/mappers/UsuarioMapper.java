@@ -81,7 +81,7 @@ public class UsuarioMapper extends BaseMapper
 
     public static Usuario mapDtoToEntityEmail(String email )
     {
-        Usuario entity = EntityFactory.createUsuario( email );
+        Usuario entity = EntityFactory.createUsuario();
 
         //region Instrumentation DEBUG
         _logger.debug( "Get in UsuarioMapper.mapDtoToEntityEmail: email {}", email );

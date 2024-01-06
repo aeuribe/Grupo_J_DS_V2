@@ -13,6 +13,8 @@ import com.ucab.cmcapp.logic.commands.evento.atomic.AddEventoCommand;
 import com.ucab.cmcapp.logic.commands.evento.atomic.GetEventoByIdCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.AddPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByIdCommand;
+import com.ucab.cmcapp.logic.commands.persona.composite.CreatePersonaCommand;
+import com.ucab.cmcapp.logic.commands.persona.composite.GetPersonaCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.AddPosicionamientoCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.GetPosicionamientoByIdCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.AddQuerellaCommand;
@@ -150,8 +152,23 @@ public class CommandFactory
     }
 
     //persona
+
+    public static GetPersonaCommand createGetPersonaCommand(Persona persona)
+    {
+        return new GetPersonaCommand(persona);
+    }
+
+    public static CreatePersonaCommand createCreatePersonaCommand(Persona persona)
+    {
+        return new CreatePersonaCommand(persona);
+    }
     public static AddPersonaCommand createAddPersonaCommand (Persona persona, DBHandler handler){
         return new AddPersonaCommand(persona, handler);
+    }
+
+    public static AddPersonaCommand createAddUserCommand(Persona persona)
+    {
+        return new AddPersonaCommand(persona);
     }
 
     public static GetPersonaByIdCommand createGetPersonaByIdCommand (DBHandler handler, long id){

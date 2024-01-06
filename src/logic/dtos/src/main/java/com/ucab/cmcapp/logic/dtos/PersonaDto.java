@@ -15,8 +15,8 @@ public class PersonaDto extends BaseDto
     {
     }
 
-    public PersonaDto(long _id_persona) {
-        super(_id_persona);
+    public PersonaDto( long id ) {
+        super( id );
     }
 
     public void set_primer_nombre(String _primer_nombre) {

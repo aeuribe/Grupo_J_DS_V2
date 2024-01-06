@@ -39,7 +39,7 @@ public class UsuarioDao extends BaseDao<Usuario>{
             Root<Usuario> root = query.from( Usuario.class );
 
             query.select( root );
-            query.where( _builder.equal( root.get( "_email" ), email ) );
+            query.where( _builder.equal( root.get( "_correo_electronico" ), email ) );
 
             result = _em.createQuery( query ).getSingleResult();
         }
