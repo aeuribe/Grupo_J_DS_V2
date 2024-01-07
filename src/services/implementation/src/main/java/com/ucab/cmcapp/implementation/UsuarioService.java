@@ -6,8 +6,10 @@ import com.ucab.cmcapp.logic.commands.CommandFactory;
 import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByEmailCommand;
 import com.ucab.cmcapp.logic.commands.user.composite.CreateUserCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByEmailCommand;
+import com.ucab.cmcapp.logic.commands.usuario.atomic.UpdateUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.GetUsuarioCommand;
+import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.logic.dtos.UserDto;
 import com.ucab.cmcapp.logic.dtos.UsuarioDto;
 import com.ucab.cmcapp.logic.mappers.UserMapper;
@@ -126,6 +128,40 @@ public class UsuarioService extends BaseService
         }
 
         _logger.debug( "Leaving UsuarioService.addUsuario" );
+        return response;
+    }
+
+    @PUT
+    public UsuarioDto updateUsuario( UsuarioDto usuarioDto )
+    {
+        Usuario entity;
+        UsuarioDto response;
+        ModifyUsuarioCommand command = null;
+        //region Instrumentation DEBUG
+        _logger.debug( "Get in UsuarioService.updateUsuario" );
+        //endregion
+
+        try
+        {
+            entity = UsuarioMapper.mapDtoToEntity( usuarioDto );
+            command = CommandFactory.createModifyUsuarioCommand( entity );
+            command.execute();
+            response = UsuarioMapper.mapEntityToDto( command.getReturnParam() );
+            _logger.info( "Response updateUsuario: {} ", response );
+        }
+        catch ( Exception e )
+        {
+            _logger.error("error {} updating usuario: {}", e.getMessage(), e.getCause());
+            throw new WebApplicationException( Response.status( Response.Status.INTERNAL_SERVER_ERROR ).
+                    entity( e ).build() );
+        }
+        finally
+        {
+            if (command != null)
+                command.closeHandlerSession();
+        }
+
+        _logger.debug( "Leaving UsuarioService.updateUsuario" );
         return response;
     }
 }

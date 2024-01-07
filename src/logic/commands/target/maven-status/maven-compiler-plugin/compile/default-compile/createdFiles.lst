@@ -18,11 +18,13 @@ com\ucab\cmcapp\logic\commands\usuario\atomic\GetUsuarioByEmailCommand.class
 com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\atomic\AddZona_de_SeguridadCommand.class
 com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\composite\CreateZona_de_SeguridadCommand.class
 com\ucab\cmcapp\logic\commands\user\atomic\GetUserByIdCommand.class
+com\ucab\cmcapp\logic\commands\usuario\atomic\UpdateUsuarioCommand.class
 com\ucab\cmcapp\logic\commands\user\atomic\AddUserCommand.class
 com\ucab\cmcapp\logic\commands\dispositivo\composite\CreateDispositivoCommand.class
 com\ucab\cmcapp\logic\commands\alerta\atomic\GetAlertaByIdCommand.class
 com\ucab\cmcapp\logic\commands\alerta\composite\GetAlertaCommand.class
 com\ucab\cmcapp\logic\commands\querella\composite\GetQuerellaCommand.class
+com\ucab\cmcapp\logic\commands\usuario\composite\ModifyUsuarioCommand.class
 com\ucab\cmcapp\logic\commands\alerta\composite\CreateAlertaCommand.class
 com\ucab\cmcapp\logic\commands\dispositivo\atomic\GetDispositivoByIdCommand.class
 com\ucab\cmcapp\logic\commands\Command.class

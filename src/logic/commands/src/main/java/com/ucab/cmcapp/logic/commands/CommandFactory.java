@@ -27,9 +27,12 @@ import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByIdCommand;
 import com.ucab.cmcapp.logic.commands.user.composite.CreateUserCommand;
 import com.ucab.cmcapp.logic.commands.user.composite.GetUserCommand;
 import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByEmailCommand;
+import com.ucab.cmcapp.logic.commands.usuario.atomic.UpdateUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.GetUsuarioCommand;
+import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
+import org.hibernate.sql.Update;
 
 public class CommandFactory
 {
@@ -70,11 +73,13 @@ public class CommandFactory
         return new CreateUserCommand(user);
     }
 
+
+    //usuario
+
+    public static ModifyUsuarioCommand createModifyUsuarioCommand(Usuario usuario) { return new ModifyUsuarioCommand(usuario);}
     public static CreateUsuarioCommand createCreateUsuarioCommand(Usuario usuario){
         return new CreateUsuarioCommand(usuario);
     }
-
-    //usuario
 
     public static GetUsuarioCommand createGetUsuarioCommand(Usuario usuario)
     {
@@ -98,6 +103,13 @@ public class CommandFactory
         return new GetUsuarioByIdCommand(handler, userId);
     }
 
+    public static UpdateUsuarioCommand createUpdateUsuarioCommand (Usuario usuario, DBHandler handler){
+        return new UpdateUsuarioCommand(usuario,handler);
+    }
+
+    public static UpdateUsuarioCommand createUpdateUsuarioCommand (Usuario usuario){
+        return new UpdateUsuarioCommand(usuario);
+    }
     //dispositivo
     public static AddDispositivoCommand createAddDispositivoCommand (Dispositivo dispositivo, DBHandler handler){
         return new AddDispositivoCommand(dispositivo, handler);
