@@ -9,8 +9,15 @@ import com.ucab.cmcapp.logic.commands.alerta.atomic.AddAlertaCommand;
 import com.ucab.cmcapp.logic.commands.alerta.atomic.GetAlertaByIdCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.AddDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.GetDispositivoByIdCommand;
+import com.ucab.cmcapp.logic.commands.dispositivo.atomic.UpdateDispositivoCommand;
+import com.ucab.cmcapp.logic.commands.dispositivo.composite.CreateDispositivoCommand;
+import com.ucab.cmcapp.logic.commands.dispositivo.composite.GetDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.evento.atomic.AddEventoCommand;
 import com.ucab.cmcapp.logic.commands.evento.atomic.GetEventoByIdCommand;
+import com.ucab.cmcapp.logic.commands.evento.atomic.UpdateEventoCommand;
+import com.ucab.cmcapp.logic.commands.evento.composite.CreateEventoCommand;
+import com.ucab.cmcapp.logic.commands.evento.composite.GetEventoCommand;
+import com.ucab.cmcapp.logic.commands.evento.composite.ModifyEventoCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.AddPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByIdCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByListCommand;
@@ -35,6 +42,7 @@ import com.ucab.cmcapp.logic.commands.usuario.atomic.UpdateUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.GetUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
+import com.ucab.cmcapp.logic.commands.dispositivo.composite.ModifyDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
 import org.hibernate.sql.Update;
 
@@ -210,6 +218,7 @@ public class CommandFactory
         return new GetQuerellaByIdCommand(handler, id);
     }
 
+<<<<<<< HEAD
     public static GetQuerellaCommand createGetQuerellaCommand(Querella querella)
     {
         return new GetQuerellaCommand(querella);
@@ -220,5 +229,52 @@ public class CommandFactory
         return new CreateQuerellaCommand(querella);
     }
 
+=======
+
+    //Evento
+
+    public static GetEventoCommand createGetEventoCommand(Evento evento)
+    {
+        return new GetEventoCommand(evento);
+    }
+
+    public static CreateEventoCommand createCreateEventoCommand(Evento evento)
+    {
+        return new CreateEventoCommand(evento);
+    }
+
+    public static UpdateEventoCommand createUpdateEventoCommand (Evento evento, DBHandler handler){
+        return new UpdateEventoCommand(evento,handler);
+    }
+
+    public static UpdateEventoCommand createUpdateEventoCommand (Evento evento){
+        return new UpdateEventoCommand(evento);
+    }
+    public static ModifyEventoCommand createModifyEventoCommand(Evento evento) {
+
+        return new ModifyEventoCommand(evento);}
+
+
+    //Dispositivo
+    public static GetDispositivoCommand createGetDispositivoCommand(Dispositivo dispositivo) { return new GetDispositivoCommand(dispositivo);
+    }
+
+    public static CreateDispositivoCommand createCreateDispositivoCommand(Dispositivo dispositivo)
+    {
+        return new CreateDispositivoCommand(dispositivo);
+    }
+
+    public static UpdateDispositivoCommand createUpdateDispositivoCommand (Dispositivo dispositivo, DBHandler handler){
+        return new UpdateDispositivoCommand(dispositivo,handler);
+    }
+
+    public static UpdateDispositivoCommand createUpdateDispositivoCommand (Dispositivo dispositivo){
+        return new UpdateDispositivoCommand(dispositivo);
+    }
+    public static ModifyDispositivoCommand createModifyDispositivoCommand(Dispositivo dispositivo) {
+
+        return new ModifyDispositivoCommand(dispositivo);}
+
+>>>>>>> a3015ac414c3cb78e78b64e7b85dc3da790ced7f
 
 }
