@@ -24,10 +24,12 @@ C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\c
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\posicionamiento\atomic\GetPosicionamientoByIdCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\atomic\GetUserByIdCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\atomic\AddPersonaCommand.java
+C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\atomic\GetPersonaByListCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\composite\GetUsuarioCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\atomic\AddZona_de_SeguridadCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\composite\GetPersonaCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\composite\CreateUsuarioCommand.java
+C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\composite\GetAllPersonaCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\dispositivo\atomic\AddDispositivoCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\posicionamiento\composite\GetPosicionamientoCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Historial_Conexion\composite\CreateHistorial_ConexionCommand.java

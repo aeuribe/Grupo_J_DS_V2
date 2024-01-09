@@ -13,12 +13,16 @@ import com.ucab.cmcapp.logic.commands.evento.atomic.AddEventoCommand;
 import com.ucab.cmcapp.logic.commands.evento.atomic.GetEventoByIdCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.AddPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByIdCommand;
+import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByListCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.CreatePersonaCommand;
+import com.ucab.cmcapp.logic.commands.persona.composite.GetAllPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.GetPersonaCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.AddPosicionamientoCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.GetPosicionamientoByIdCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.AddQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.GetQuerellaByIdCommand;
+import com.ucab.cmcapp.logic.commands.querella.composite.CreateQuerellaCommand;
+import com.ucab.cmcapp.logic.commands.querella.composite.GetQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.user.atomic.AddUserCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.AddUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByEmailCommand;
@@ -33,6 +37,8 @@ import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
 import org.hibernate.sql.Update;
+
+import java.util.ArrayList;
 
 public class CommandFactory
 {
@@ -165,6 +171,14 @@ public class CommandFactory
 
     //persona
 
+    public static GetAllPersonaCommand createGetAllPersonaCommand(){
+        return new GetAllPersonaCommand();
+    }
+
+    public static GetPersonaByListCommand createGetPersonaByListCommand(DBHandler handler){
+        return new GetPersonaByListCommand(handler);
+    }
+
     public static GetPersonaCommand createGetPersonaCommand(Persona persona)
     {
         return new GetPersonaCommand(persona);
@@ -195,4 +209,16 @@ public class CommandFactory
     public static GetQuerellaByIdCommand createGetQuerellaByIdCommand (DBHandler handler, long id){
         return new GetQuerellaByIdCommand(handler, id);
     }
+
+    public static GetQuerellaCommand createGetQuerellaCommand(Querella querella)
+    {
+        return new GetQuerellaCommand(querella);
+    }
+
+    public static CreateQuerellaCommand createCreateQuerellaCommand(Querella querella)
+    {
+        return new CreateQuerellaCommand(querella);
+    }
+
+
 }

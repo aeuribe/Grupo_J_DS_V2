@@ -55,7 +55,7 @@ public class QuerellaMapper extends BaseMapper{
         return dto;
     }
 
-    public static Querella mapDtoEntity( long id )
+    public static Querella mapDtoToEntity( long id )
     {
         Querella entity = EntityFactory.createQuerella(id);
 

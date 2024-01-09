@@ -4,6 +4,7 @@ import com.ucab.cmcapp.common.entities.*;
 import com.ucab.cmcapp.logic.commands.CommandFactory;
 import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByIdCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.CreatePersonaCommand;
+import com.ucab.cmcapp.logic.commands.persona.composite.GetAllPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.GetPersonaCommand;
 import com.ucab.cmcapp.logic.commands.user.composite.CreateUserCommand;
 import com.ucab.cmcapp.logic.dtos.PersonaDto;
@@ -22,6 +23,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 
 @Path( "/personas" )
 @Produces( MediaType.APPLICATION_JSON )
@@ -97,6 +99,41 @@ public class PersonaService extends BaseService
         }
 
         _logger.debug( "Leaving PersonaService.addPersona" );
+        return response;
+    }
+
+    @GET
+    @Path("/")
+    public ArrayList<PersonaDto> getAllPersonas()
+    {
+        ArrayList<Persona> entitys;
+        ArrayList<PersonaDto> response;
+        GetAllPersonaCommand command = null;
+        //region Instrumentation DEBUG
+        _logger.debug( "Get in PersonaService.getPersona" );
+        //endregion
+
+        try
+        {
+            command = CommandFactory.createGetAllPersonaCommand();
+            command.execute();
+            entitys = command.getReturnParam();
+            response = PersonaMapper.mapEntityToDtoList( entitys );
+            _logger.info( "Response getPersonas: {} ", response );
+        }
+        catch ( Exception e )
+        {
+            _logger.error("error {} getting Persona {}:", e.getMessage());
+            throw new WebApplicationException( Response.status( Response.Status.INTERNAL_SERVER_ERROR ).
+                    entity( e ).build() );
+        }
+        finally
+        {
+            if (command != null)
+                command.closeHandlerSession();
+        }
+
+        _logger.debug( "Leaving PersonaService.getPersona" );
         return response;
     }
 }

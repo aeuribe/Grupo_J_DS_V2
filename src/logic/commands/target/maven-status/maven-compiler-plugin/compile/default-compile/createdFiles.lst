@@ -1,6 +1,7 @@
 com\ucab\cmcapp\logic\commands\persona\composite\CreatePersonaCommand.class
 com\ucab\cmcapp\logic\commands\evento\atomic\AddEventoCommand.class
 com\ucab\cmcapp\logic\commands\Historial_Conexion\atomic\AddHistorial_ConexionCommand.class
+com\ucab\cmcapp\logic\commands\persona\atomic\GetPersonaByListCommand.class
 com\ucab\cmcapp\logic\commands\posicionamiento\atomic\AddPosicionamientoCommand.class
 com\ucab\cmcapp\logic\commands\Historial_Conexion\composite\GetHistorial_ConexionCommand.class
 com\ucab\cmcapp\logic\commands\posicionamiento\atomic\GetPosicionamientoByIdCommand.class
@@ -40,6 +41,7 @@ com\ucab\cmcapp\logic\commands\Historial_Conexion\composite\CreateHistorial_Cone
 com\ucab\cmcapp\logic\commands\querella\atomic\GetQuerellaByIdCommand.class
 com\ucab\cmcapp\logic\commands\persona\composite\GetPersonaCommand.class
 com\ucab\cmcapp\logic\commands\user\composite\CreateUserCommand.class
+com\ucab\cmcapp\logic\commands\persona\composite\GetAllPersonaCommand.class
 com\ucab\cmcapp\logic\commands\usuario\composite\CreateUsuarioCommand.class
 com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\atomic\GetZona_de_SeguridadByIdCommand.class
 com\ucab\cmcapp\logic\commands\dispositivo\atomic\AddDispositivoCommand.class

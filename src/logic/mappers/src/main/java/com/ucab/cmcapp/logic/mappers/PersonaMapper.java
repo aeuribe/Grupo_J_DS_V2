@@ -8,6 +8,7 @@ import com.ucab.cmcapp.common.entities.Persona;
 import org.slf4j.Logger;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 
 
 public class PersonaMapper extends BaseMapper{
@@ -74,5 +75,20 @@ public class PersonaMapper extends BaseMapper{
         //endregion
 
         return entity;
+    }
+
+    public static ArrayList<PersonaDto> mapEntityToDtoList(ArrayList<Persona> entity){
+        ArrayList<PersonaDto> dto = new ArrayList<PersonaDto>();
+
+        //region Instrumentation DEBUG
+        _logger.debug("Get in PersonaMapper.mapEntityToDto: entity {}");
+        //endregion
+
+        for (Persona persona : entity) {
+            dto.add(mapEntityToDto(persona));
+        }
+
+
+        return dto;
     }
 }
