@@ -136,7 +136,7 @@ public class PersonaService extends BaseService
     }
 
     @PUT
-    public PersonaDto updateUsuario(PersonaDto personaDto )
+    public PersonaDto updatePersona(PersonaDto personaDto )
     {
         Persona entity;
         PersonaDto response;

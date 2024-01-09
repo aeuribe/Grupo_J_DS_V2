@@ -30,8 +30,10 @@ import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.AddPosicionamientoC
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.GetPosicionamientoByIdCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.AddQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.GetQuerellaByIdCommand;
+import com.ucab.cmcapp.logic.commands.querella.atomic.UpdateQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.querella.composite.CreateQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.querella.composite.GetQuerellaCommand;
+import com.ucab.cmcapp.logic.commands.querella.composite.ModifyQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.user.atomic.AddUserCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.AddUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByEmailCommand;
@@ -232,6 +234,16 @@ public class CommandFactory {
         return new CreateQuerellaCommand(querella);
     }
 
+    public static UpdateQuerellaCommand createUpdateQuerellaCommand(Querella querella, DBHandler handler) {
+        return new UpdateQuerellaCommand(querella, handler);
+    }
+
+    public static UpdateQuerellaCommand createUpdateUsuarioCommand(Querella querella) {
+        return new UpdateQuerellaCommand(querella);
+    }
+    public static ModifyQuerellaCommand createModifyQuerellaCommand(Querella querella) {
+        return new ModifyQuerellaCommand(querella);
+    }
 
     //Evento
 

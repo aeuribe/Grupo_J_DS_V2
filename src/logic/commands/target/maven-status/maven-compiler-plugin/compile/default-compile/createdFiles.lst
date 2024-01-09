@@ -21,6 +21,7 @@ com\ucab\cmcapp\logic\commands\evento\atomic\UpdateEventoCommand.class
 com\ucab\cmcapp\logic\commands\evento\composite\CreateEventoCommand.class
 com\ucab\cmcapp\logic\commands\posicionamiento\composite\CreatePosicionamientoCommand.class
 com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\composite\GetZona_de_SeguridadCommand.class
+com\ucab\cmcapp\logic\commands\querella\composite\ModifyQuerellaCommand.class
 com\ucab\cmcapp\logic\commands\Historial_Conexion\composite\CreateHistorial_ConexionCommand.class
 com\ucab\cmcapp\logic\commands\persona\atomic\UpdatePersonaCommand.class
 com\ucab\cmcapp\logic\commands\persona\composite\GetPersonaCommand.class
@@ -37,6 +38,7 @@ com\ucab\cmcapp\logic\commands\alerta\atomic\AddAlertaCommand.class
 com\ucab\cmcapp\logic\commands\usuario\atomic\AddUsuarioCommand.class
 com\ucab\cmcapp\logic\commands\evento\composite\ModifyEventoCommand.class
 com\ucab\cmcapp\logic\commands\user\composite\GetUserCommand.class
+com\ucab\cmcapp\logic\commands\querella\atomic\UpdateQuerellaCommand.class
 com\ucab\cmcapp\logic\commands\evento\composite\GetEventoCommand.class
 com\ucab\cmcapp\logic\commands\usuario\atomic\GetUsuarioByEmailCommand.class
 com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\atomic\AddZona_de_SeguridadCommand.class

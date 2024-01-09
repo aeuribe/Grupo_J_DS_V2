@@ -5,6 +5,7 @@ C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\c
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\posicionamiento\composite\CreatePosicionamientoCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\composite\GetZona_de_SeguridadCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\evento\composite\ModifyEventoCommand.java
+C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\querella\composite\ModifyQuerellaCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\posicionamiento\atomic\AddPosicionamientoCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\atomic\AddUsuarioCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\evento\composite\CreateEventoCommand.java
@@ -16,6 +17,7 @@ C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\c
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\composite\GetAllPersonaCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\posicionamiento\composite\GetPosicionamientoCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Historial_Conexion\composite\CreateHistorial_ConexionCommand.java
+C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\querella\atomic\UpdateQuerellaCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\querella\atomic\GetQuerellaByIdCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\atomic\GetPersonaByIdCommand.java
 C:\Users\ae_ur\OneDrive\Desktop\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\dispositivo\composite\CreateDispositivoCommand.java
