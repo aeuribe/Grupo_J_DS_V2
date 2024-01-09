@@ -3,6 +3,8 @@ package com.ucab.cmcapp.logic.commands;
 import com.ucab.cmcapp.common.entities.*;
 import com.ucab.cmcapp.logic.commands.Historial_Conexion.atomic.AddHistorial_ConexionCommand;
 import com.ucab.cmcapp.logic.commands.Historial_Conexion.atomic.GetHistorial_ConexionByIdCommand;
+import com.ucab.cmcapp.logic.commands.Historial_Conexion.composite.CreateHistorial_ConexionCommand;
+import com.ucab.cmcapp.logic.commands.Historial_Conexion.composite.GetHistorial_ConexionCommand;
 import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.AddZona_de_SeguridadCommand;
 import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.GetZona_de_SeguridadByIdCommand;
 import com.ucab.cmcapp.logic.commands.alerta.atomic.AddAlertaCommand;
@@ -40,7 +42,6 @@ import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import com.ucab.cmcapp.logic.commands.dispositivo.composite.ModifyDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
-import org.hibernate.sql.Update;
 
 public class CommandFactory
 {
@@ -136,6 +137,17 @@ public class CommandFactory
         return new GetHistorial_ConexionByIdCommand(handler, id);
     }
 
+    public static GetHistorial_ConexionCommand createGetHistorial_ConexionCommand(Historial_Conexion historial) { return new GetHistorial_ConexionCommand(historial);
+    }
+
+    public static CreateHistorial_ConexionCommand createCreateHistorial_ConexionCommand(Historial_Conexion historial)
+    {
+        return new CreateHistorial_ConexionCommand(historial);
+    }
+
+
+    //Zona de Seguridad
+
     public static AddZona_de_SeguridadCommand createAddZona_de_SeguridadCommand(Zona_de_Seguridad zona, DBHandler handler) {
         return new AddZona_de_SeguridadCommand(zona, handler);
     }
@@ -143,6 +155,10 @@ public class CommandFactory
     public static GetZona_de_SeguridadByIdCommand createGetZona_de_SeguridadByIdCommand(DBHandler handler, long id) {
         return new GetZona_de_SeguridadByIdCommand(handler, id);
     }
+
+
+
+
 
     //posicionamiento
     public static AddPosicionamientoCommand createAddPosicionamientoCommand (Posicionamiento posicionamiento, DBHandler handler) {
@@ -247,7 +263,7 @@ public class CommandFactory
     }
     public static ModifyDispositivoCommand createModifyDispositivoCommand(Dispositivo dispositivo) {
 
-        return new ModifyDispositivoCommand(dispositivo);}
-
+        return new ModifyDispositivoCommand(dispositivo);
+    }
 
 }
