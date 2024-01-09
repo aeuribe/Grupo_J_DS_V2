@@ -6,21 +6,19 @@ import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByIdCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.CreatePersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.GetAllPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.GetPersonaCommand;
+import com.ucab.cmcapp.logic.commands.persona.composite.ModifyPersonaCommand;
 import com.ucab.cmcapp.logic.commands.user.composite.CreateUserCommand;
+import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.logic.dtos.PersonaDto;
 import com.ucab.cmcapp.logic.dtos.UserDto;
+import com.ucab.cmcapp.logic.dtos.UsuarioDto;
 import com.ucab.cmcapp.logic.mappers.PersonaMapper;
 import com.ucab.cmcapp.logic.mappers.UserMapper;
+import com.ucab.cmcapp.logic.mappers.UsuarioMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
@@ -134,6 +132,40 @@ public class PersonaService extends BaseService
         }
 
         _logger.debug( "Leaving PersonaService.getPersona" );
+        return response;
+    }
+
+    @PUT
+    public PersonaDto updateUsuario(PersonaDto personaDto )
+    {
+        Persona entity;
+        PersonaDto response;
+        ModifyPersonaCommand command = null;
+        //region Instrumentation DEBUG
+        _logger.debug( "Get in PersonaService.updatePersona" );
+        //endregion
+
+        try
+        {
+            entity = PersonaMapper.mapDtoToEntity( personaDto );
+            command = CommandFactory.createModifyPersonaCommand( entity );
+            command.execute();
+            response = PersonaMapper.mapEntityToDto( command.getReturnParam() );
+            _logger.info( "Response updatePersona: {} ", response );
+        }
+        catch ( Exception e )
+        {
+            _logger.error("error {} updating persona: {}", e.getMessage(), e.getCause());
+            throw new WebApplicationException( Response.status( Response.Status.INTERNAL_SERVER_ERROR ).
+                    entity( e ).build() );
+        }
+        finally
+        {
+            if (command != null)
+                command.closeHandlerSession();
+        }
+
+        _logger.debug( "Leaving PersonaService.updatePersona" );
         return response;
     }
 }

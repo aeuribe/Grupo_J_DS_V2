@@ -21,9 +21,11 @@ import com.ucab.cmcapp.logic.commands.evento.composite.ModifyEventoCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.AddPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByIdCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByListCommand;
+import com.ucab.cmcapp.logic.commands.persona.atomic.UpdatePersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.CreatePersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.GetAllPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.GetPersonaCommand;
+import com.ucab.cmcapp.logic.commands.persona.composite.ModifyPersonaCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.AddPosicionamientoCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.GetPosicionamientoByIdCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.AddQuerellaCommand;
@@ -48,88 +50,82 @@ import org.hibernate.sql.Update;
 
 import java.util.ArrayList;
 
-public class CommandFactory
-{
+public class CommandFactory {
 
-    public static GetUserCommand createGetUserCommand(User user)
-    {
+    public static GetUserCommand createGetUserCommand(User user) {
         return new GetUserCommand(user);
     }
 
-    public static GetUserByEmailCommand createGetUserByEmailCommand(User user)
-    {
+    public static GetUserByEmailCommand createGetUserByEmailCommand(User user) {
         return new GetUserByEmailCommand(user);
     }
 
-    public static GetUserByEmailCommand createGetUserByEmailCommand(User user, DBHandler handler)
-    {
+    public static GetUserByEmailCommand createGetUserByEmailCommand(User user, DBHandler handler) {
         return new GetUserByEmailCommand(user, handler);
     }
 
-    public static GetUserByIdCommand createGetUserByIdCommand (DBHandler handler, long userId )
-    {
+    public static GetUserByIdCommand createGetUserByIdCommand(DBHandler handler, long userId) {
         return new GetUserByIdCommand(handler, userId);
     }
 
 
-    public static AddUserCommand createAddUserCommand(User user, DBHandler handler)
-    {
+    public static AddUserCommand createAddUserCommand(User user, DBHandler handler) {
         return new AddUserCommand(user, handler);
     }
 
-    public static AddUserCommand createAddUserCommand(User user)
-    {
+    public static AddUserCommand createAddUserCommand(User user) {
         return new AddUserCommand(user);
     }
 
-    public static CreateUserCommand createCreateUserCommand(User user)
-    {
+    public static CreateUserCommand createCreateUserCommand(User user) {
         return new CreateUserCommand(user);
     }
 
 
     //usuario
 
-    public static ModifyUsuarioCommand createModifyUsuarioCommand(Usuario usuario) { return new ModifyUsuarioCommand(usuario);}
-    public static CreateUsuarioCommand createCreateUsuarioCommand(Usuario usuario){
+    public static ModifyUsuarioCommand createModifyUsuarioCommand(Usuario usuario) {
+        return new ModifyUsuarioCommand(usuario);
+    }
+
+    public static CreateUsuarioCommand createCreateUsuarioCommand(Usuario usuario) {
         return new CreateUsuarioCommand(usuario);
     }
 
-    public static GetUsuarioCommand createGetUsuarioCommand(Usuario usuario)
-    {
+    public static GetUsuarioCommand createGetUsuarioCommand(Usuario usuario) {
         return new GetUsuarioCommand(usuario);
     }
-    public static GetUsuarioByEmailCommand createGetUsuarioByEmailCommand (Usuario usuario){
-        return new GetUsuarioByEmailCommand( usuario );
+
+    public static GetUsuarioByEmailCommand createGetUsuarioByEmailCommand(Usuario usuario) {
+        return new GetUsuarioByEmailCommand(usuario);
     }
 
-    public static GetUsuarioByEmailCommand createGetUsuarioByEmailCommand (Usuario usuario, DBHandler handler){
-        return new GetUsuarioByEmailCommand( usuario, handler);
+    public static GetUsuarioByEmailCommand createGetUsuarioByEmailCommand(Usuario usuario, DBHandler handler) {
+        return new GetUsuarioByEmailCommand(usuario, handler);
     }
 
-    public static AddUsuarioCommand createAddUsuarioCommand(Usuario usuario, DBHandler handler)
-    {
+    public static AddUsuarioCommand createAddUsuarioCommand(Usuario usuario, DBHandler handler) {
         return new AddUsuarioCommand(usuario, handler);
     }
 
-    public static GetUsuarioByIdCommand createGetUsuarioByIdCommand (DBHandler handler, long userId )
-    {
+    public static GetUsuarioByIdCommand createGetUsuarioByIdCommand(DBHandler handler, long userId) {
         return new GetUsuarioByIdCommand(handler, userId);
     }
 
-    public static UpdateUsuarioCommand createUpdateUsuarioCommand (Usuario usuario, DBHandler handler){
-        return new UpdateUsuarioCommand(usuario,handler);
+    public static UpdateUsuarioCommand createUpdateUsuarioCommand(Usuario usuario, DBHandler handler) {
+        return new UpdateUsuarioCommand(usuario, handler);
     }
 
-    public static UpdateUsuarioCommand createUpdateUsuarioCommand (Usuario usuario){
+    public static UpdateUsuarioCommand createUpdateUsuarioCommand(Usuario usuario) {
         return new UpdateUsuarioCommand(usuario);
     }
+
     //dispositivo
-    public static AddDispositivoCommand createAddDispositivoCommand (Dispositivo dispositivo, DBHandler handler){
+    public static AddDispositivoCommand createAddDispositivoCommand(Dispositivo dispositivo, DBHandler handler) {
         return new AddDispositivoCommand(dispositivo, handler);
     }
 
-    public static GetDispositivoByIdCommand createGetDispositivoByIdCommand (DBHandler handler, long dispositivoId){
+    public static GetDispositivoByIdCommand createGetDispositivoByIdCommand(DBHandler handler, long dispositivoId) {
         return new GetDispositivoByIdCommand(handler, dispositivoId);
     }
 
@@ -151,130 +147,136 @@ public class CommandFactory
     }
 
     //posicionamiento
-    public static AddPosicionamientoCommand createAddPosicionamientoCommand (Posicionamiento posicionamiento, DBHandler handler) {
+    public static AddPosicionamientoCommand createAddPosicionamientoCommand(Posicionamiento posicionamiento, DBHandler handler) {
         return new AddPosicionamientoCommand(posicionamiento, handler);
     }
 
-    public static GetPosicionamientoByIdCommand createGetPosicionamientoByIdCommand (DBHandler handler, long id){
-        return new GetPosicionamientoByIdCommand( handler, id );
+    public static GetPosicionamientoByIdCommand createGetPosicionamientoByIdCommand(DBHandler handler, long id) {
+        return new GetPosicionamientoByIdCommand(handler, id);
     }
 
     //evento
-    public static AddEventoCommand createAddEventoCommand (Evento evento, DBHandler handler){
-        return new AddEventoCommand( evento, handler );
+    public static AddEventoCommand createAddEventoCommand(Evento evento, DBHandler handler) {
+        return new AddEventoCommand(evento, handler);
     }
 
-    public static GetEventoByIdCommand createGetEventoByIdCommand (DBHandler handler, long id){
-        return new GetEventoByIdCommand( handler, id );
+    public static GetEventoByIdCommand createGetEventoByIdCommand(DBHandler handler, long id) {
+        return new GetEventoByIdCommand(handler, id);
     }
 
     //alerta
-    public static AddAlertaCommand createAddAlertaCommand (Alerta alerta, DBHandler handler){
-        return new AddAlertaCommand (alerta, handler);
+    public static AddAlertaCommand createAddAlertaCommand(Alerta alerta, DBHandler handler) {
+        return new AddAlertaCommand(alerta, handler);
     }
 
-    public static GetAlertaByIdCommand createGetAlertaByIdCommand (DBHandler handler, long id){
-        return new GetAlertaByIdCommand (handler, id);
+    public static GetAlertaByIdCommand createGetAlertaByIdCommand(DBHandler handler, long id) {
+        return new GetAlertaByIdCommand(handler, id);
     }
 
     //persona
 
-    public static GetAllPersonaCommand createGetAllPersonaCommand(){
+    public static GetAllPersonaCommand createGetAllPersonaCommand() {
         return new GetAllPersonaCommand();
     }
 
-    public static GetPersonaByListCommand createGetPersonaByListCommand(DBHandler handler){
+    public static GetPersonaByListCommand createGetPersonaByListCommand(DBHandler handler) {
         return new GetPersonaByListCommand(handler);
     }
 
-    public static GetPersonaCommand createGetPersonaCommand(Persona persona)
-    {
+    public static GetPersonaCommand createGetPersonaCommand(Persona persona) {
         return new GetPersonaCommand(persona);
     }
 
-    public static CreatePersonaCommand createCreatePersonaCommand(Persona persona)
-    {
+    public static CreatePersonaCommand createCreatePersonaCommand(Persona persona) {
         return new CreatePersonaCommand(persona);
     }
-    public static AddPersonaCommand createAddPersonaCommand (Persona persona, DBHandler handler){
+
+    public static AddPersonaCommand createAddPersonaCommand(Persona persona, DBHandler handler) {
         return new AddPersonaCommand(persona, handler);
     }
 
-    public static AddPersonaCommand createAddUserCommand(Persona persona)
-    {
+    public static AddPersonaCommand createAddUserCommand(Persona persona) {
         return new AddPersonaCommand(persona);
     }
 
-    public static GetPersonaByIdCommand createGetPersonaByIdCommand (DBHandler handler, long id){
+    public static GetPersonaByIdCommand createGetPersonaByIdCommand(DBHandler handler, long id) {
         return new GetPersonaByIdCommand(handler, id);
     }
 
+    public static UpdatePersonaCommand createUpdatePersonaCommand(Persona persona, DBHandler handler) {
+        return new UpdatePersonaCommand(persona, handler);
+    }
+
+    public static UpdatePersonaCommand createUpdatePersonaCommand(Persona persona) {
+        return new UpdatePersonaCommand(persona);
+    }
+
+    public static ModifyPersonaCommand createModifyPersonaCommand(Persona persona) {
+        return new ModifyPersonaCommand(persona);
+    }
+
     //querella
-    public static AddQuerellaCommand createAddQuerellaCommand (Querella persona, DBHandler handler){
+    public static AddQuerellaCommand createAddQuerellaCommand(Querella persona, DBHandler handler) {
         return new AddQuerellaCommand(persona, handler);
     }
 
-    public static GetQuerellaByIdCommand createGetQuerellaByIdCommand (DBHandler handler, long id){
+    public static GetQuerellaByIdCommand createGetQuerellaByIdCommand(DBHandler handler, long id) {
         return new GetQuerellaByIdCommand(handler, id);
     }
 
-<<<<<<< HEAD
-    public static GetQuerellaCommand createGetQuerellaCommand(Querella querella)
-    {
+    public static GetQuerellaCommand createGetQuerellaCommand(Querella querella) {
         return new GetQuerellaCommand(querella);
     }
 
-    public static CreateQuerellaCommand createCreateQuerellaCommand(Querella querella)
-    {
+    public static CreateQuerellaCommand createCreateQuerellaCommand(Querella querella) {
         return new CreateQuerellaCommand(querella);
     }
 
-=======
 
     //Evento
 
-    public static GetEventoCommand createGetEventoCommand(Evento evento)
-    {
+    public static GetEventoCommand createGetEventoCommand(Evento evento) {
         return new GetEventoCommand(evento);
     }
 
-    public static CreateEventoCommand createCreateEventoCommand(Evento evento)
-    {
+    public static CreateEventoCommand createCreateEventoCommand(Evento evento) {
         return new CreateEventoCommand(evento);
     }
 
-    public static UpdateEventoCommand createUpdateEventoCommand (Evento evento, DBHandler handler){
-        return new UpdateEventoCommand(evento,handler);
+    public static UpdateEventoCommand createUpdateEventoCommand(Evento evento, DBHandler handler) {
+        return new UpdateEventoCommand(evento, handler);
     }
 
-    public static UpdateEventoCommand createUpdateEventoCommand (Evento evento){
+    public static UpdateEventoCommand createUpdateEventoCommand(Evento evento) {
         return new UpdateEventoCommand(evento);
     }
+
     public static ModifyEventoCommand createModifyEventoCommand(Evento evento) {
 
-        return new ModifyEventoCommand(evento);}
+        return new ModifyEventoCommand(evento);
+    }
 
 
     //Dispositivo
-    public static GetDispositivoCommand createGetDispositivoCommand(Dispositivo dispositivo) { return new GetDispositivoCommand(dispositivo);
+    public static GetDispositivoCommand createGetDispositivoCommand(Dispositivo dispositivo) {
+        return new GetDispositivoCommand(dispositivo);
     }
 
-    public static CreateDispositivoCommand createCreateDispositivoCommand(Dispositivo dispositivo)
-    {
+    public static CreateDispositivoCommand createCreateDispositivoCommand(Dispositivo dispositivo) {
         return new CreateDispositivoCommand(dispositivo);
     }
 
-    public static UpdateDispositivoCommand createUpdateDispositivoCommand (Dispositivo dispositivo, DBHandler handler){
-        return new UpdateDispositivoCommand(dispositivo,handler);
+    public static UpdateDispositivoCommand createUpdateDispositivoCommand(Dispositivo dispositivo, DBHandler handler) {
+        return new UpdateDispositivoCommand(dispositivo, handler);
     }
 
-    public static UpdateDispositivoCommand createUpdateDispositivoCommand (Dispositivo dispositivo){
+    public static UpdateDispositivoCommand createUpdateDispositivoCommand(Dispositivo dispositivo) {
         return new UpdateDispositivoCommand(dispositivo);
     }
+
     public static ModifyDispositivoCommand createModifyDispositivoCommand(Dispositivo dispositivo) {
 
-        return new ModifyDispositivoCommand(dispositivo);}
-
->>>>>>> a3015ac414c3cb78e78b64e7b85dc3da790ced7f
-
+        return new ModifyDispositivoCommand(dispositivo);
+    }
 }
+
