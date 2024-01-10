@@ -47,6 +47,7 @@ public class ModifyQuerellaCommand extends Command<Querella>
         }
         catch (Exception e)
         {
+            _logger.error("Error during ModifyQuerellaCommand execution: {}", e.getMessage(), e);
             getHandler().rollbackTransaction();
             getHandler().closeSession();
             throw e;

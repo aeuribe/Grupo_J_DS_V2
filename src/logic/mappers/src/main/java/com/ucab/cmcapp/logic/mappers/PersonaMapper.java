@@ -30,6 +30,7 @@ public class PersonaMapper extends BaseMapper{
         entity.set_segundo_nombre( dto.get_segundo_nombre());
         entity.set_segundo_apellido( dto.get_segundo_apellido());
         entity.setFec_nac( dto.get_fec_nac());
+        entity.set_tipoRol(dto.get_tipoRol());
 
         //region Instrumentation DEBUG
         _logger.debug( "Leaving PersonaMapper.mapDtoToEntity: entity {}", entity );
@@ -50,9 +51,10 @@ public class PersonaMapper extends BaseMapper{
         dto.set_primer_apellido(  entity.get_primer_apellido() );
         dto.set_segundo_apellido( entity.get_segundo_apellido());
         dto.set_primer_nombre( entity.get_primer_nombre());
-        dto.set_segundo_apellido( entity.get_segundo_nombre());
+        dto.set_segundo_nombre( entity.get_segundo_nombre());
         dto.set_sexo( entity.get_sexo());
         dto.set_fec_nac( entity.getFec_nac());
+        dto.set_tipoRol( entity.get_tipoRol() );
 
         //region Instrumentation DEBUG
         _logger.debug( "Leaving PersonaMapper.mapEntityToDto: dto {}", dto );

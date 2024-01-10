@@ -1,15 +1,19 @@
 package com.ucab.cmcapp.common.entities;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 //import com.ucab.cmcapp.common.entities;
 
 /**
  * Name:                Persona.
  * Description:         Entity Persona.
  */
+
 @Entity
 @Table(name = "PERSONA")
 public class Persona {
+
 
     @Id
     @Column (name = "id_persona")
@@ -35,8 +39,11 @@ public class Persona {
     @Column (name = "fec_nac")
     private Date fec_nac;
 
+    @Column (name = "tipoRol")
+    private String _tipoRol;
 
-    public Persona(Long _id_persona, String _primer_nombre, String _primer_apellido, String _segundo_nombre, String _segundo_apellido, char _sexo, Date fec_nac, Usuario usuario) {
+
+    public Persona(long _id_persona, String _primer_nombre, String _primer_apellido, String _segundo_nombre, String _segundo_apellido, char _sexo, Date fec_nac, String _tipoRol) {
         this._id_persona = _id_persona;
         this._primer_nombre = _primer_nombre;
         this._primer_apellido = _primer_apellido;
@@ -44,12 +51,25 @@ public class Persona {
         this._segundo_apellido = _segundo_apellido;
         this._sexo = _sexo;
         this.fec_nac = fec_nac;
+        this._tipoRol = _tipoRol;
     }
 
     public Persona() {
     }
 
+    public String get_tipoRol() {
+        return _tipoRol;
+    }
+
+    public void set_tipoRol(String _tipoRol) {
+        this._tipoRol = _tipoRol;
+    }
+
     public Persona(Long _id_persona) {
+        this._id_persona = _id_persona;
+    }
+
+    public void set_id_persona(long _id_persona) {
         this._id_persona = _id_persona;
     }
 

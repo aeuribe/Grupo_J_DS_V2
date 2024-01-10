@@ -36,7 +36,7 @@ public class GetQuerellaByIdCommand extends Command<Querella>
         //region Instrumentation DEBUG
         _logger.debug( "Get in  GetQuerellaByIdCommand.execute" );
         //endregion
-        _result = _dao.find(_querellaId, Querella.class);
+        _result = _dao.find(_querellaId, Querella.class); //el result sabe las personas asociadas
         //region Instrumentation DEBUG
         _logger.debug( "Leaving  GetQuerellaByIdCommand.execute" );
         //endregion
@@ -45,7 +45,7 @@ public class GetQuerellaByIdCommand extends Command<Querella>
     @Override
     public Querella getReturnParam()
     {
-        return _result;
+        return _result; //sabe las personas asociadas
     }
 
     @Override

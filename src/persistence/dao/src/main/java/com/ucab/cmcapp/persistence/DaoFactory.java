@@ -24,10 +24,6 @@ public class DaoFactory
         return new QuerellaDao( handler );
     }
 
-    public  static P_QDao createP_QDao ( DBHandler handler){
-        return new P_QDao(handler);
-    }
-
     public  static DispositivoDao createDispositivoDao ( DBHandler handler ){
         return new DispositivoDao( handler );
     }
@@ -40,9 +36,6 @@ public class DaoFactory
         return new Zona_de_SeguridadDao( handler );
     }
 
-    public static D_ZDao createD_ZDao (DBHandler handler){
-        return new D_ZDao(handler);
-    }
 
     public static PosicionamientoDao createPosicionamientoDao ( DBHandler handler ){
         return new PosicionamientoDao( handler );

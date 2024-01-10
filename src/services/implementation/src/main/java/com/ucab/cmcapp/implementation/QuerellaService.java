@@ -38,10 +38,10 @@ public class QuerellaService extends BaseService
 
         try
         {
-            entity = QuerellaMapper.mapDtoToEntity( QuerellaId );
+            entity = QuerellaMapper.mapDtoToEntity( QuerellaId ); //no sabe las personas asociadas
             command = CommandFactory.createGetQuerellaCommand( entity );
-            command.execute();
-            response = QuerellaMapper.mapEntityToDto( command.getReturnParam() );
+            command.execute(); //sabe las personas asociadas
+            response = QuerellaMapper.mapEntityToDto( command.getReturnParam() ); //NO ESTA LLEGANDO CON LOS DATOS DE PERSONA
             _logger.info( "Response getQuerella: {} ", response );
         }
         catch ( Exception e )
@@ -66,6 +66,7 @@ public class QuerellaService extends BaseService
         Querella entity;
         QuerellaDto response;
         CreateQuerellaCommand command = null;
+
         //region Instrumentation DEBUG
         _logger.debug( "Get in QuerellaService.addQuerella" );
         //endregion
@@ -98,8 +99,11 @@ public class QuerellaService extends BaseService
     public QuerellaDto updateUsuario(QuerellaDto querellaDto )
     {
         Querella entity;
+        Querella entityResponse;
         QuerellaDto response;
         ModifyQuerellaCommand command = null;
+        GetQuerellaCommand commandResponse = null;
+
         //region Instrumentation DEBUG
         _logger.debug( "Get in QuerellaService.updateQuerella" );
         //endregion
@@ -107,9 +111,13 @@ public class QuerellaService extends BaseService
         try
         {
             entity = QuerellaMapper.mapDtoToEntity( querellaDto );
-            command = CommandFactory.createModifyQuerellaCommand( entity );
-            command.execute();
-            response = QuerellaMapper.mapEntityToDto( command.getReturnParam() );
+            command = CommandFactory.createModifyQuerellaCommand( entity ); //en este punto deberian estar definidos los fk
+            command.execute(); //no sabe nada de info del fk
+
+
+            response = getQuerella( querellaDto.getId() );
+
+            //response = QuerellaMapper.mapEntityToDto( command.getReturnParam() );
             _logger.info( "Response updateQuerella: {} ", response );
         }
         catch ( Exception e )

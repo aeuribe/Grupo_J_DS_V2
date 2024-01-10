@@ -67,15 +67,6 @@ public class EntityFactory
     }
 
 
-    public static P_Q createP_Q(){
-        return createP_Q();
-    }
-
-    public static P_Q createP_Q( Querella id_querella, Persona id_agresor, Persona id_victima ){
-        return new P_Q( id_querella, id_agresor, id_victima);
-
-    }
-
     public static Dispositivo createDispositivo (){
         return  new Dispositivo();
     }
@@ -98,14 +89,6 @@ public class EntityFactory
 
     public static Zona_de_Seguridad createZona_de_Seguridad (long id_zona){
         return new Zona_de_Seguridad(id_zona);
-    }
-
-    public static D_Z createD_Z (){
-        return new D_Z();
-    }
-
-    public static D_Z createD_Z (Zona_de_Seguridad id_zona, Dispositivo id_dispositivo){
-        return new D_Z(id_zona, id_dispositivo);
     }
 
     //posicionamiento

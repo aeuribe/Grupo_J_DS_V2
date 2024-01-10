@@ -1,6 +1,9 @@
 package com.ucab.cmcapp.common.entities;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "QUERELLA")
@@ -26,6 +29,14 @@ public class Querella {
     @Column ( name = "inamovilidad")
     private long _inamovilidad;
 
+    @ManyToMany (fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "Querella_Persona",
+            joinColumns = @JoinColumn(name = "id_querella"),
+            inverseJoinColumns = @JoinColumn(name = "id_persona")
+    )
+    private Set<Persona> personasAsociadas = new HashSet<>();
+
     public Querella(long _id_querella, Date _fecha_caso, String _descripcion, long _distancia_alejamiento, long _cuenta_atras, long _inamovilidad) {
         this._id_querella = _id_querella;
         this._fecha_caso = _fecha_caso;
@@ -35,11 +46,25 @@ public class Querella {
         this._inamovilidad = _inamovilidad;
     }
 
+
     public Querella(long _id_querella) {
         this._id_querella = _id_querella;
     }
 
     public Querella(){}
+
+    public Set<Persona> getPersonasAsociadas() {
+        return personasAsociadas;
+    }
+
+    public void addPersonasAsociadas(Persona persona)
+    {
+        personasAsociadas.add(persona);
+    }
+
+    public void setPersonasAsociadas(Set<Persona> personasAsociadas) {
+        this.personasAsociadas = personasAsociadas;
+    }
 
     public void set_id_querella(long _id_querella) {
         this._id_querella = _id_querella;
@@ -87,5 +112,19 @@ public class Querella {
 
     public long get_inamovilidad() {
         return _inamovilidad;
+    }
+
+    // Método para obtener víctimas
+    public Persona getVictima() {
+        return personasAsociadas.stream()
+                .filter(persona -> persona.get_tipoRol().equals("victima"))
+                .findFirst()
+                .orElse(new Persona(null));
+    }
+    public Persona getAgresor() {
+        return personasAsociadas.stream()
+                .filter(persona -> persona.get_tipoRol().equals("agresor"))
+                .findFirst()
+                .orElse(null);
     }
 }
