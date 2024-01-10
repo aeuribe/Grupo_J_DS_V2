@@ -7,8 +7,6 @@ import javax.persistence.ManyToOne;
 import java.util.Date;
 
 public class Historial_ConexionDto extends BaseDto{
-
-    private long _id_historial;
     private Date _hora_conexion;
     private Date _hora_desconexion;
     private Date _fecha;
@@ -18,17 +16,8 @@ public class Historial_ConexionDto extends BaseDto{
     public Historial_ConexionDto() {
     }
 
-    public Historial_ConexionDto(long id, long _id_historial) {
+    public Historial_ConexionDto(long id) {
         super(id);
-        this._id_historial = _id_historial;
-    }
-
-    public long get_id_historial() {
-        return _id_historial;
-    }
-
-    public void set_id_historial(long _id_historial) {
-        this._id_historial = _id_historial;
     }
 
     public Date get_hora_conexion() {

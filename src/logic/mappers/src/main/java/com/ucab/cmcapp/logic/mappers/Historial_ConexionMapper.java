@@ -23,7 +23,7 @@ public class Historial_ConexionMapper extends BaseMapper
         _logger.debug( "Get in Historial_ConexionMapper.mapDtoToEntity: dto {}", dto );
         //endregion
 
-        entity.set_id_historial( dto.get_id_historial() );
+        entity.set_id_historial( dto.getId());
         entity.set_estado(dto.get_estado());
         entity.set_fecha(dto.get_fecha());
         entity.set_hora_conexion(dto.get_hora_conexion());
@@ -50,7 +50,7 @@ public class Historial_ConexionMapper extends BaseMapper
         _logger.debug( "Get in Historial_ConexionMapper.mapEntityToDto: entity {}", entity );
         //endregion
 
-        dto.set_id_historial( entity.get_id_historial() );
+        dto.setId( entity.get_id_historial() );
         dto.set_estado( entity.get_estado());
         dto.set_fecha( entity.get_fecha() );
         dto.set_hora_conexion( entity.get_hora_conexion());
