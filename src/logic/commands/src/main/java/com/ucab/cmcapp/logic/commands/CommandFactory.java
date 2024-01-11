@@ -5,6 +5,8 @@ import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.AddZona_de_Seguri
 import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.GetZona_de_SeguridadByIdCommand;
 import com.ucab.cmcapp.logic.commands.alerta.atomic.AddAlertaCommand;
 import com.ucab.cmcapp.logic.commands.alerta.atomic.GetAlertaByIdCommand;
+import com.ucab.cmcapp.logic.commands.alerta.composite.CreateAlertaCommand;
+import com.ucab.cmcapp.logic.commands.alerta.composite.GetAlertaCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.AddDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.GetDispositivoByIdCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.UpdateDispositivoCommand;
@@ -185,6 +187,15 @@ public class CommandFactory {
     public static GetAlertaByIdCommand createGetAlertaByIdCommand(DBHandler handler, long id) {
         return new GetAlertaByIdCommand(handler, id);
     }
+
+    public static GetAlertaCommand createGetAlertaCommand(Alerta alerta) {
+        return new GetAlertaCommand(alerta);
+    }
+
+    public static CreateAlertaCommand createCreateAlertaCommand(Alerta alerta) {
+        return new CreateAlertaCommand(alerta);
+    }
+
 
     //persona
 
