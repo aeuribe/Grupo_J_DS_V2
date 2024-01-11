@@ -2,11 +2,13 @@ package com.ucab.cmcapp.implementation;
 
 import com.ucab.cmcapp.common.entities.*;
 import com.ucab.cmcapp.logic.commands.CommandFactory;
+import com.ucab.cmcapp.logic.commands.historial_conexion.composite.CreateHistorial_ConexionCommand;
 import com.ucab.cmcapp.logic.commands.historial_conexion.composite.GetHistorial_ConexionCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.CreatePersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.GetAllPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.GetPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.ModifyPersonaCommand;
+import com.ucab.cmcapp.logic.commands.querella.composite.CreateQuerellaCommand;
 import com.ucab.cmcapp.logic.dtos.Historial_ConexionDto;
 import com.ucab.cmcapp.logic.dtos.PersonaDto;
 import com.ucab.cmcapp.logic.mappers.Historial_ConexionMapper;
@@ -62,27 +64,27 @@ public class HistorialService extends BaseService
         return response;
     }
 
-/*    @POST
-    public PersonaDto addPersona( PersonaDto personaDto )
+    @POST
+    public Historial_ConexionDto addHistorial_Conexion( Historial_ConexionDto historialDto )
     {
-        Persona entity;
-        PersonaDto response;
-        CreatePersonaCommand command = null;
+        Historial_Conexion entity;
+        Historial_ConexionDto response;
+        CreateHistorial_ConexionCommand command = null;
         //region Instrumentation DEBUG
-        _logger.debug( "Get in PersonaService.addPersona" );
+        _logger.debug( "Get in PersonaService.addHistorial_Conexion" );
         //endregion
 
         try
         {
-            entity = PersonaMapper.mapDtoToEntity( personaDto );
-            command = CommandFactory.createCreatePersonaCommand( entity );
+            entity = Historial_ConexionMapper.mapDtoToEntity( historialDto );
+            command = CommandFactory.createCreateHistorial_ConexionCommand( entity );
             command.execute();
-            response = PersonaMapper.mapEntityToDto( command.getReturnParam() );
-            _logger.info( "Response addPersona: {} ", response );
+            response = Historial_ConexionMapper.mapEntityToDto( command.getReturnParam() );
+            _logger.info( "Response addHistorial_Conexion: {} ", response );
         }
         catch ( Exception e )
         {
-            _logger.error("error {} adding persona: {}", e.getMessage(), e.getCause());
+            _logger.error("error {} adding historial_conexion: {}", e.getMessage(), e.getCause());
             throw new WebApplicationException( Response.status( Response.Status.INTERNAL_SERVER_ERROR ).
                     entity( e ).build() );
         }
@@ -96,42 +98,9 @@ public class HistorialService extends BaseService
         return response;
     }
 
-    @GET
-    @Path("/")
-    public ArrayList<PersonaDto> getAllPersonas()
-    {
-        ArrayList<Persona> entitys;
-        ArrayList<PersonaDto> response;
-        GetAllPersonaCommand command = null;
-        //region Instrumentation DEBUG
-        _logger.debug( "Get in PersonaService.getPersona" );
-        //endregion
 
-        try
-        {
-            command = CommandFactory.createGetAllPersonaCommand();
-            command.execute();
-            entitys = command.getReturnParam();
-            response = PersonaMapper.mapEntityToDtoList( entitys );
-            _logger.info( "Response getPersonas: {} ", response );
-        }
-        catch ( Exception e )
-        {
-            _logger.error("error {} getting Persona {}:", e.getMessage());
-            throw new WebApplicationException( Response.status( Response.Status.INTERNAL_SERVER_ERROR ).
-                    entity( e ).build() );
-        }
-        finally
-        {
-            if (command != null)
-                command.closeHandlerSession();
-        }
 
-        _logger.debug( "Leaving PersonaService.getPersona" );
-        return response;
-    }
-
-    @PUT
+/*    @PUT
     public PersonaDto updatePersona(PersonaDto personaDto )
     {
         Persona entity;

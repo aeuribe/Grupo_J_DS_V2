@@ -49,12 +49,6 @@ public class Historial_ConexionMapper extends BaseMapper{
         //region Instrumentation DEBUG
         _logger.debug( "Get in HistorialMapper.mapEntityToDto: entity {}", entity );
         //endregion
-        entity.set_id_historial(dto.getId());
-        entity.set_hora_conexion(dto.get_hora_conexion());
-        entity.set_hora_desconexion(dto.get_hora_desconexion());
-        entity.set_fecha(dto.get_fecha());
-        entity.set_estado(dto.get_estado());
-
 
         dto.setId(entity.get_id_historial());
         dto.set_estado(entity.get_estado());

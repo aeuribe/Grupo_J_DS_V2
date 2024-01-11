@@ -16,7 +16,9 @@ import com.ucab.cmcapp.logic.commands.evento.atomic.UpdateEventoCommand;
 import com.ucab.cmcapp.logic.commands.evento.composite.CreateEventoCommand;
 import com.ucab.cmcapp.logic.commands.evento.composite.GetEventoCommand;
 import com.ucab.cmcapp.logic.commands.evento.composite.ModifyEventoCommand;
+import com.ucab.cmcapp.logic.commands.historial_conexion.atomic.AddHistorial_ConexionCommand;
 import com.ucab.cmcapp.logic.commands.historial_conexion.atomic.GetHistorial_ConexionByIdCommand;
+import com.ucab.cmcapp.logic.commands.historial_conexion.composite.CreateHistorial_ConexionCommand;
 import com.ucab.cmcapp.logic.commands.historial_conexion.composite.GetHistorial_ConexionCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.AddPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByIdCommand;
@@ -141,7 +143,13 @@ public class CommandFactory {
     }
 
     //Historial_Conexion
+    public static AddHistorial_ConexionCommand createAddHistorial_ConexionCommand(Historial_Conexion historial, DBHandler handler) {
+        return new AddHistorial_ConexionCommand(historial, handler);
+    }
 
+    public static CreateHistorial_ConexionCommand createCreateHistorial_ConexionCommand(Historial_Conexion historial) {
+        return new CreateHistorial_ConexionCommand(historial);
+    }
 
     public static AddZona_de_SeguridadCommand createAddZona_de_SeguridadCommand(Zona_de_Seguridad zona, DBHandler handler) {
         return new AddZona_de_SeguridadCommand(zona, handler);

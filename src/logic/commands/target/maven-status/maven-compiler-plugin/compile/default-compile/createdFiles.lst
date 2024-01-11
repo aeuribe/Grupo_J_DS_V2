@@ -28,6 +28,7 @@ com\ucab\cmcapp\logic\commands\user\composite\CreateUserCommand.class
 com\ucab\cmcapp\logic\commands\persona\composite\GetAllPersonaCommand.class
 com\ucab\cmcapp\logic\commands\usuario\composite\CreateUsuarioCommand.class
 com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\atomic\GetZona_de_SeguridadByIdCommand.class
+com\ucab\cmcapp\logic\commands\historial_conexion\composite\CreateHistorial_ConexionCommand.class
 com\ucab\cmcapp\logic\commands\dispositivo\atomic\AddDispositivoCommand.class
 com\ucab\cmcapp\logic\commands\user\atomic\GetUserByEmailCommand.class
 com\ucab\cmcapp\logic\commands\persona\composite\CreatePersonaCommand.class
