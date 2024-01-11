@@ -1,8 +1,6 @@
 package com.ucab.cmcapp.logic.commands;
 
 import com.ucab.cmcapp.common.entities.*;
-import com.ucab.cmcapp.logic.commands.Historial_Conexion.atomic.AddHistorial_ConexionCommand;
-import com.ucab.cmcapp.logic.commands.Historial_Conexion.atomic.GetHistorial_ConexionByIdCommand;
 import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.AddZona_de_SeguridadCommand;
 import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.GetZona_de_SeguridadByIdCommand;
 import com.ucab.cmcapp.logic.commands.alerta.atomic.AddAlertaCommand;
@@ -18,6 +16,8 @@ import com.ucab.cmcapp.logic.commands.evento.atomic.UpdateEventoCommand;
 import com.ucab.cmcapp.logic.commands.evento.composite.CreateEventoCommand;
 import com.ucab.cmcapp.logic.commands.evento.composite.GetEventoCommand;
 import com.ucab.cmcapp.logic.commands.evento.composite.ModifyEventoCommand;
+import com.ucab.cmcapp.logic.commands.historial_conexion.atomic.GetHistorial_ConexionByIdCommand;
+import com.ucab.cmcapp.logic.commands.historial_conexion.composite.GetHistorial_ConexionCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.AddPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByIdCommand;
 import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByListCommand;
@@ -48,9 +48,8 @@ import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import com.ucab.cmcapp.logic.commands.dispositivo.composite.ModifyDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
-import org.hibernate.sql.Update;
 
-import java.util.ArrayList;
+import java.util.logging.Handler;
 
 public class CommandFactory {
 
@@ -83,7 +82,15 @@ public class CommandFactory {
         return new CreateUserCommand(user);
     }
 
+    //historial
+    public static GetHistorial_ConexionByIdCommand createGetHistorial_ConexionByIdCommand(DBHandler handler, long id)
+    {
+        return new GetHistorial_ConexionByIdCommand(handler, id);
+    }
 
+    public static GetHistorial_ConexionCommand createGetHistorial_ConexionCommand(Historial_Conexion historial_conexion){
+        return new GetHistorial_ConexionCommand(historial_conexion);
+    }
     //usuario
 
     public static ModifyUsuarioCommand createModifyUsuarioCommand(Usuario usuario) {
@@ -132,13 +139,7 @@ public class CommandFactory {
     }
 
     //Historial_Conexion
-    public static AddHistorial_ConexionCommand createAddHistorial_ConexionCommand(Historial_Conexion historial, DBHandler handler) {
-        return new AddHistorial_ConexionCommand(historial, handler);
-    }
 
-    public static GetHistorial_ConexionByIdCommand createGetHistorial_ConexionByIdCommand(DBHandler handler, long id) {
-        return new GetHistorial_ConexionByIdCommand(handler, id);
-    }
 
     public static AddZona_de_SeguridadCommand createAddZona_de_SeguridadCommand(Zona_de_Seguridad zona, DBHandler handler) {
         return new AddZona_de_SeguridadCommand(zona, handler);

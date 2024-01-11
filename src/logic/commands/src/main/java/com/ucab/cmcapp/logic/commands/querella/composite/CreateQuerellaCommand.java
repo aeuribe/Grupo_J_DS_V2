@@ -3,8 +3,6 @@ package com.ucab.cmcapp.logic.commands.querella.composite;
 import com.ucab.cmcapp.common.entities.*;
 import com.ucab.cmcapp.logic.commands.Command;
 import com.ucab.cmcapp.logic.commands.CommandFactory;
-import com.ucab.cmcapp.logic.commands.persona.atomic.AddPersonaCommand;
-import com.ucab.cmcapp.logic.commands.persona.composite.CreatePersonaCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.AddQuerellaCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import org.slf4j.Logger;

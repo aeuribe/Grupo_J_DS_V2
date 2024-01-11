@@ -2,7 +2,6 @@ package com.ucab.cmcapp.logic.commands.persona.atomic;
 
 import com.ucab.cmcapp.common.entities.*;
 import com.ucab.cmcapp.logic.commands.Command;
-import com.ucab.cmcapp.logic.commands.persona.atomic.AddPersonaCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import com.ucab.cmcapp.persistence.DaoFactory;
 import com.ucab.cmcapp.persistence.dao.PersonaDao;

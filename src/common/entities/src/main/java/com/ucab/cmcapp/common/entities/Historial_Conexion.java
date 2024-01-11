@@ -21,7 +21,6 @@ public class Historial_Conexion implements Serializable
     private Date _fecha;
     @Column (name = "_estado")
     private String _estado;
-    @Id
     @ManyToOne
     @JoinColumn ( name = "id_dispositivo")
     private Dispositivo _id_dispositivo;

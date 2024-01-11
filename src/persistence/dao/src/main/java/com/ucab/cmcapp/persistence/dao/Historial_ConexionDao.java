@@ -28,34 +28,5 @@ public class Historial_ConexionDao extends BaseDao<Historial_Conexion>{
         _builder = _em.getCriteriaBuilder();
     }
 
-    public Historial_Conexion getHistorial_ConexionById( long id )
-    {
-        Historial_Conexion result = EntityFactory.createHistorial_Conexion();
-        _logger.debug( String.format( "Get in Historial_ConexionDao.getHistorial_ConexionById: parameter {%s}", id ) );
-        try
-        {
-            CriteriaQuery<Historial_Conexion> query = _builder.createQuery( Historial_Conexion.class );
-            Root<Historial_Conexion> root = query.from( Historial_Conexion.class );
-
-            query.select( root );
-            query.where( _builder.equal( root.get( "id_historial" ), id ) );
-
-            result = _em.createQuery( query ).getSingleResult();
-        }
-        catch ( NoResultException e )
-        {
-            _logger.error( String.format( "Error UserDao.getHistorial_ConexionById: No Result {%s}", e.getMessage() ) );
-        }
-        catch ( Exception e )
-        {
-            _logger.error( String.format( "Error Historial_ConexionDao.getHistorial_ConexionById: {%s}", e.getMessage() ) );
-            throw new CupraException( e.getMessage() );
-        }
-        //region Instrumentation
-        _logger.debug( String.format( "Leavin Historial_ConexionDao.getHistorial_ConexionById: result {%s}", result ) );
-        //endregion
-
-        return result;
-    }
 
 }

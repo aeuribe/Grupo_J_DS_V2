@@ -119,7 +119,7 @@ public class Querella {
         return personasAsociadas.stream()
                 .filter(persona -> persona.get_tipoRol().equals("victima"))
                 .findFirst()
-                .orElse(new Persona(null));
+                .orElse( null);
     }
     public Persona getAgresor() {
         return personasAsociadas.stream()
