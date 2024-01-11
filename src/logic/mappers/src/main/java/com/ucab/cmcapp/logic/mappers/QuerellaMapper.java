@@ -9,6 +9,7 @@ import com.ucab.cmcapp.common.entities.Persona;
 import org.slf4j.Logger;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class QuerellaMapper extends BaseMapper{
@@ -89,5 +90,20 @@ public class QuerellaMapper extends BaseMapper{
         //endregion
 
         return entity;
+    }
+
+    public static ArrayList<QuerellaDto> mapEntityToDtoList(ArrayList<Querella> entity){
+        ArrayList<QuerellaDto> dto = new ArrayList<QuerellaDto>();
+
+        //region Instrumentation DEBUG
+        _logger.debug("Get in QuerellaMapper.mapEntityToDto: entity {}");
+        //endregion
+
+        for (Querella querella : entity) {
+            dto.add(mapEntityToDto(querella));
+        }
+
+
+        return dto;
     }
 }

@@ -41,6 +41,7 @@ C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\u
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Command.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\querella\atomic\GetQuerellaByIdCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\querella\atomic\UpdateQuerellaCommand.java
+C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\querella\composite\GetAllQuerellaCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\atomic\UpdatePersonaCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\alerta\composite\GetAlertaCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\atomic\GetPersonaByIdCommand.java
@@ -51,5 +52,6 @@ C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\u
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\composite\GetPersonaCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\atomic\GetUserByIdCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\evento\composite\ModifyEventoCommand.java
+C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\querella\atomic\GetQuerellaByListCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\composite\CreatePersonaCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\dispositivo\atomic\UpdateDispositivoCommand.java

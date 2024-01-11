@@ -16,6 +16,7 @@ com\ucab\cmcapp\logic\commands\alerta\composite\GetAlertaCommand.class
 com\ucab\cmcapp\logic\commands\persona\composite\ModifyPersonaCommand.class
 com\ucab\cmcapp\logic\commands\querella\composite\GetQuerellaCommand.class
 com\ucab\cmcapp\logic\commands\dispositivo\atomic\UpdateDispositivoCommand.class
+com\ucab\cmcapp\logic\commands\querella\atomic\GetQuerellaByListCommand.class
 com\ucab\cmcapp\logic\commands\evento\atomic\UpdateEventoCommand.class
 com\ucab\cmcapp\logic\commands\evento\composite\CreateEventoCommand.class
 com\ucab\cmcapp\logic\commands\posicionamiento\composite\CreatePosicionamientoCommand.class
@@ -41,6 +42,7 @@ com\ucab\cmcapp\logic\commands\evento\composite\GetEventoCommand.class
 com\ucab\cmcapp\logic\commands\usuario\atomic\GetUsuarioByEmailCommand.class
 com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\atomic\AddZona_de_SeguridadCommand.class
 com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\composite\CreateZona_de_SeguridadCommand.class
+com\ucab\cmcapp\logic\commands\querella\composite\GetAllQuerellaCommand.class
 com\ucab\cmcapp\logic\commands\usuario\composite\ModifyUsuarioCommand.class
 com\ucab\cmcapp\logic\commands\alerta\composite\CreateAlertaCommand.class
 com\ucab\cmcapp\logic\commands\dispositivo\atomic\GetDispositivoByIdCommand.class
