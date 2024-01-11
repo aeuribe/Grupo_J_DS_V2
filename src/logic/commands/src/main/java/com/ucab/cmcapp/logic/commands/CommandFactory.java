@@ -32,6 +32,8 @@ import com.ucab.cmcapp.logic.commands.persona.composite.GetPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.ModifyPersonaCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.AddPosicionamientoCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.GetPosicionamientoByIdCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.composite.CreatePosicionamientoCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.composite.GetPosicionamientoCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.AddQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.GetQuerellaByIdCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.GetQuerellaByListCommand;
@@ -54,6 +56,7 @@ import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import com.ucab.cmcapp.logic.commands.dispositivo.composite.ModifyDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
+import javafx.geometry.Pos;
 
 import java.util.logging.Handler;
 
@@ -164,6 +167,14 @@ public class CommandFactory {
     //posicionamiento
     public static AddPosicionamientoCommand createAddPosicionamientoCommand(Posicionamiento posicionamiento, DBHandler handler) {
         return new AddPosicionamientoCommand(posicionamiento, handler);
+    }
+
+    public static CreatePosicionamientoCommand createCreatePosicionamientoCommand(Posicionamiento posicionamiento) {
+        return new CreatePosicionamientoCommand(posicionamiento);
+    }
+
+    public static GetPosicionamientoCommand createGetPosicionamientoCommand(Posicionamiento posicionamiento) {
+        return new GetPosicionamientoCommand(posicionamiento);
     }
 
     public static GetPosicionamientoByIdCommand createGetPosicionamientoByIdCommand(DBHandler handler, long id) {

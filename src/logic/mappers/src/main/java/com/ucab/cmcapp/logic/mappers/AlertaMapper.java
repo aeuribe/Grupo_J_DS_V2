@@ -19,7 +19,7 @@ public class AlertaMapper extends BaseMapper{
         _logger.debug( "Get in AlertaMapper.mapDtoToEntity: dto {}", dto );
         //endregion
 
-        entity.set_id_alerta( dto.get_id_alerta());
+        entity.set_id_alerta( dto.getId());
         entity.set_descripcion( dto.get_descripcion() );
         entity.set_nombre( dto.get_nombre() );
 
@@ -43,7 +43,7 @@ public class AlertaMapper extends BaseMapper{
         _logger.debug( "Get in UserMapper.mapEntityToDto: entity {}", entity );
         //endregion
 
-        dto.set_id_alerta( entity.get_id_alerta() );
+        dto.setId( entity.get_id_alerta() );
         dto.set_descripcion( entity.get_descripcion() );
         dto.set_nombre( entity.get_nombre());
 

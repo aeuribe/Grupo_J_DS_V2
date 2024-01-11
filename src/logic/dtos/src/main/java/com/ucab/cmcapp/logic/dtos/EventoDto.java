@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class EventoDto extends BaseDto
 {
-    private long _id_evento;
     private DispositivoDto _id_dispositivo;
     private Date _fecha;
     private String _hora;
@@ -15,14 +14,6 @@ public class EventoDto extends BaseDto
 
     public EventoDto(long id) {
         super(id);
-    }
-
-    public long get_id_evento() {
-        return _id_evento;
-    }
-
-    public void set_id_evento(long _id_evento) {
-        this._id_evento = _id_evento;
     }
 
     public DispositivoDto get_id_dispositivo() {
