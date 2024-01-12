@@ -1,0 +1,149 @@
+.wrapper2 {
+    width: 1020px;
+    background: rgba(255, 255, 255, 0.767);
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0 10 rgba(235, 218, 218, 0.2);
+    color: #000000;
+    border-radius: 10px;
+    padding: 30px 40px; 
+    position: fixed;
+    left:10%;
+    top:20%;
+}
+
+.search-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+   right: 5%;
+    
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 5px;
+    font-size: 1.7rem;
+    color: #4b8bd493;
+  }
+
+  .add-icon {
+    position: absolute;
+    font-size: 2rem;
+    color: #292cd4ce;
+  } 
+
+.wrapper h1 {
+    font-size: 26px;
+    text-align: center;
+}
+
+.wrapper h2 {
+    font-size: 10px;
+    text-align: center;
+}
+
+.wrapper2 .input-box {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    margin: 25px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    outline: none;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder{
+    color:#fff
+}
+
+.wrapper2 .input-boxi {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    margin: 25px 0;
+}
+
+.input-boxi input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    outline: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #fff;
+    padding: 5px 5px 5px 120px;
+}
+
+.input-boxi input::placeholder{
+    color:#fff
+}
+
+.wrapper2 .icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+
+.wrapper2 button{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+}
+
+.wrapper2 button{
+    all: unset;
+}
+
+table {
+    background: white;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 2%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #4b8bd4;
+    height: 35px;
+    border-bottom: 1px solid rgb(210, 220, 250);
+    color: rgba(12, 11, 11, 0.808);
+  }
+  
+  td {
+    color:  rgb(12, 11, 11);
+    height: 20px;
+    border: 0.5px solid rgba(240, 240, 240, 10);
+  }
+
+
+  th:hover {
+    background-color: #4b8bd493;
+  }
+  
+  tr:hover {
+    background-color: #4b8bd493;
+  }
