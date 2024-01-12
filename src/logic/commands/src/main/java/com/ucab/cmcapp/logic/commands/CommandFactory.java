@@ -32,8 +32,10 @@ import com.ucab.cmcapp.logic.commands.persona.composite.GetPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.ModifyPersonaCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.AddPosicionamientoCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.GetPosicionamientoByIdCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.UpdatePosicionamientoCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.composite.CreatePosicionamientoCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.composite.GetPosicionamientoCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.composite.ModifyPosicionamientoCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.AddQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.GetQuerellaByIdCommand;
 import com.ucab.cmcapp.logic.commands.querella.atomic.GetQuerellaByListCommand;
@@ -165,6 +167,13 @@ public class CommandFactory {
     }
 
     //posicionamiento
+
+    public static ModifyPosicionamientoCommand createModifyPosicionamientoCommand(Posicionamiento posicionamiento) {
+        return new ModifyPosicionamientoCommand(posicionamiento);
+    }
+    public static UpdatePosicionamientoCommand createUpdatePosicionamientoCommand(Posicionamiento posicionamiento, DBHandler handler) {
+        return new UpdatePosicionamientoCommand(posicionamiento, handler);
+    }
     public static AddPosicionamientoCommand createAddPosicionamientoCommand(Posicionamiento posicionamiento, DBHandler handler) {
         return new AddPosicionamientoCommand(posicionamiento, handler);
     }

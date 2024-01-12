@@ -33,11 +33,13 @@ com\ucab\cmcapp\logic\commands\dispositivo\atomic\AddDispositivoCommand.class
 com\ucab\cmcapp\logic\commands\user\atomic\GetUserByEmailCommand.class
 com\ucab\cmcapp\logic\commands\persona\composite\CreatePersonaCommand.class
 com\ucab\cmcapp\logic\commands\evento\atomic\AddEventoCommand.class
+com\ucab\cmcapp\logic\commands\posicionamiento\atomic\UpdatePosicionamientoCommand.class
 com\ucab\cmcapp\logic\commands\posicionamiento\atomic\AddPosicionamientoCommand.class
 com\ucab\cmcapp\logic\commands\alerta\atomic\AddAlertaCommand.class
 com\ucab\cmcapp\logic\commands\usuario\atomic\AddUsuarioCommand.class
 com\ucab\cmcapp\logic\commands\evento\composite\ModifyEventoCommand.class
 com\ucab\cmcapp\logic\commands\user\composite\GetUserCommand.class
+com\ucab\cmcapp\logic\commands\posicionamiento\composite\ModifyPosicionamientoCommand.class
 com\ucab\cmcapp\logic\commands\querella\atomic\UpdateQuerellaCommand.class
 com\ucab\cmcapp\logic\commands\evento\composite\GetEventoCommand.class
 com\ucab\cmcapp\logic\commands\usuario\atomic\GetUsuarioByEmailCommand.class

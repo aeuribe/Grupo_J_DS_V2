@@ -21,6 +21,7 @@ C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\u
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\atomic\AddZona_de_SeguridadCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\usuario\atomic\AddUsuarioCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\Zona_de_Seguridad\atomic\GetZona_de_SeguridadByIdCommand.java
+C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\posicionamiento\composite\ModifyPosicionamientoCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\user\composite\GetUserCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\dispositivo\composite\GetDispositivoCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\posicionamiento\atomic\GetPosicionamientoByIdCommand.java
@@ -43,6 +44,7 @@ C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\u
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\querella\atomic\UpdateQuerellaCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\querella\composite\GetAllQuerellaCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\atomic\UpdatePersonaCommand.java
+C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\posicionamiento\atomic\UpdatePosicionamientoCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\alerta\composite\GetAlertaCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\atomic\GetPersonaByIdCommand.java
 C:\Users\ae_ur\IdeaProjects\Grupo_J_DS_V2\src\logic\commands\src\main\java\com\ucab\cmcapp\logic\commands\persona\atomic\AddPersonaCommand.java

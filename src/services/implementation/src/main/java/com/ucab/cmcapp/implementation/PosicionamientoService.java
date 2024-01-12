@@ -9,6 +9,7 @@ import com.ucab.cmcapp.logic.commands.persona.composite.GetPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.ModifyPersonaCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.composite.CreatePosicionamientoCommand;
 import com.ucab.cmcapp.logic.commands.posicionamiento.composite.GetPosicionamientoCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.composite.ModifyPosicionamientoCommand;
 import com.ucab.cmcapp.logic.commands.user.composite.CreateUserCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.logic.dtos.PersonaDto;
@@ -100,31 +101,32 @@ public class PosicionamientoService extends BaseService
                 command.closeHandlerSession();
         }
 
-        _logger.debug( "Leaving PersonaService.addPersona" );
+        _logger.debug( "Leaving PosicionamientoService.addPersona" );
         return response;
     }
 
-/*    @PUT
-    public PersonaDto updatePersona(PersonaDto personaDto )
+    @PUT
+    public PosicionamientoDto updatePosicionamiento(PosicionamientoDto posicionamientoDto )
     {
-        Persona entity;
-        PersonaDto response;
-        ModifyPersonaCommand command = null;
+        Posicionamiento entity;
+        PosicionamientoDto response;
+        ModifyPosicionamientoCommand command = null;
         //region Instrumentation DEBUG
-        _logger.debug( "Get in PersonaService.updatePersona" );
+        _logger.debug( "Get in PosicionamientoService.updatePosicionamiento" );
         //endregion
 
         try
         {
-            entity = PersonaMapper.mapDtoToEntity( personaDto );
-            command = CommandFactory.createModifyPersonaCommand( entity );
+            entity = PosicionamientoMapper.mapDtoToEntity( posicionamientoDto );
+            command = CommandFactory.createModifyPosicionamientoCommand( entity );
             command.execute();
-            response = PersonaMapper.mapEntityToDto( command.getReturnParam() );
-            _logger.info( "Response updatePersona: {} ", response );
+            response = getPosicionamiento(posicionamientoDto.getId());
+            //response = PosicionamientoMapper.mapEntityToDto( command.getReturnParam() );
+            _logger.info( "Response updatePosicionamiento: {} ", response );
         }
         catch ( Exception e )
         {
-            _logger.error("error {} updating persona: {}", e.getMessage(), e.getCause());
+            _logger.error("error {} updating posicionamiento: {}", e.getMessage(), e.getCause());
             throw new WebApplicationException( Response.status( Response.Status.INTERNAL_SERVER_ERROR ).
                     entity( e ).build() );
         }
@@ -134,7 +136,7 @@ public class PosicionamientoService extends BaseService
                 command.closeHandlerSession();
         }
 
-        _logger.debug( "Leaving PersonaService.updatePersona" );
+        _logger.debug( "Leaving PosicionamientoService.updatePosicionamiento" );
         return response;
-    }*/
+    }
 }
