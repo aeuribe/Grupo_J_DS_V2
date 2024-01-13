@@ -1,12 +1,40 @@
 package com.ucab.cmcapp.logic.dtos;
 
+import java.util.Set;
+
 public class DispositivoDto extends BaseDto{
 
     private String _modelo;
     private String _marca;
     private String _nunero_telefonico;
-
     private UsuarioDto _id_usuario;
+    private Set<ZonaSeguridadDto> _zonas;
+    private Set<AlertaDto> _alertas;
+    private Set<EventoDto> _eventos;
+
+    public Set<ZonaSeguridadDto> get_zonas() {
+        return _zonas;
+    }
+
+    public void set_zonas(Set<ZonaSeguridadDto> _zonas) {
+        this._zonas = _zonas;
+    }
+
+    public Set<AlertaDto> get_alertas() {
+        return _alertas;
+    }
+
+    public void set_alertas(Set<AlertaDto> _alertas) {
+        this._alertas = _alertas;
+    }
+
+    public Set<EventoDto> get_eventos() {
+        return _eventos;
+    }
+
+    public void set_eventos(Set<EventoDto> _eventos) {
+        this._eventos = _eventos;
+    }
 
     public DispositivoDto() {
     }

@@ -13,9 +13,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-
-public class Historial_ConexionDao extends BaseDao<Historial_Conexion>
-{
+public class Historial_ConexionDao extends BaseDao<Historial_Conexion>{
     private static Logger _logger = LoggerFactory.getLogger( Historial_ConexionDao.class );
     private EntityManager _em;
     private CriteriaBuilder _builder;
@@ -24,10 +22,11 @@ public class Historial_ConexionDao extends BaseDao<Historial_Conexion>
         super();
     }
 
-    public Historial_ConexionDao(DBHandler handler){
+    public Historial_ConexionDao( DBHandler handler){
         super( handler );
         _em = getDBHandler().getSession();
         _builder = _em.getCriteriaBuilder();
     }
+
 
 }

@@ -10,11 +10,9 @@
         <class>com.ucab.cmcapp.common.entities.Usuario</class>
         <class>com.ucab.cmcapp.common.entities.Persona</class>
         <class>com.ucab.cmcapp.common.entities.Querella</class>
-        <class>com.ucab.cmcapp.common.entities.P_Q</class>
         <class>com.ucab.cmcapp.common.entities.Dispositivo</class>
         <class>com.ucab.cmcapp.common.entities.Historial_Conexion</class>
-        <class>com.ucab.cmcapp.common.entities.Zona_de_Seguridad</class>
-        <class>com.ucab.cmcapp.common.entities.D_Z</class>
+        <class>com.ucab.cmcapp.common.entities.ZonaSeguridad</class>
         <class>com.ucab.cmcapp.common.entities.Alerta</class>
         <class>com.ucab.cmcapp.common.entities.Evento</class>
         <class>com.ucab.cmcapp.common.entities.Posicionamiento</class>

@@ -23,7 +23,7 @@ public class EventoMapper extends BaseMapper
         _logger.debug( "Get in EventoMapper.mapDtoToEntity: dto {}", dto );
         //endregion
 
-        entity.set_id_evento( dto.get_id_evento() );
+        entity.set_id_evento( dto.getId() );
         entity.set_fecha( dto.get_fecha() );
         entity.set_hora( dto.get_hora());
         entity.set_tipo( dto.get_tipo());
@@ -49,7 +49,7 @@ public class EventoMapper extends BaseMapper
         _logger.debug( "Get in EventoMapper.mapEntityToDto: entity {}", entity );
         //endregion
 
-        dto.set_id_evento( entity.get_id_evento() );
+        dto.setId( entity.get_id_evento() );
         dto.set_fecha( entity.get_fecha() );
         dto.set_tipo( entity.get_tipo() );
         dto.set_hora( entity.get_hora() );

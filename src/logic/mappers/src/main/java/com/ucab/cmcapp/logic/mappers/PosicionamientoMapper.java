@@ -23,7 +23,7 @@ public class PosicionamientoMapper extends BaseMapper
         _logger.debug( "Get in PosicionamientoMapper.mapEntityToDto: entity {}", entity );
         //endregion
 
-        dto.set_id_posicionamiento( entity.get_id_posicionamiento());
+        dto.setId( entity.get_id_posicionamiento());
         dto.set_fecha( entity.get_fecha());
         dto.set_latitud(entity.get_latitud());
         dto.set_logitud(entity.get_longitud());
@@ -44,7 +44,7 @@ public class PosicionamientoMapper extends BaseMapper
         _logger.debug( "Get in PosicionamientoMapper.mapDtoToEntity: dto {}", dto );
         //endregion
 
-        entity.set_id_posicionamiento( dto.get_id_posicionamiento() );
+        entity.set_id_posicionamiento( dto.getId() );
         entity.set_latitud( dto.get_latitud() ) ;
         entity.set_longitud( dto.get_logitud() );
         entity.set_fecha( dto.get_fecha() );
@@ -61,7 +61,7 @@ public class PosicionamientoMapper extends BaseMapper
         return entity;
     }
 
-    public static Posicionamiento mapDtoToEntityId( long id_posicionamiento )
+    public static Posicionamiento mapDtoToEntity( long id_posicionamiento )
     {
         Posicionamiento entity = EntityFactory.createPosicionamiento();
 

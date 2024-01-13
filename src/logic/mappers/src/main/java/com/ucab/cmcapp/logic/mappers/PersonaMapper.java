@@ -8,6 +8,7 @@ import com.ucab.cmcapp.common.entities.Persona;
 import org.slf4j.Logger;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 
 
 public class PersonaMapper extends BaseMapper{
@@ -29,6 +30,7 @@ public class PersonaMapper extends BaseMapper{
         entity.set_segundo_nombre( dto.get_segundo_nombre());
         entity.set_segundo_apellido( dto.get_segundo_apellido());
         entity.setFec_nac( dto.get_fec_nac());
+        entity.set_tipoRol(dto.get_tipoRol());
 
         //region Instrumentation DEBUG
         _logger.debug( "Leaving PersonaMapper.mapDtoToEntity: entity {}", entity );
@@ -49,9 +51,10 @@ public class PersonaMapper extends BaseMapper{
         dto.set_primer_apellido(  entity.get_primer_apellido() );
         dto.set_segundo_apellido( entity.get_segundo_apellido());
         dto.set_primer_nombre( entity.get_primer_nombre());
-        dto.set_segundo_apellido( entity.get_segundo_nombre());
+        dto.set_segundo_nombre( entity.get_segundo_nombre());
         dto.set_sexo( entity.get_sexo());
         dto.set_fec_nac( entity.getFec_nac());
+        dto.set_tipoRol( entity.get_tipoRol() );
 
         //region Instrumentation DEBUG
         _logger.debug( "Leaving PersonaMapper.mapEntityToDto: dto {}", dto );
@@ -74,5 +77,20 @@ public class PersonaMapper extends BaseMapper{
         //endregion
 
         return entity;
+    }
+
+    public static ArrayList<PersonaDto> mapEntityToDtoList(ArrayList<Persona> entity){
+        ArrayList<PersonaDto> dto = new ArrayList<PersonaDto>();
+
+        //region Instrumentation DEBUG
+        _logger.debug("Get in PersonaMapper.mapEntityToDto: entity {}");
+        //endregion
+
+        for (Persona persona : entity) {
+            dto.add(mapEntityToDto(persona));
+        }
+
+
+        return dto;
     }
 }

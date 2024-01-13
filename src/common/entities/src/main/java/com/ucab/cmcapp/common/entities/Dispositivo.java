@@ -1,6 +1,7 @@
 package com.ucab.cmcapp.common.entities;
 import javax.persistence.*;
-import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table ( name = "Dispositivo")
@@ -21,6 +22,23 @@ public class Dispositivo {
     @JoinColumn ( name = "id_usuario")
     private Usuario _id_usuario;
 
+
+    @ManyToMany (fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "Dispositivo_Zona",
+            joinColumns = @JoinColumn(name = "id_dispositivo"),
+            inverseJoinColumns = @JoinColumn(name = "id_zona")
+    )
+    private Set<ZonaSeguridad> _zonasAsociadas = new HashSet<>();
+
+    @OneToMany (fetch = FetchType.EAGER)
+    @JoinColumn (name = "id_alerta")
+    private Set<Alerta> _alertasAsociadas = new HashSet<>();
+
+    @OneToMany (fetch = FetchType.EAGER)
+    @JoinColumn (name = "id_evento")
+    private Set<Evento> _eventosAsociados = new HashSet<>();
+
     public Dispositivo() {
     }
 
@@ -30,6 +48,45 @@ public class Dispositivo {
         this._marca = _marca;
         this._numero_telefonico = _numero_telefonico;
         this._id_usuario = _id_usuario;
+    }
+
+    public void addEventosAsociados(Evento evento)
+    {
+        _eventosAsociados.add(evento);
+    }
+
+    public Set<Evento> getEventosAsociados() {
+        return _eventosAsociados;
+    }
+
+    public void setEventosAsociados(Set<Evento> eventosAsociados) {
+        this._eventosAsociados = eventosAsociados;
+    }
+
+    public void addAlertasAsociadas(Alerta alerta)
+    {
+        _alertasAsociadas.add(alerta);
+    }
+
+    public Set<Alerta> getAlertasAsociadas() {
+        return _alertasAsociadas;
+    }
+
+    public void setAlertasAsociadas(Set<Alerta> alertasAsociadas) {
+        this._alertasAsociadas = alertasAsociadas;
+    }
+
+    public void addZonasAsociadas(ZonaSeguridad zona)
+    {
+        _zonasAsociadas.add(zona);
+    }
+
+    public Set<ZonaSeguridad> getZonasAsociadas() {
+        return _zonasAsociadas;
+    }
+
+    public void setZonasAsociadas(Set<ZonaSeguridad> zonasAsociadas) {
+        this._zonasAsociadas = zonasAsociadas;
     }
 
     public Dispositivo(long _id_dispositivo) {

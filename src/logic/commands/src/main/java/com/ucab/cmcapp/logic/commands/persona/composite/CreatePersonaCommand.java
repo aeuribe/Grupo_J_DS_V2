@@ -4,7 +4,6 @@ import com.ucab.cmcapp.common.entities.*;
 import com.ucab.cmcapp.logic.commands.Command;
 import com.ucab.cmcapp.logic.commands.CommandFactory;
 import com.ucab.cmcapp.logic.commands.persona.atomic.AddPersonaCommand;
-import com.ucab.cmcapp.logic.commands.persona.composite.CreatePersonaCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,6 +1,7 @@
 package com.ucab.cmcapp.logic.dtos;
 
 import java.util.Date;
+import java.util.Set;
 
 public class PersonaDto extends BaseDto
 {
@@ -10,6 +11,8 @@ public class PersonaDto extends BaseDto
     private String _segundo_apellido;
     private char _sexo;
     private Date _fec_nac;
+    private String _tipoRol;
+
 
     public PersonaDto()
     {
@@ -17,6 +20,14 @@ public class PersonaDto extends BaseDto
 
     public PersonaDto( long id ) {
         super( id );
+    }
+
+    public String get_tipoRol() {
+        return _tipoRol;
+    }
+
+    public void set_tipoRol(String _tipoRol) {
+        this._tipoRol = _tipoRol;
     }
 
     public void set_primer_nombre(String _primer_nombre) {

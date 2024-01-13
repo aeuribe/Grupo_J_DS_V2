@@ -4,26 +4,16 @@ import java.util.Date;
 
 public class PosicionamientoDto extends BaseDto
 {
-    private long _id_posicionamiento;
     private DispositivoDto _dispositivo;
     private Double _latitud;
     private Double _logitud;
     private Date _fecha;
 
-    public PosicionamientoDto(){
+    public PosicionamientoDto(){}
 
-    }
-
-    public PosicionamientoDto(long _id_posicionamiento){
-        super( _id_posicionamiento );
-    }
-
-    public long get_id_posicionamiento() {
-        return _id_posicionamiento;
-    }
-
-    public void set_id_posicionamiento(long _id_posicionamiento) {
-        this._id_posicionamiento = _id_posicionamiento;
+    public PosicionamientoDto( long id )
+    {
+        super( id );
     }
 
     public DispositivoDto get_dispositivo() {
