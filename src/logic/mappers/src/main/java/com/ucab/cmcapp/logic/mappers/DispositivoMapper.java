@@ -4,7 +4,9 @@ package com.ucab.cmcapp.logic.mappers;
 import com.ucab.cmcapp.common.EntityFactory;
 import com.ucab.cmcapp.common.entities.Dispositivo;
 import com.ucab.cmcapp.common.entities.Evento;
+import com.ucab.cmcapp.logic.dtos.AlertaDto;
 import com.ucab.cmcapp.logic.dtos.DispositivoDto;
+import com.ucab.cmcapp.logic.dtos.ZonaSeguridadDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,9 +31,21 @@ public class DispositivoMapper extends BaseMapper{
         entity.set_numero_telefonico(dto.get_nunero_telefonico());
 
 
-        if ( Objects.nonNull( dto.getId() ) )
+        if ( Objects.nonNull( dto.get_id_usuario() ) )
         {
             entity.set_id_usuario( UsuarioMapper.mapDtoToEntity( dto.get_id_usuario() ) );
+        }
+
+        if (Objects.nonNull(dto.get_zonaAsociada())) {
+            for (ZonaSeguridadDto zonaDto : dto.get_zonaAsociada()) {
+                entity.addZonasAsociadas(ZonaSeguridadMapper.mapDtoToEntity(zonaDto));
+            }
+        }
+
+        if (Objects.nonNull(dto.get_alertas())) {
+            for (AlertaDto alertaDto : dto.get_alertas()) {
+                entity.addAlertasAsociadas(AlertaMapper.mapDtoToEntity(alertaDto));
+            }
         }
 
         //region Instrumentation DEBUG

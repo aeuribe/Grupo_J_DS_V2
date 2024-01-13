@@ -22,20 +22,15 @@ public class Dispositivo {
     @JoinColumn ( name = "id_usuario")
     private Usuario _id_usuario;
 
-
-    @ManyToMany (fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "Dispositivo_Zona",
-            joinColumns = @JoinColumn(name = "id_dispositivo"),
-            inverseJoinColumns = @JoinColumn(name = "id_zona")
-    )
+    @OneToMany(mappedBy = "_id_dispositivo", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_zona")
     private Set<ZonaSeguridad> _zonasAsociadas = new HashSet<>();
 
-    @OneToMany (fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "_id_dispositivo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn (name = "id_alerta")
     private Set<Alerta> _alertasAsociadas = new HashSet<>();
 
-    @OneToMany (fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "_id_dispositivo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn (name = "id_evento")
     private Set<Evento> _eventosAsociados = new HashSet<>();
 
@@ -50,43 +45,41 @@ public class Dispositivo {
         this._id_usuario = _id_usuario;
     }
 
+    public void addZonasAsociadas(ZonaSeguridad zona)
+    {
+        _zonasAsociadas.add(zona);
+    }
+    public void addAlertasAsociadas(Alerta alerta)
+    {
+        _alertasAsociadas.add(alerta);
+    }
     public void addEventosAsociados(Evento evento)
     {
         _eventosAsociados.add(evento);
     }
 
-    public Set<Evento> getEventosAsociados() {
-        return _eventosAsociados;
-    }
-
-    public void setEventosAsociados(Set<Evento> eventosAsociados) {
-        this._eventosAsociados = eventosAsociados;
-    }
-
-    public void addAlertasAsociadas(Alerta alerta)
-    {
-        _alertasAsociadas.add(alerta);
-    }
-
-    public Set<Alerta> getAlertasAsociadas() {
-        return _alertasAsociadas;
-    }
-
-    public void setAlertasAsociadas(Set<Alerta> alertasAsociadas) {
-        this._alertasAsociadas = alertasAsociadas;
-    }
-
-    public void addZonasAsociadas(ZonaSeguridad zona)
-    {
-        _zonasAsociadas.add(zona);
-    }
-
-    public Set<ZonaSeguridad> getZonasAsociadas() {
+    public Set<ZonaSeguridad> get_zonasAsociadas() {
         return _zonasAsociadas;
     }
 
-    public void setZonasAsociadas(Set<ZonaSeguridad> zonasAsociadas) {
-        this._zonasAsociadas = zonasAsociadas;
+    public void set_zonasAsociadas(Set<ZonaSeguridad> _zonasAsociadas) {
+        this._zonasAsociadas = _zonasAsociadas;
+    }
+
+    public Set<Alerta> get_alertasAsociadas() {
+        return _alertasAsociadas;
+    }
+
+    public void set_alertasAsociadas(Set<Alerta> _alertasAsociadas) {
+        this._alertasAsociadas = _alertasAsociadas;
+    }
+
+    public Set<Evento> get_eventosAsociados() {
+        return _eventosAsociados;
+    }
+
+    public void set_eventosAsociados(Set<Evento> _eventosAsociados) {
+        this._eventosAsociados = _eventosAsociados;
     }
 
     public Dispositivo(long _id_dispositivo) {
