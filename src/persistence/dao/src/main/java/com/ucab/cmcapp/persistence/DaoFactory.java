@@ -1,6 +1,5 @@
 package com.ucab.cmcapp.persistence;
 
-import com.ucab.cmcapp.common.entities.Posicionamiento;
 import com.ucab.cmcapp.persistence.dao.*;
 
 public class DaoFactory
@@ -32,8 +31,8 @@ public class DaoFactory
         return new Historial_ConexionDao( handler );
     }
 
-    public  static Zona_de_SeguridadDao createZona_de_SeguridadDao ( DBHandler handler ){
-        return new Zona_de_SeguridadDao( handler );
+    public  static ZonaSeguridadDao createZonaSeguridadDao (DBHandler handler ){
+        return new ZonaSeguridadDao( handler );
     }
 
 

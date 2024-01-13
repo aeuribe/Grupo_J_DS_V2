@@ -13,29 +13,29 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-public class Zona_de_SeguridadDao extends BaseDao<Zona_de_Seguridad> {
-    private static Logger _logger = LoggerFactory.getLogger( Zona_de_SeguridadDao.class );
+public class ZonaSeguridadDao extends BaseDao<ZonaSeguridad> {
+    private static Logger _logger = LoggerFactory.getLogger( ZonaSeguridadDao.class );
     private EntityManager _em;
     private CriteriaBuilder _builder;
 
-    public Zona_de_SeguridadDao(){
+    public ZonaSeguridadDao(){
         super();
     }
 
-    public Zona_de_SeguridadDao( DBHandler handler){
+    public ZonaSeguridadDao(DBHandler handler){
         super( handler );
         _em = getDBHandler().getSession();
         _builder = _em.getCriteriaBuilder();
     }
 
-    public Zona_de_Seguridad getZona_de_SeguridadById( long id )
+    public ZonaSeguridad getZonaSeguridadById(long id )
     {
-        Zona_de_Seguridad result = EntityFactory.createZona_de_Seguridad();
-        _logger.debug( String.format( "Get in Zona_de_SeguridadDao.getZona_de_SeguridadById: parameter {%s}", id ) );
+        ZonaSeguridad result = EntityFactory.createZonaSeguridad();
+        _logger.debug( String.format( "Get in ZonaSeguridadDao.getZonaSeguridadById: parameter {%s}", id ) );
         try
         {
-            CriteriaQuery<Zona_de_Seguridad> query = _builder.createQuery( Zona_de_Seguridad.class );
-            Root<Zona_de_Seguridad> root = query.from( Zona_de_Seguridad.class );
+            CriteriaQuery<ZonaSeguridad> query = _builder.createQuery( ZonaSeguridad.class );
+            Root<ZonaSeguridad> root = query.from( ZonaSeguridad.class );
 
             query.select( root );
             query.where( _builder.equal( root.get( "id_zona" ), id ) );
@@ -44,15 +44,15 @@ public class Zona_de_SeguridadDao extends BaseDao<Zona_de_Seguridad> {
         }
         catch ( NoResultException e )
         {
-            _logger.error( String.format( "Error UserDao.getZona_de_SeguridadById: No Result {%s}", e.getMessage() ) );
+            _logger.error( String.format( "Error UserDao.getZonaSeguridadById: No Result {%s}", e.getMessage() ) );
         }
         catch ( Exception e )
         {
-            _logger.error( String.format( "Error Zona_de_SeguridadDao.getZona_de_SeguridadById: {%s}", e.getMessage() ) );
+            _logger.error( String.format( "Error ZonaSeguridadDao.getZonaSeguridadById: {%s}", e.getMessage() ) );
             throw new CupraException( e.getMessage() );
         }
         //region Instrumentation
-        _logger.debug( String.format( "Leavin Zona_de_SeguridadDao.getZona_de_SeguridadById: result {%s}", result ) );
+        _logger.debug( String.format( "Leavin ZonaSeguridadDao.getZonaSeguridadById: result {%s}", result ) );
         //endregion
 
         return result;

@@ -1,8 +1,12 @@
 package com.ucab.cmcapp.logic.commands;
 
 import com.ucab.cmcapp.common.entities.*;
-import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.AddZona_de_SeguridadCommand;
-import com.ucab.cmcapp.logic.commands.Zona_de_Seguridad.atomic.GetZona_de_SeguridadByIdCommand;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.atomic.AddZonaSeguridadCommand;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.atomic.GetZonaSeguridadByIdCommand;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.atomic.UpdateZonaSeguridadCommand;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.composite.CreateZonaSeguridadCommand;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.composite.GetZonaSeguridadCommand;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.composite.ModifyZonaSeguridadCommand;
 import com.ucab.cmcapp.logic.commands.alerta.atomic.AddAlertaCommand;
 import com.ucab.cmcapp.logic.commands.alerta.atomic.GetAlertaByIdCommand;
 import com.ucab.cmcapp.logic.commands.alerta.composite.CreateAlertaCommand;
@@ -58,9 +62,6 @@ import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import com.ucab.cmcapp.logic.commands.dispositivo.composite.ModifyDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
-import javafx.geometry.Pos;
-
-import java.util.logging.Handler;
 
 public class CommandFactory {
 
@@ -158,12 +159,29 @@ public class CommandFactory {
         return new CreateHistorial_ConexionCommand(historial);
     }
 
-    public static AddZona_de_SeguridadCommand createAddZona_de_SeguridadCommand(Zona_de_Seguridad zona, DBHandler handler) {
-        return new AddZona_de_SeguridadCommand(zona, handler);
+
+    //zona de seguridad
+
+    public static ModifyZonaSeguridadCommand createModifyZonaSeguridadCommand(ZonaSeguridad zona) {
+        return new ModifyZonaSeguridadCommand(zona);
+    }
+    public static UpdateZonaSeguridadCommand createUpdateZonaSeguridadCommand(ZonaSeguridad zona, DBHandler handler) {
+        return new UpdateZonaSeguridadCommand(zona, handler);
+    }
+    public static AddZonaSeguridadCommand createAddZonaSeguridadCommand(ZonaSeguridad zona, DBHandler handler) {
+        return new AddZonaSeguridadCommand(zona, handler);
     }
 
-    public static GetZona_de_SeguridadByIdCommand createGetZona_de_SeguridadByIdCommand(DBHandler handler, long id) {
-        return new GetZona_de_SeguridadByIdCommand(handler, id);
+    public static GetZonaSeguridadByIdCommand createGetZonaSeguridadByIdCommand(DBHandler handler, long id) {
+        return new GetZonaSeguridadByIdCommand(handler, id);
+    }
+
+    public static GetZonaSeguridadCommand createGetZonaSeguridadCommand(ZonaSeguridad zona) {
+        return new GetZonaSeguridadCommand(zona);
+    }
+
+    public static CreateZonaSeguridadCommand createCreateZonaSeguridadCommand(ZonaSeguridad zonaSeguridad) {
+        return new CreateZonaSeguridadCommand(zonaSeguridad);
     }
 
     //posicionamiento

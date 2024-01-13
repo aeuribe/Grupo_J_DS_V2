@@ -1,6 +1,5 @@
 com\ucab\cmcapp\persistence\dao\QuerellaDao.class
 com\ucab\cmcapp\persistence\dao\UserDao.class
-com\ucab\cmcapp\persistence\dao\Zona_de_SeguridadDao.class
 com\ucab\cmcapp\persistence\dao\EventoDao.class
 com\ucab\cmcapp\persistence\dao\PersonaDao.class
 com\ucab\cmcapp\persistence\DaoFactory.class
@@ -11,3 +10,4 @@ com\ucab\cmcapp\persistence\DBHandler.class
 com\ucab\cmcapp\persistence\dao\BaseDao.class
 com\ucab\cmcapp\persistence\dao\Historial_ConexionDao.class
 com\ucab\cmcapp\persistence\dao\DispositivoDao.class
+com\ucab\cmcapp\persistence\dao\ZonaSeguridadDao.class

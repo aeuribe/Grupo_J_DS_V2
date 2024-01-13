@@ -25,7 +25,7 @@ public class UpdatePersonaCommand extends Command<Persona>
 
 
         //region Instrumentation DEBUG
-        _logger.debug( String.format( "Leaving AddPersonaCommand.ctor: attribute {%s}",
+        _logger.debug( String.format( "Leaving UpdatePersonaCommand.ctor: attribute {%s}",
                 _persona.toString() ) );
         //endregion
     }
