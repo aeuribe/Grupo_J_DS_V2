@@ -2,8 +2,8 @@ package com.ucab.cmcapp.implementation;
 
 import com.ucab.cmcapp.common.entities.*;
 import com.ucab.cmcapp.logic.commands.CommandFactory;
-import com.ucab.cmcapp.logic.commands.Historial_Conexion.composite.CreateHistorial_ConexionCommand;
-import com.ucab.cmcapp.logic.commands.Historial_Conexion.composite.GetHistorial_ConexionCommand;
+import com.ucab.cmcapp.logic.commands.historial_conexion.composite.CreateHistorial_ConexionCommand;
+import com.ucab.cmcapp.logic.commands.historial_conexion.composite.GetHistorial_ConexionCommand;
 import com.ucab.cmcapp.logic.dtos.Historial_ConexionDto;
 import com.ucab.cmcapp.logic.mappers.Historial_ConexionMapper;
 import org.slf4j.Logger;
