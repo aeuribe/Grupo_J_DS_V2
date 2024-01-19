@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AlertaDto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dtos</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.logic.dtos</a> &gt; <span class="el_source">AlertaDto.java</span></div><h1>AlertaDto.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.logic.dtos;
+
+public class AlertaDto extends BaseDto
+{
+    private DispositivoDto _id_dispositivo;
+    private String _nombre;
+    private String _descripcion;
+
+<span class="fc" id="L9">    public AlertaDto() {</span>
+<span class="fc" id="L10">    }</span>
+
+    public AlertaDto(long id) {
+<span class="fc" id="L13">        super(id);</span>
+<span class="fc" id="L14">    }</span>
+
+    public DispositivoDto get_id_dispositivo() {
+<span class="fc" id="L17">        return _id_dispositivo;</span>
+    }
+
+    public void set_id_dispositivo(DispositivoDto _id_dispositivo) {
+<span class="fc" id="L21">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L22">    }</span>
+
+    public String get_nombre() {
+<span class="fc" id="L25">        return _nombre;</span>
+    }
+
+    public void set_nombre(String _nombre) {
+<span class="fc" id="L29">        this._nombre = _nombre;</span>
+<span class="fc" id="L30">    }</span>
+
+    public String get_descripcion() {
+<span class="fc" id="L33">        return _descripcion;</span>
+    }
+
+    public void set_descripcion(String _descripcion) {
+<span class="fc" id="L37">        this._descripcion = _descripcion;</span>
+<span class="fc" id="L38">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

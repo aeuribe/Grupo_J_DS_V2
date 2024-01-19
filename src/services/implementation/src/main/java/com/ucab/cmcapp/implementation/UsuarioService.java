@@ -1,21 +1,20 @@
 package com.ucab.cmcapp.implementation;
 
-import com.ucab.cmcapp.common.entities.User;
+import com.ucab.cmcapp.common.entities.Persona;
 import com.ucab.cmcapp.common.entities.Usuario;
 import com.ucab.cmcapp.logic.commands.CommandFactory;
-import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByEmailCommand;
-import com.ucab.cmcapp.logic.commands.user.composite.CreateUserCommand;
 import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByEmailCommand;
-import com.ucab.cmcapp.logic.commands.usuario.atomic.UpdateUsuarioCommand;
+import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByIdPersonaCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.GetUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
-import com.ucab.cmcapp.logic.dtos.UserDto;
+import com.ucab.cmcapp.logic.dtos.PersonaDto;
 import com.ucab.cmcapp.logic.dtos.UsuarioDto;
-import com.ucab.cmcapp.logic.mappers.UserMapper;
+import com.ucab.cmcapp.logic.mappers.PersonaMapper;
 import com.ucab.cmcapp.logic.mappers.UsuarioMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.ucab.cmcapp.implementation.PersonaService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -63,6 +62,46 @@ public class UsuarioService extends BaseService
     }
 
     @GET
+    @Path( "persona/{id_persona}" )
+    public UsuarioDto getUsuarioByPersona(@PathParam( "id_persona" ) long id_persona )
+    {
+        Persona entityPersona;
+        PersonaService servicioPersona = null;
+        PersonaDto personaDto;
+        Usuario entity;
+        UsuarioDto response;
+        GetUsuarioByIdPersonaCommand command = null;
+        //region Instrumentation DEBUG
+        _logger.debug( "Get in UsuarioService.getUsuario" );
+        //endregion
+
+        try
+        {
+            servicioPersona = new PersonaService();
+            personaDto = servicioPersona.getPersona(id_persona);
+            entityPersona = PersonaMapper.mapDtoToEntity(personaDto);
+            entity = UsuarioMapper.mapDtoToEntityPersona( entityPersona );
+            command = CommandFactory.createGetUsuarioByIdPersonaCommand( entity );
+            command.execute();
+            response = UsuarioMapper.mapEntityToDto( command.getReturnParam() );
+            _logger.info( "Response getUsuario: {} ", response );
+        }
+        catch ( Exception e )
+        {
+            _logger.error("error {} getting usuario {}: {}", e.getMessage(), id_persona, e.getCause());
+            throw new WebApplicationException( Response.status( Response.Status.INTERNAL_SERVER_ERROR ).
+                    entity( e ).build() );
+        }
+        finally
+        {
+            if (command != null)
+                command.closeHandlerSession();
+        }
+
+        _logger.debug( "Leaving UsuarioService.getUsuario" );
+        return response;
+    }
+
     @Path( "email/{email}" )
     public UsuarioDto getUsuario(@PathParam( "email" ) String email )
     {

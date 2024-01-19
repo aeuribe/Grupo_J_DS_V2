@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EntityFactory.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">entities</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.common</a> &gt; <span class="el_source">EntityFactory.java</span></div><h1>EntityFactory.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.common;
+
+import com.ucab.cmcapp.common.entities.*;
+
+<span class="nc" id="L5">public class EntityFactory</span>
+
+{
+    /**
+     * Method that returns an instance of User class
+     */
+
+    public static Persona createPersona(){
+<span class="nc" id="L13">        return new Persona();</span>
+    }
+
+    public static Persona createPersona(long _id_persona){
+<span class="nc" id="L17">        return new Persona(_id_persona);</span>
+    }
+
+    public static Usuario createUsuario() {
+<span class="nc" id="L21">        return new Usuario();</span>
+    }
+
+    public  static Usuario createUsuario( long _id_usuario ){
+<span class="nc" id="L25">        return new Usuario(_id_usuario);</span>
+    }
+
+    public static Usuario createUsuario( String _email){
+<span class="nc" id="L29">        return new Usuario(_email);</span>
+    }
+
+
+    public static Querella createQuerella () {
+<span class="nc" id="L34">        return new Querella();</span>
+    }
+
+    public static Querella createQuerella ( long id_querella){
+<span class="nc" id="L38">        return new Querella( id_querella );</span>
+    }
+
+
+    public static Dispositivo createDispositivo (){
+<span class="nc" id="L43">        return  new Dispositivo();</span>
+    }
+
+    public static Dispositivo createDispositivo (long id_dispositivo){
+<span class="nc" id="L47">        return new Dispositivo(id_dispositivo);</span>
+    }
+
+    public static Historial_Conexion createHistorial_Conexion (){
+<span class="nc" id="L51">        return  new Historial_Conexion();</span>
+    }
+
+    public static Historial_Conexion createHistorial_Conexion (long id_historial){
+<span class="nc" id="L55">        return new Historial_Conexion(id_historial);</span>
+    }
+
+
+    public static ZonaSeguridad createZonaSeguridad (){
+<span class="nc" id="L60">        return new ZonaSeguridad();</span>
+    }
+
+    public static ZonaSeguridad createZonaSeguridad (long id_zona){
+<span class="nc" id="L64">        return new ZonaSeguridad(id_zona);</span>
+    }
+
+    //posicionamiento
+    public  static Posicionamiento createPosicionamiento (){
+<span class="nc" id="L69">        return new Posicionamiento();</span>
+    }
+
+    public static Posicionamiento createPosicionamiento(long id_posicionamiento){
+<span class="nc" id="L73">        return  new Posicionamiento(id_posicionamiento);</span>
+    }
+
+    //alerta
+    public static Alerta createAlerta () {
+<span class="nc" id="L78">        return new Alerta();</span>
+    }
+
+    public static Alerta createAlerta(long id_alerta){
+<span class="nc" id="L82">        return new Alerta(id_alerta);</span>
+    }
+
+    //evento
+    public static Evento createEvento(){
+<span class="nc" id="L87">        return new Evento();</span>
+    }
+
+    public static Evento createEvento(long id_evento){
+<span class="nc" id="L91">        return new Evento();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>QuerellaDto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dtos</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.logic.dtos</a> &gt; <span class="el_source">QuerellaDto.java</span></div><h1>QuerellaDto.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.logic.dtos;
+import java.util.Date;
+import java.util.Set;
+
+public class QuerellaDto extends BaseDto {
+
+    private Date _fecha_caso;
+    private String _descripcion;
+    private long _distancia_alejamiento;
+    private long _cuenta_atras;
+    private long _inamovilidad;
+    private PersonaDto id_victima;
+    private PersonaDto id_agresor;
+
+<span class="fc" id="L15">    public QuerellaDto(){}</span>
+
+    public QuerellaDto(long id) {
+<span class="fc" id="L18">        super(id);</span>
+<span class="fc" id="L19">    }</span>
+
+    public Date get_fecha_caso() {
+<span class="fc" id="L22">        return _fecha_caso;</span>
+    }
+
+    public void set_fecha_caso(Date _fecha_caso) {
+<span class="fc" id="L26">        this._fecha_caso = _fecha_caso;</span>
+<span class="fc" id="L27">    }</span>
+
+    public String get_descripcion() {
+<span class="fc" id="L30">        return _descripcion;</span>
+    }
+
+    public void set_descripcion(String _descripcion) {
+<span class="fc" id="L34">        this._descripcion = _descripcion;</span>
+<span class="fc" id="L35">    }</span>
+
+    public long get_distancia_alejamiento() {
+<span class="fc" id="L38">        return _distancia_alejamiento;</span>
+    }
+
+    public void set_distancia_alejamiento(long _distancia_alejamiento) {
+<span class="fc" id="L42">        this._distancia_alejamiento = _distancia_alejamiento;</span>
+<span class="fc" id="L43">    }</span>
+
+    public PersonaDto getId_victima() {
+<span class="fc" id="L46">        return id_victima;</span>
+    }
+
+
+    public void setId_victima(PersonaDto id_victima) {
+<span class="fc" id="L51">        this.id_victima = id_victima;</span>
+<span class="fc" id="L52">    }</span>
+
+    public PersonaDto getId_agresor() {
+<span class="fc" id="L55">        return id_agresor;</span>
+    }
+
+    public void setId_agresor(PersonaDto id_agresor) {
+<span class="fc" id="L59">        this.id_agresor = id_agresor;</span>
+<span class="fc" id="L60">    }</span>
+
+    public long get_cuenta_atras() {
+<span class="fc" id="L63">        return _cuenta_atras;</span>
+    }
+
+    public void set_cuenta_atras(long _cuenta_atras) {
+<span class="fc" id="L67">        this._cuenta_atras = _cuenta_atras;</span>
+<span class="fc" id="L68">    }</span>
+
+    public long get_inamovilidad() {
+<span class="fc" id="L71">        return _inamovilidad;</span>
+    }
+
+    public void set_inamovilidad(long _inamovilidad) {
+<span class="fc" id="L75">        this._inamovilidad = _inamovilidad;</span>
+<span class="fc" id="L76">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

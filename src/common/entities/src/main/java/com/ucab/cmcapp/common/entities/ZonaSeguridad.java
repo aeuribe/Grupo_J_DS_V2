@@ -4,14 +4,18 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table( name = "ZonaSeguridad" )
+@Table( name = "ZonaSeguridad", uniqueConstraints = @UniqueConstraint(columnNames = "nombre") )
 public class ZonaSeguridad implements Serializable {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY )
     @Column (name = "id_zona")
     private long _id_zona;
-    @Column (name = "nombre")
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn (name = "id_dispositivo")
+    private Dispositivo _id_dispositivo;
+    @Column (name = "nombre", nullable = false)
     private String _nombre;
 
     @Column (name = "latitud_1")
@@ -48,6 +52,14 @@ public class ZonaSeguridad implements Serializable {
 
     public ZonaSeguridad(long _id_zona) {
         this._id_zona = _id_zona;
+    }
+
+    public Dispositivo get_id_dispositivo() {
+        return _id_dispositivo;
+    }
+
+    public void set_id_dispositivo(Dispositivo _id_dispositivo) {
+        this._id_dispositivo = _id_dispositivo;
     }
 
     public long get_id_zona() {

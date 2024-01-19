@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table ( name = "Dispositivo")
+@Table ( name = "Dispositivo",  uniqueConstraints = @UniqueConstraint(columnNames = "_numero_telefonico"))
 public class Dispositivo {
 
     @Id
@@ -15,24 +15,27 @@ public class Dispositivo {
     private String _modelo;
     @Column (name = "marca")
     private String _marca;
-    @Column (name = "_numero_telefonico")
+
+
+    @Column (name = "_numero_telefonico", nullable = false)
     private String _numero_telefonico;
 
     @OneToOne
     @JoinColumn ( name = "id_usuario")
     private Usuario _id_usuario;
 
-    @OneToMany(mappedBy = "_id_dispositivo", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_zona")
-    private Set<ZonaSeguridad> _zonasAsociadas = new HashSet<>();
 
-    @OneToMany(mappedBy = "_id_dispositivo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany (fetch = FetchType.EAGER)
     @JoinColumn (name = "id_alerta")
     private Set<Alerta> _alertasAsociadas = new HashSet<>();
 
-    @OneToMany(mappedBy = "_id_dispositivo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany (fetch = FetchType.EAGER)
     @JoinColumn (name = "id_evento")
     private Set<Evento> _eventosAsociados = new HashSet<>();
+
+    @OneToMany (fetch = FetchType.EAGER)
+    @JoinColumn (name = "id_posicionamiento")
+    private Set<Evento> _posAsociado = new HashSet<>();
 
     public Dispositivo() {
     }
@@ -45,41 +48,30 @@ public class Dispositivo {
         this._id_usuario = _id_usuario;
     }
 
-    public void addZonasAsociadas(ZonaSeguridad zona)
-    {
-        _zonasAsociadas.add(zona);
-    }
-    public void addAlertasAsociadas(Alerta alerta)
-    {
-        _alertasAsociadas.add(alerta);
-    }
     public void addEventosAsociados(Evento evento)
     {
         _eventosAsociados.add(evento);
     }
 
-    public Set<ZonaSeguridad> get_zonasAsociadas() {
-        return _zonasAsociadas;
-    }
-
-    public void set_zonasAsociadas(Set<ZonaSeguridad> _zonasAsociadas) {
-        this._zonasAsociadas = _zonasAsociadas;
-    }
-
-    public Set<Alerta> get_alertasAsociadas() {
-        return _alertasAsociadas;
-    }
-
-    public void set_alertasAsociadas(Set<Alerta> _alertasAsociadas) {
-        this._alertasAsociadas = _alertasAsociadas;
-    }
-
-    public Set<Evento> get_eventosAsociados() {
+    public Set<Evento> getEventosAsociados() {
         return _eventosAsociados;
     }
 
-    public void set_eventosAsociados(Set<Evento> _eventosAsociados) {
-        this._eventosAsociados = _eventosAsociados;
+    public void setEventosAsociados(Set<Evento> eventosAsociados) {
+        this._eventosAsociados = eventosAsociados;
+    }
+
+    public void addAlertasAsociadas(Alerta alerta)
+    {
+        _alertasAsociadas.add(alerta);
+    }
+
+    public Set<Alerta> getAlertasAsociadas() {
+        return _alertasAsociadas;
+    }
+
+    public void setAlertasAsociadas(Set<Alerta> alertasAsociadas) {
+        this._alertasAsociadas = alertasAsociadas;
     }
 
     public Dispositivo(long _id_dispositivo) {

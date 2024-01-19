@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Evento.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">entities</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.common.entities</a> &gt; <span class="el_source">Evento.java</span></div><h1>Evento.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.common.entities;
+
+import javax.persistence.*;
+import java.sql.Time;
+import java.util.Date;
+
+@Entity
+@Table (name = &quot;Evento&quot;)
+public class Evento {
+
+    @Id
+    @Column (name = &quot;id_evento&quot;)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long _id_evento;
+
+    @ManyToOne
+    @JoinColumn(name = &quot;id_dispositivo&quot;)
+    private Dispositivo _id_dispositivo;
+
+    @Column(name = &quot;fecha&quot;)
+    private Date _fecha;
+
+    @Column(name = &quot;hora&quot;)
+    private String _hora;
+
+    @Column(name = &quot;tipo&quot;)
+    private String _tipo;
+
+<span class="fc" id="L29">    public Evento() {</span>
+<span class="fc" id="L30">    }</span>
+
+<span class="fc" id="L32">    public Evento(long _id_evento, Dispositivo _id_dispositivo, Date _fecha, String _hora, String _tipo) {</span>
+<span class="fc" id="L33">        this._id_evento = _id_evento;</span>
+<span class="fc" id="L34">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L35">        this._fecha = _fecha;</span>
+<span class="fc" id="L36">        this._hora = _hora;</span>
+<span class="fc" id="L37">        this._tipo = _tipo;</span>
+<span class="fc" id="L38">    }</span>
+
+<span class="fc" id="L40">    public Evento(long _id_evento) {</span>
+<span class="fc" id="L41">        this._id_evento = _id_evento;</span>
+<span class="fc" id="L42">    }</span>
+
+    public long get_id_evento() {
+<span class="fc" id="L45">        return _id_evento;</span>
+    }
+
+    public void set_id_evento(long _id_evento) {
+<span class="fc" id="L49">        this._id_evento = _id_evento;</span>
+<span class="fc" id="L50">    }</span>
+
+    public Dispositivo get_id_dispositivo() {
+<span class="fc" id="L53">        return _id_dispositivo;</span>
+    }
+
+    public void set_id_dispositivo(Dispositivo _id_dispositivo) {
+<span class="fc" id="L57">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L58">    }</span>
+
+    public Date get_fecha() {
+<span class="fc" id="L61">        return _fecha;</span>
+    }
+
+    public void set_fecha(Date _fecha) {
+<span class="fc" id="L65">        this._fecha = _fecha;</span>
+<span class="fc" id="L66">    }</span>
+
+    public String get_hora() {
+<span class="fc" id="L69">        return _hora;</span>
+    }
+
+    public void set_hora(String _hora) {
+<span class="fc" id="L73">        this._hora = _hora;</span>
+<span class="fc" id="L74">    }</span>
+
+    public String get_tipo() {
+<span class="fc" id="L77">        return _tipo;</span>
+    }
+
+    public void set_tipo(String _tipo) {
+<span class="fc" id="L81">        this._tipo = _tipo;</span>
+<span class="fc" id="L82">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

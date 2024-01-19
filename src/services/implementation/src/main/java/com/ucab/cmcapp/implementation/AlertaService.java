@@ -1,23 +1,11 @@
 package com.ucab.cmcapp.implementation;
 
 import com.ucab.cmcapp.common.entities.Alerta;
-import com.ucab.cmcapp.common.entities.User;
-import com.ucab.cmcapp.common.entities.Usuario;
 import com.ucab.cmcapp.logic.commands.CommandFactory;
 import com.ucab.cmcapp.logic.commands.alerta.composite.CreateAlertaCommand;
 import com.ucab.cmcapp.logic.commands.alerta.composite.GetAlertaCommand;
-import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByEmailCommand;
-import com.ucab.cmcapp.logic.commands.user.composite.CreateUserCommand;
-import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByEmailCommand;
-import com.ucab.cmcapp.logic.commands.usuario.atomic.UpdateUsuarioCommand;
-import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
-import com.ucab.cmcapp.logic.commands.usuario.composite.GetUsuarioCommand;
-import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
-import com.ucab.cmcapp.logic.dtos.UserDto;
 import com.ucab.cmcapp.logic.dtos.AlertaDto;
 import com.ucab.cmcapp.logic.mappers.AlertaMapper;
-import com.ucab.cmcapp.logic.mappers.UserMapper;
-import com.ucab.cmcapp.logic.mappers.UsuarioMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +21,7 @@ public class AlertaService extends BaseService
     private static Logger _logger = LoggerFactory.getLogger( AlertaService.class );
     @GET
     @Path( "/{id}" )
-    public AlertaDto geAlerta(@PathParam( "id" ) long alertaId )
+    public AlertaDto getAlerta(@PathParam( "id" ) long alertaId )
     {
         Alerta entity;
         AlertaDto response;

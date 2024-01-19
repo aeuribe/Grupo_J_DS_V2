@@ -1,6 +1,5 @@
 package com.ucab.cmcapp.logic.commands.usuario.atomic;
 
-import com.ucab.cmcapp.common.entities.User;
 import com.ucab.cmcapp.common.entities.Usuario;
 import com.ucab.cmcapp.logic.commands.Command;
 import com.ucab.cmcapp.persistence.DBHandler;

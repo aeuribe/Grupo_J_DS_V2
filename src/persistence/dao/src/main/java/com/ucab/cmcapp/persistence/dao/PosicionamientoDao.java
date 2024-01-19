@@ -16,7 +16,7 @@ import javax.validation.constraints.PositiveOrZero;
 
 
 public class PosicionamientoDao extends  BaseDao<Posicionamiento>{
-    private static Logger _logger = LoggerFactory.getLogger( UserDao.class );
+    private static Logger _logger = LoggerFactory.getLogger( EventoDao.class );
     private EntityManager _em;
     private CriteriaBuilder _builder;
 

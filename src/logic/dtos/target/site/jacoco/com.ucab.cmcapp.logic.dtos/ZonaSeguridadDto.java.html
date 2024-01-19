@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ZonaSeguridadDto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dtos</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.logic.dtos</a> &gt; <span class="el_source">ZonaSeguridadDto.java</span></div><h1>ZonaSeguridadDto.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.logic.dtos;
+
+import javax.persistence.Column;
+
+public class ZonaSeguridadDto extends BaseDto{
+    private String _nombre;
+
+    private Double _latitud_1;
+
+    private Double _longitud_1;
+
+    private Double _latitud_2;
+
+    private Double _longitud_2;
+
+    private Double _latitud_3;
+
+    private Double _longitud_3;
+
+    private DispositivoDto _id_dispositivo;
+
+    public DispositivoDto get_id_dispositivo() {
+<span class="fc" id="L23">        return _id_dispositivo;</span>
+    }
+
+    public void set_id_dispositivo(DispositivoDto _id_dispositivo) {
+<span class="fc" id="L27">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L28">    }</span>
+
+<span class="fc" id="L30">    public ZonaSeguridadDto() {</span>
+<span class="fc" id="L31">    }</span>
+
+    public ZonaSeguridadDto(long id) {
+<span class="fc" id="L34">        super(id);</span>
+<span class="fc" id="L35">    }</span>
+
+    public String get_nombre() {
+<span class="fc" id="L38">        return _nombre;</span>
+    }
+
+    public void set_nombre(String _nombre) {
+<span class="fc" id="L42">        this._nombre = _nombre;</span>
+<span class="fc" id="L43">    }</span>
+
+    public Double get_latitud_1() {
+<span class="fc" id="L46">        return _latitud_1;</span>
+    }
+
+    public void set_latitud_1(Double _latitud_1) {
+<span class="fc" id="L50">        this._latitud_1 = _latitud_1;</span>
+<span class="fc" id="L51">    }</span>
+
+    public Double get_longitud_1() {
+<span class="fc" id="L54">        return _longitud_1;</span>
+    }
+
+    public void set_longitud_1(Double _longitud_1) {
+<span class="fc" id="L58">        this._longitud_1 = _longitud_1;</span>
+<span class="fc" id="L59">    }</span>
+
+    public Double get_latitud_2() {
+<span class="fc" id="L62">        return _latitud_2;</span>
+    }
+
+    public void set_latitud_2(Double _latitud_2) {
+<span class="fc" id="L66">        this._latitud_2 = _latitud_2;</span>
+<span class="fc" id="L67">    }</span>
+
+    public Double get_longitud_2() {
+<span class="fc" id="L70">        return _longitud_2;</span>
+    }
+
+    public void set_longitud_2(Double _longitud_2) {
+<span class="fc" id="L74">        this._longitud_2 = _longitud_2;</span>
+<span class="fc" id="L75">    }</span>
+
+    public Double get_latitud_3() {
+<span class="fc" id="L78">        return _latitud_3;</span>
+    }
+
+    public void set_latitud_3(Double _latitud_3) {
+<span class="fc" id="L82">        this._latitud_3 = _latitud_3;</span>
+<span class="fc" id="L83">    }</span>
+
+    public Double get_longitud_3() {
+<span class="fc" id="L86">        return _longitud_3;</span>
+    }
+
+    public void set_longitud_3(Double _longitud_3) {
+<span class="fc" id="L90">        this._longitud_3 = _longitud_3;</span>
+<span class="fc" id="L91">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

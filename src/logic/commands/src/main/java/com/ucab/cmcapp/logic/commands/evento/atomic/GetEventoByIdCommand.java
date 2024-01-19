@@ -1,7 +1,6 @@
 package com.ucab.cmcapp.logic.commands.evento.atomic;
 import com.ucab.cmcapp.common.entities.*;
 import com.ucab.cmcapp.logic.commands.Command;
-import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByIdCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import com.ucab.cmcapp.persistence.DaoFactory;
 import com.ucab.cmcapp.persistence.dao.EventoDao;

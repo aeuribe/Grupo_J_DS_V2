@@ -1,0 +1,9 @@
+com\ucab\cmcapp\common\entities\AlertaTest.class
+com\ucab\cmcapp\common\entities\EventoTest.class
+com\ucab\cmcapp\common\entities\QuerellaTest.class
+com\ucab\cmcapp\common\entities\PosicionamientoTest.class
+com\ucab\cmcapp\common\entities\PersonaTest.class
+com\ucab\cmcapp\common\entities\ZonaSeguridadTest.class
+com\ucab\cmcapp\common\entities\DispositivoTest.class
+com\ucab\cmcapp\common\entities\UsuarioTest.class
+com\ucab\cmcapp\common\entities\Historial_ConexionTest.class

@@ -1,12 +1,9 @@
 package com.ucab.cmcapp.logic.commands.posicionamiento.composite;
 
 import com.ucab.cmcapp.common.entities.Posicionamiento;
-import com.ucab.cmcapp.common.entities.User;
 import com.ucab.cmcapp.logic.commands.Command;
 import com.ucab.cmcapp.logic.commands.CommandFactory;
 import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.GetPosicionamientoByIdCommand;
-import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByIdCommand;
-import com.ucab.cmcapp.logic.commands.user.composite.GetUserCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

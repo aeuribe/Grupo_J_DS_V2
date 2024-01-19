@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommandFactory.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">command</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.logic.commands</a> &gt; <span class="el_source">CommandFactory.java</span></div><h1>CommandFactory.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.logic.commands;
+
+import com.ucab.cmcapp.common.entities.*;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.atomic.AddZonaSeguridadCommand;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.atomic.GetZonaSeguridadByIdCommand;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.atomic.UpdateZonaSeguridadCommand;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.composite.CreateZonaSeguridadCommand;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.composite.GetZonaSeguridadCommand;
+import com.ucab.cmcapp.logic.commands.ZonaSeguridad.composite.ModifyZonaSeguridadCommand;
+import com.ucab.cmcapp.logic.commands.alerta.atomic.AddAlertaCommand;
+import com.ucab.cmcapp.logic.commands.alerta.atomic.GetAlertaByIdCommand;
+import com.ucab.cmcapp.logic.commands.alerta.composite.CreateAlertaCommand;
+import com.ucab.cmcapp.logic.commands.alerta.composite.GetAlertaCommand;
+import com.ucab.cmcapp.logic.commands.dispositivo.atomic.*;
+import com.ucab.cmcapp.logic.commands.dispositivo.composite.CreateDispositivoCommand;
+import com.ucab.cmcapp.logic.commands.dispositivo.composite.GetDispositivoCommand;
+import com.ucab.cmcapp.logic.commands.evento.atomic.AddEventoCommand;
+import com.ucab.cmcapp.logic.commands.evento.atomic.GetEventoByIdCommand;
+import com.ucab.cmcapp.logic.commands.evento.atomic.UpdateEventoCommand;
+import com.ucab.cmcapp.logic.commands.evento.composite.CreateEventoCommand;
+import com.ucab.cmcapp.logic.commands.evento.composite.GetEventoCommand;
+import com.ucab.cmcapp.logic.commands.evento.composite.ModifyEventoCommand;
+import com.ucab.cmcapp.logic.commands.historial_conexion.atomic.AddHistorial_ConexionCommand;
+import com.ucab.cmcapp.logic.commands.historial_conexion.atomic.GetHistorial_ConexionByIdCommand;
+import com.ucab.cmcapp.logic.commands.historial_conexion.composite.CreateHistorial_ConexionCommand;
+import com.ucab.cmcapp.logic.commands.historial_conexion.composite.GetHistorial_ConexionCommand;
+import com.ucab.cmcapp.logic.commands.persona.atomic.AddPersonaCommand;
+import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByIdCommand;
+import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByListCommand;
+import com.ucab.cmcapp.logic.commands.persona.atomic.UpdatePersonaCommand;
+import com.ucab.cmcapp.logic.commands.persona.composite.CreatePersonaCommand;
+import com.ucab.cmcapp.logic.commands.persona.composite.GetAllPersonaCommand;
+import com.ucab.cmcapp.logic.commands.persona.composite.GetPersonaCommand;
+import com.ucab.cmcapp.logic.commands.persona.composite.ModifyPersonaCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.AddPosicionamientoCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.GetPosicionamientoByIdCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.atomic.UpdatePosicionamientoCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.composite.CreatePosicionamientoCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.composite.GetPosicionamientoCommand;
+import com.ucab.cmcapp.logic.commands.posicionamiento.composite.ModifyPosicionamientoCommand;
+import com.ucab.cmcapp.logic.commands.querella.atomic.AddQuerellaCommand;
+import com.ucab.cmcapp.logic.commands.querella.atomic.GetQuerellaByIdCommand;
+import com.ucab.cmcapp.logic.commands.querella.atomic.GetQuerellaByListCommand;
+import com.ucab.cmcapp.logic.commands.querella.atomic.UpdateQuerellaCommand;
+import com.ucab.cmcapp.logic.commands.querella.composite.CreateQuerellaCommand;
+import com.ucab.cmcapp.logic.commands.querella.composite.GetAllQuerellaCommand;
+import com.ucab.cmcapp.logic.commands.querella.composite.GetQuerellaCommand;
+import com.ucab.cmcapp.logic.commands.querella.composite.ModifyQuerellaCommand;
+import com.ucab.cmcapp.logic.commands.usuario.atomic.*;
+import com.ucab.cmcapp.logic.commands.usuario.composite.AuthenticateUsuarioCommand;
+import com.ucab.cmcapp.logic.commands.usuario.composite.GetUsuarioCommand;
+import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
+import com.ucab.cmcapp.persistence.DBHandler;
+import com.ucab.cmcapp.logic.commands.dispositivo.composite.ModifyDispositivoCommand;
+import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
+
+<span class="nc" id="L57">public class CommandFactory {</span>
+    //historial
+    public static GetHistorial_ConexionByIdCommand createGetHistorial_ConexionByIdCommand(DBHandler handler, long id)
+    {
+<span class="nc" id="L61">        return new GetHistorial_ConexionByIdCommand(handler, id);</span>
+    }
+
+    public static GetHistorial_ConexionCommand createGetHistorial_ConexionCommand(Historial_Conexion historial_conexion){
+<span class="nc" id="L65">        return new GetHistorial_ConexionCommand(historial_conexion);</span>
+    }
+    //usuario
+
+    public static AuthenticateUsuarioCommand createAuthenticateUsuarioCommand ( Usuario usuario){
+<span class="nc" id="L70">        return new AuthenticateUsuarioCommand(usuario);</span>
+    }
+    public static ModifyUsuarioCommand createModifyUsuarioCommand(Usuario usuario) {
+<span class="nc" id="L73">        return new ModifyUsuarioCommand(usuario);</span>
+    }
+
+    public static CreateUsuarioCommand createCreateUsuarioCommand(Usuario usuario) {
+<span class="nc" id="L77">        return new CreateUsuarioCommand(usuario);</span>
+    }
+
+    public static GetUsuarioCommand createGetUsuarioCommand(Usuario usuario) {
+<span class="nc" id="L81">        return new GetUsuarioCommand(usuario);</span>
+    }
+
+    public static GetUsuarioByEmailCommand createGetUsuarioByEmailCommand(Usuario usuario) {
+<span class="nc" id="L85">        return new GetUsuarioByEmailCommand(usuario);</span>
+    }
+
+    public static GetUsuarioByEmailCommand createGetUsuarioByEmailCommand(Usuario usuario, DBHandler handler) {
+<span class="nc" id="L89">        return new GetUsuarioByEmailCommand(usuario, handler);</span>
+    }
+
+    public static AddUsuarioCommand createAddUsuarioCommand(Usuario usuario, DBHandler handler) {
+<span class="nc" id="L93">        return new AddUsuarioCommand(usuario, handler);</span>
+    }
+
+    public static GetUsuarioByIdCommand createGetUsuarioByIdCommand(DBHandler handler, long userId) {
+<span class="nc" id="L97">        return new GetUsuarioByIdCommand(handler, userId);</span>
+    }
+
+    public static UpdateUsuarioCommand createUpdateUsuarioCommand(Usuario usuario, DBHandler handler) {
+<span class="nc" id="L101">        return new UpdateUsuarioCommand(usuario, handler);</span>
+    }
+
+    public static UpdateUsuarioCommand createUpdateUsuarioCommand(Usuario usuario) {
+<span class="nc" id="L105">        return new UpdateUsuarioCommand(usuario);</span>
+    }
+
+    public static GetUsuarioByIdPersonaCommand createGetUsuarioByIdPersonaCommand (Usuario usuario){
+<span class="nc" id="L109">        return new GetUsuarioByIdPersonaCommand(usuario);</span>
+    }
+
+public static GetUsuarioByIdPersonaCommand createGetUsuarioByIdPersonaCommand (DBHandler handler, Usuario usuario){
+<span class="nc" id="L113">        return new GetUsuarioByIdPersonaCommand(usuario,handler);</span>
+    }
+
+    //dispositivo
+    public static AddDispositivoCommand createAddDispositivoCommand(Dispositivo dispositivo, DBHandler handler) {
+<span class="nc" id="L118">        return new AddDispositivoCommand(dispositivo, handler);</span>
+    }
+
+    public static GetDispositivoByIdCommand createGetDispositivoByIdCommand(DBHandler handler, long dispositivoId) {
+<span class="nc" id="L122">        return new GetDispositivoByIdCommand(handler, dispositivoId);</span>
+    }
+
+    //Historial_Conexion
+    public static AddHistorial_ConexionCommand createAddHistorial_ConexionCommand(Historial_Conexion historial, DBHandler handler) {
+<span class="nc" id="L127">        return new AddHistorial_ConexionCommand(historial, handler);</span>
+    }
+
+    public static CreateHistorial_ConexionCommand createCreateHistorial_ConexionCommand(Historial_Conexion historial) {
+<span class="nc" id="L131">        return new CreateHistorial_ConexionCommand(historial);</span>
+    }
+
+
+    //zona de seguridad
+
+    public static ModifyZonaSeguridadCommand createModifyZonaSeguridadCommand(ZonaSeguridad zona) {
+<span class="nc" id="L138">        return new ModifyZonaSeguridadCommand(zona);</span>
+    }
+    public static UpdateZonaSeguridadCommand createUpdateZonaSeguridadCommand(ZonaSeguridad zona, DBHandler handler) {
+<span class="nc" id="L141">        return new UpdateZonaSeguridadCommand(zona, handler);</span>
+    }
+    public static AddZonaSeguridadCommand createAddZonaSeguridadCommand(ZonaSeguridad zona, DBHandler handler) {
+<span class="nc" id="L144">        return new AddZonaSeguridadCommand(zona, handler);</span>
+    }
+
+    public static GetZonaSeguridadByIdCommand createGetZonaSeguridadByIdCommand(DBHandler handler, long id) {
+<span class="nc" id="L148">        return new GetZonaSeguridadByIdCommand(handler, id);</span>
+    }
+
+    public static GetZonaSeguridadCommand createGetZonaSeguridadCommand(ZonaSeguridad zona) {
+<span class="nc" id="L152">        return new GetZonaSeguridadCommand(zona);</span>
+    }
+
+    public static CreateZonaSeguridadCommand createCreateZonaSeguridadCommand(ZonaSeguridad zonaSeguridad) {
+<span class="nc" id="L156">        return new CreateZonaSeguridadCommand(zonaSeguridad);</span>
+    }
+
+    //posicionamiento
+
+    public static ModifyPosicionamientoCommand createModifyPosicionamientoCommand(Posicionamiento posicionamiento) {
+<span class="nc" id="L162">        return new ModifyPosicionamientoCommand(posicionamiento);</span>
+    }
+    public static UpdatePosicionamientoCommand createUpdatePosicionamientoCommand(Posicionamiento posicionamiento, DBHandler handler) {
+<span class="nc" id="L165">        return new UpdatePosicionamientoCommand(posicionamiento, handler);</span>
+    }
+    public static AddPosicionamientoCommand createAddPosicionamientoCommand(Posicionamiento posicionamiento, DBHandler handler) {
+<span class="nc" id="L168">        return new AddPosicionamientoCommand(posicionamiento, handler);</span>
+    }
+
+    public static CreatePosicionamientoCommand createCreatePosicionamientoCommand(Posicionamiento posicionamiento) {
+<span class="nc" id="L172">        return new CreatePosicionamientoCommand(posicionamiento);</span>
+    }
+
+    public static GetPosicionamientoCommand createGetPosicionamientoCommand(Posicionamiento posicionamiento) {
+<span class="nc" id="L176">        return new GetPosicionamientoCommand(posicionamiento);</span>
+    }
+
+    public static GetPosicionamientoByIdCommand createGetPosicionamientoByIdCommand(DBHandler handler, long id) {
+<span class="nc" id="L180">        return new GetPosicionamientoByIdCommand(handler, id);</span>
+    }
+
+    //evento
+    public static AddEventoCommand createAddEventoCommand(Evento evento, DBHandler handler) {
+<span class="nc" id="L185">        return new AddEventoCommand(evento, handler);</span>
+    }
+
+    public static GetEventoByIdCommand createGetEventoByIdCommand(DBHandler handler, long id) {
+<span class="nc" id="L189">        return new GetEventoByIdCommand(handler, id);</span>
+    }
+
+    //alerta
+    public static AddAlertaCommand createAddAlertaCommand(Alerta alerta, DBHandler handler) {
+<span class="nc" id="L194">        return new AddAlertaCommand(alerta, handler);</span>
+    }
+
+    public static GetAlertaByIdCommand createGetAlertaByIdCommand(DBHandler handler, long id) {
+<span class="nc" id="L198">        return new GetAlertaByIdCommand(handler, id);</span>
+    }
+
+    public static GetAlertaCommand createGetAlertaCommand(Alerta alerta) {
+<span class="nc" id="L202">        return new GetAlertaCommand(alerta);</span>
+    }
+
+    public static CreateAlertaCommand createCreateAlertaCommand(Alerta alerta) {
+<span class="nc" id="L206">        return new CreateAlertaCommand(alerta);</span>
+    }
+
+
+    //persona
+
+    public static GetAllPersonaCommand createGetAllPersonaCommand() {
+<span class="nc" id="L213">        return new GetAllPersonaCommand();</span>
+    }
+
+    public static GetPersonaByListCommand createGetPersonaByListCommand(DBHandler handler) {
+<span class="nc" id="L217">        return new GetPersonaByListCommand(handler);</span>
+    }
+
+    public static GetPersonaCommand createGetPersonaCommand(Persona persona) {
+<span class="nc" id="L221">        return new GetPersonaCommand(persona);</span>
+    }
+
+    public static CreatePersonaCommand createCreatePersonaCommand(Persona persona) {
+<span class="nc" id="L225">        return new CreatePersonaCommand(persona);</span>
+    }
+
+    public static AddPersonaCommand createAddPersonaCommand(Persona persona, DBHandler handler) {
+<span class="nc" id="L229">        return new AddPersonaCommand(persona, handler);</span>
+    }
+
+    public static AddPersonaCommand createAddUserCommand(Persona persona) {
+<span class="nc" id="L233">        return new AddPersonaCommand(persona);</span>
+    }
+
+    public static GetPersonaByIdCommand createGetPersonaByIdCommand(DBHandler handler, long id) {
+<span class="nc" id="L237">        return new GetPersonaByIdCommand(handler, id);</span>
+    }
+
+    public static UpdatePersonaCommand createUpdatePersonaCommand(Persona persona, DBHandler handler) {
+<span class="nc" id="L241">        return new UpdatePersonaCommand(persona, handler);</span>
+    }
+
+    public static UpdatePersonaCommand createUpdatePersonaCommand(Persona persona) {
+<span class="nc" id="L245">        return new UpdatePersonaCommand(persona);</span>
+    }
+
+    public static ModifyPersonaCommand createModifyPersonaCommand(Persona persona) {
+<span class="nc" id="L249">        return new ModifyPersonaCommand(persona);</span>
+    }
+
+    //querella
+    public static GetQuerellaByListCommand createGetQuerellaByListCommand(DBHandler handler) {
+<span class="nc" id="L254">        return new GetQuerellaByListCommand(handler);</span>
+    }
+
+    public static GetAllQuerellaCommand createGetAllQuerellaCommand() {
+<span class="nc" id="L258">        return new GetAllQuerellaCommand();</span>
+    }
+
+    public static AddQuerellaCommand createAddQuerellaCommand(Querella persona, DBHandler handler) {
+<span class="nc" id="L262">        return new AddQuerellaCommand(persona, handler);</span>
+    }
+
+    public static GetQuerellaByIdCommand createGetQuerellaByIdCommand(DBHandler handler, long id) {
+<span class="nc" id="L266">        return new GetQuerellaByIdCommand(handler, id);</span>
+    }
+
+    public static GetQuerellaCommand createGetQuerellaCommand(Querella querella) {
+<span class="nc" id="L270">        return new GetQuerellaCommand(querella);</span>
+    }
+
+    public static CreateQuerellaCommand createCreateQuerellaCommand(Querella querella) {
+<span class="nc" id="L274">        return new CreateQuerellaCommand(querella);</span>
+    }
+
+    public static UpdateQuerellaCommand createUpdateQuerellaCommand(Querella querella, DBHandler handler) {
+<span class="nc" id="L278">        return new UpdateQuerellaCommand(querella, handler);</span>
+    }
+
+    public static UpdateQuerellaCommand createUpdateUsuarioCommand(Querella querella) {
+<span class="nc" id="L282">        return new UpdateQuerellaCommand(querella);</span>
+    }
+    public static ModifyQuerellaCommand createModifyQuerellaCommand(Querella querella) {
+<span class="nc" id="L285">        return new ModifyQuerellaCommand(querella);</span>
+    }
+
+    //Evento
+
+    public static GetEventoCommand createGetEventoCommand(Evento evento) {
+<span class="nc" id="L291">        return new GetEventoCommand(evento);</span>
+    }
+
+    public static CreateEventoCommand createCreateEventoCommand(Evento evento) {
+<span class="nc" id="L295">        return new CreateEventoCommand(evento);</span>
+    }
+
+    public static UpdateEventoCommand createUpdateEventoCommand(Evento evento, DBHandler handler) {
+<span class="nc" id="L299">        return new UpdateEventoCommand(evento, handler);</span>
+    }
+
+    public static UpdateEventoCommand createUpdateEventoCommand(Evento evento) {
+<span class="nc" id="L303">        return new UpdateEventoCommand(evento);</span>
+    }
+
+    public static ModifyEventoCommand createModifyEventoCommand(Evento evento) {
+
+<span class="nc" id="L308">        return new ModifyEventoCommand(evento);</span>
+    }
+
+
+    //Dispositivo
+    public static GetDispositivoCommand createGetDispositivoCommand(Dispositivo dispositivo) {
+<span class="nc" id="L314">        return new GetDispositivoCommand(dispositivo);</span>
+    }
+
+    public static GetDispositivoByUsuarioCommand createGetDispositivoByUsuarioCommand(Dispositivo dispositivo, DBHandler handler){
+<span class="nc" id="L318">        return new GetDispositivoByUsuarioCommand(dispositivo, handler);</span>
+    }
+
+    public static GetDispositivoByUsuarioCommand createGetDispositivoByUsuarioCommand(Dispositivo dispositivo){
+<span class="nc" id="L322">        return new GetDispositivoByUsuarioCommand(dispositivo);</span>
+    }
+
+    public static CreateDispositivoCommand createCreateDispositivoCommand(Dispositivo dispositivo) {
+<span class="nc" id="L326">        return new CreateDispositivoCommand(dispositivo);</span>
+    }
+
+    public static UpdateDispositivoCommand createUpdateDispositivoCommand(Dispositivo dispositivo, DBHandler handler) {
+<span class="nc" id="L330">        return new UpdateDispositivoCommand(dispositivo, handler);</span>
+    }
+
+    public static UpdateDispositivoCommand createUpdateDispositivoCommand(Dispositivo dispositivo) {
+<span class="nc" id="L334">        return new UpdateDispositivoCommand(dispositivo);</span>
+    }
+
+    public static ModifyDispositivoCommand createModifyDispositivoCommand(Dispositivo dispositivo) {
+
+<span class="nc" id="L339">        return new ModifyDispositivoCommand(dispositivo);</span>
+    }
+
+    public static GetDispositivoByNumberCommand createGetDispositivoByNumberCommand(Dispositivo dispositivo, DBHandler handler) {
+<span class="nc" id="L343">        return new GetDispositivoByNumberCommand(dispositivo, handler);</span>
+    }
+
+    public static GetDispositivoByNumberCommand createGetDispositivoByNumberCommand(Dispositivo dispositivo) {
+<span class="nc" id="L347">        return new GetDispositivoByNumberCommand(dispositivo);</span>
+    }
+
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

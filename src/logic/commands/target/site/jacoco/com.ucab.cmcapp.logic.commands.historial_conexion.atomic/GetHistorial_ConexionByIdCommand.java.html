@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GetHistorial_ConexionByIdCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">command</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.logic.commands.historial_conexion.atomic</a> &gt; <span class="el_source">GetHistorial_ConexionByIdCommand.java</span></div><h1>GetHistorial_ConexionByIdCommand.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.logic.commands.historial_conexion.atomic;
+
+import com.ucab.cmcapp.common.entities.*;
+import com.ucab.cmcapp.logic.commands.Command;
+import com.ucab.cmcapp.logic.commands.historial_conexion.atomic.GetHistorial_ConexionByIdCommand;
+import com.ucab.cmcapp.persistence.DBHandler;
+import com.ucab.cmcapp.persistence.DaoFactory;
+import com.ucab.cmcapp.persistence.dao.Historial_ConexionDao;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+public class GetHistorial_ConexionByIdCommand extends Command&lt;Historial_Conexion&gt;
+{
+<span class="nc" id="L13">    private static Logger _logger = LoggerFactory.getLogger( GetHistorial_ConexionByIdCommand.class );</span>
+    private long _historial_conexionId;
+    private Historial_Conexion _result;
+    private Historial_ConexionDao _dao;
+
+    public GetHistorial_ConexionByIdCommand( DBHandler handler, long historial_conexionId )
+<span class="nc" id="L19">    {</span>
+        //region Instrumentation DEBUG
+<span class="nc" id="L21">        _logger.debug( String.format( &quot;Get in GetHistorial_ConexionByIdCommand.ctor: parameter {%s}&quot;, historial_conexionId ) );</span>
+
+<span class="nc" id="L23">        _historial_conexionId = historial_conexionId;</span>
+<span class="nc" id="L24">        setHandler(handler);</span>
+<span class="nc" id="L25">        _dao = DaoFactory.createHistorial_ConexionDao(getHandler());</span>
+
+        //region Instrumentation DEBUG
+<span class="nc" id="L28">        _logger.debug( String.format( &quot;Leaving GetHistorial_ConexionByIdCommand.ctor: attribute {%s}&quot;, historial_conexionId ) );</span>
+        //endregion
+<span class="nc" id="L30">    }</span>
+
+    @Override
+    public void execute()
+    {
+        //region Instrumentation DEBUG
+<span class="nc" id="L36">        _logger.debug( &quot;Get in  GetHistorial_ConexionByIdCommand.execute&quot; );</span>
+        //endregion
+<span class="nc" id="L38">        _result = _dao.find(_historial_conexionId, Historial_Conexion.class);</span>
+        //region Instrumentation DEBUG
+<span class="nc" id="L40">        _logger.debug( &quot;Leaving  GetHistorial_ConexionByIdCommand.execute&quot; );</span>
+        //endregion
+<span class="nc" id="L42">    }</span>
+
+    @Override
+    public Historial_Conexion getReturnParam()
+    {
+<span class="nc" id="L47">        return _result;</span>
+    }
+
+    @Override
+    public void closeHandlerSession()
+    {
+<span class="nc" id="L53">        getHandler().closeSession();</span>
+<span class="nc" id="L54">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

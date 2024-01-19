@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Posicionamiento.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">entities</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.common.entities</a> &gt; <span class="el_source">Posicionamiento.java</span></div><h1>Posicionamiento.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.common.entities;
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity
+@Table( name = &quot;Posicionamiento&quot;)
+public class Posicionamiento {
+
+    @Id
+    @Column ( name = &quot;id_posicionamiento&quot;)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    private long _id_posicionamiento;
+
+    @ManyToOne
+    @JoinColumn (name = &quot;id_dispositivo&quot;)
+    private Dispositivo _id_dispositivo;
+
+    @Column (name = &quot;latitud&quot;)
+    private Double _latitud;
+
+    @Column (name = &quot;longitud&quot;)
+    private Double _longitud;
+
+    @Column (name = &quot;fecha&quot;)
+    private Date _fecha;
+
+<span class="fc" id="L27">    public Posicionamiento() {</span>
+<span class="fc" id="L28">    }</span>
+
+<span class="fc" id="L30">    public Posicionamiento(long _id_posicionamiento, Dispositivo _id_dispositivo, Double _latitud, Double _longitud, Date _fecha) {</span>
+<span class="fc" id="L31">        this._id_posicionamiento = _id_posicionamiento;</span>
+<span class="fc" id="L32">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L33">        this._latitud = _latitud;</span>
+<span class="fc" id="L34">        this._longitud = _longitud;</span>
+<span class="fc" id="L35">        this._fecha = _fecha;</span>
+<span class="fc" id="L36">    }</span>
+
+<span class="fc" id="L38">    public Posicionamiento(long _id_posicionamiento) {</span>
+<span class="fc" id="L39">        this._id_posicionamiento = _id_posicionamiento;</span>
+<span class="fc" id="L40">    }</span>
+
+    public long get_id_posicionamiento() {
+<span class="fc" id="L43">        return _id_posicionamiento;</span>
+    }
+
+    public void set_id_posicionamiento(long _id_posicionamiento) {
+<span class="fc" id="L47">        this._id_posicionamiento = _id_posicionamiento;</span>
+<span class="fc" id="L48">    }</span>
+
+    public Dispositivo get_id_dispositivo() {
+<span class="fc" id="L51">        return _id_dispositivo;</span>
+    }
+
+    public void set_id_dispositivo(Dispositivo _id_dispositivo) {
+<span class="fc" id="L55">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L56">    }</span>
+
+    public Double get_latitud() {
+<span class="fc" id="L59">        return _latitud;</span>
+    }
+
+    public void set_latitud(Double _latitud) {
+<span class="fc" id="L63">        this._latitud = _latitud;</span>
+<span class="fc" id="L64">    }</span>
+
+    public Double get_longitud() {
+<span class="fc" id="L67">        return _longitud;</span>
+    }
+
+    public void set_longitud(Double _longitud) {
+<span class="fc" id="L71">        this._longitud = _longitud;</span>
+<span class="fc" id="L72">    }</span>
+
+    public Date get_fecha() {
+<span class="fc" id="L75">        return _fecha;</span>
+    }
+
+    public void set_fecha(Date _fecha) {
+<span class="fc" id="L79">        this._fecha = _fecha;</span>
+<span class="fc" id="L80">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
