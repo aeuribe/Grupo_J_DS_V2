@@ -6,7 +6,7 @@ public class DispositivoDto extends BaseDto{
 
     private String _modelo;
     private String _marca;
-    private String _nunero_telefonico;
+    private String _numero_telefonico;
     private UsuarioDto _id_usuario;
     private Set<ZonaSeguridadDto> _zonas;
     private Set<AlertaDto> _alertas;
@@ -39,10 +39,6 @@ public class DispositivoDto extends BaseDto{
     public DispositivoDto() {
     }
 
-    public DispositivoDto(long _id_dispositivo) {
-        super(_id_dispositivo);
-    }
-
 
     public String get_modelo() {
         return _modelo;
@@ -60,12 +56,12 @@ public class DispositivoDto extends BaseDto{
         this._marca = _marca;
     }
 
-    public String get_nunero_telefonico() {
-        return _nunero_telefonico;
+    public String get_numero_telefonico() {
+        return _numero_telefonico;
     }
 
-    public void set_nunero_telefonico(String _nunero_telefonico) {
-        this._nunero_telefonico = _nunero_telefonico;
+    public void set_numero_telefonico(String _numero_telefonico) {
+        this._numero_telefonico = _numero_telefonico;
     }
 
     public UsuarioDto get_id_usuario() {

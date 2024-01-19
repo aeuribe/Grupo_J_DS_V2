@@ -15,7 +15,7 @@ import javax.persistence.criteria.Root;
 
 public class EventoDao extends BaseDao<Evento>
 {
-    private static Logger _logger = LoggerFactory.getLogger( UserDao.class );
+    private static Logger _logger = LoggerFactory.getLogger( EventoDao.class );
     private EntityManager _em;
     private CriteriaBuilder _builder;
 

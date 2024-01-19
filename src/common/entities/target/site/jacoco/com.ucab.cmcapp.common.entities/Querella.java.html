@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Querella.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">entities</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.common.entities</a> &gt; <span class="el_source">Querella.java</span></div><h1>Querella.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.common.entities;
+import javax.persistence.*;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+@Entity
+@Table(name = &quot;QUERELLA&quot;, uniqueConstraints = @UniqueConstraint(columnNames = &quot;descripcion&quot;))
+public class Querella {
+
+    @Id
+    @Column (name = &quot;id_querella&quot;)
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
+    private long _id_querella;
+
+    @Column ( name = &quot;fecha_caso&quot;)
+    private Date _fecha_caso;
+
+    @Column ( name = &quot;descripcion&quot;)
+    private String _descripcion;
+
+    @Column ( name = &quot;distancia_alejamiento&quot;)
+    private long _distancia_alejamiento;
+
+    @Column ( name = &quot;cuenta_atras&quot;)
+    private long _cuenta_atras;
+
+    @Column ( name = &quot;inamovilidad&quot;)
+    private long _inamovilidad;
+
+<span class="fc" id="L32">    @ManyToMany (fetch = FetchType.EAGER)</span>
+    @JoinTable(
+            name = &quot;Querella_Persona&quot;,
+            joinColumns = @JoinColumn(name = &quot;id_querella&quot;),
+            inverseJoinColumns = @JoinColumn(name = &quot;id_persona&quot;)
+    )
+    private Set&lt;Persona&gt; personasAsociadas = new HashSet&lt;&gt;();
+
+<span class="fc" id="L40">    public Querella(long _id_querella, Date _fecha_caso, String _descripcion, long _distancia_alejamiento, long _cuenta_atras, long _inamovilidad) {</span>
+<span class="fc" id="L41">        this._id_querella = _id_querella;</span>
+<span class="fc" id="L42">        this._fecha_caso = _fecha_caso;</span>
+<span class="fc" id="L43">        this._descripcion = _descripcion;</span>
+<span class="fc" id="L44">        this._distancia_alejamiento = _distancia_alejamiento;</span>
+<span class="fc" id="L45">        this._cuenta_atras = _cuenta_atras;</span>
+<span class="fc" id="L46">        this._inamovilidad = _inamovilidad;</span>
+<span class="fc" id="L47">    }</span>
+
+
+<span class="fc" id="L50">    public Querella(long _id_querella) {</span>
+<span class="fc" id="L51">        this._id_querella = _id_querella;</span>
+<span class="fc" id="L52">    }</span>
+
+<span class="fc" id="L54">    public Querella(){}</span>
+
+    public Set&lt;Persona&gt; getPersonasAsociadas() {
+<span class="fc" id="L57">        return personasAsociadas;</span>
+    }
+
+    public void addPersonasAsociadas(Persona persona)
+    {
+<span class="fc" id="L62">        personasAsociadas.add(persona);</span>
+<span class="fc" id="L63">    }</span>
+
+    public void setPersonasAsociadas(Set&lt;Persona&gt; personasAsociadas) {
+<span class="fc" id="L66">        this.personasAsociadas = personasAsociadas;</span>
+<span class="fc" id="L67">    }</span>
+
+    public void set_id_querella(long _id_querella) {
+<span class="fc" id="L70">        this._id_querella = _id_querella;</span>
+<span class="fc" id="L71">    }</span>
+
+    public void set_fecha_caso(Date _fecha_caso) {
+<span class="fc" id="L74">        this._fecha_caso = _fecha_caso;</span>
+<span class="fc" id="L75">    }</span>
+
+    public void set_descripcion(String _descripcion) {
+<span class="fc" id="L78">        this._descripcion = _descripcion;</span>
+<span class="fc" id="L79">    }</span>
+
+    public void set_distancia_alejamiento(long _distancia_alejamiento) {
+<span class="fc" id="L82">        this._distancia_alejamiento = _distancia_alejamiento;</span>
+<span class="fc" id="L83">    }</span>
+
+    public void set_cuenta_atras(long _cuenta_atras) {
+<span class="fc" id="L86">        this._cuenta_atras = _cuenta_atras;</span>
+<span class="fc" id="L87">    }</span>
+
+    public void set_inamovilidad(long _inamovilidad) {
+<span class="fc" id="L90">        this._inamovilidad = _inamovilidad;</span>
+<span class="fc" id="L91">    }</span>
+
+    public long get_id_querella() {
+<span class="fc" id="L94">        return _id_querella;</span>
+    }
+
+    public Date get_fecha_caso() {
+<span class="fc" id="L98">        return _fecha_caso;</span>
+    }
+
+    public String get_descripcion() {
+<span class="fc" id="L102">        return _descripcion;</span>
+    }
+
+    public long get_distancia_alejamiento() {
+<span class="fc" id="L106">        return _distancia_alejamiento;</span>
+    }
+
+    public long get_cuenta_atras() {
+<span class="fc" id="L110">        return _cuenta_atras;</span>
+    }
+
+    public long get_inamovilidad() {
+<span class="fc" id="L114">        return _inamovilidad;</span>
+    }
+
+    // Método para obtener víctimas
+    public Persona getVictima() {
+<span class="fc" id="L119">        return personasAsociadas.stream()</span>
+<span class="fc" id="L120">                .filter(persona -&gt; persona.get_tipoRol().equals(&quot;victima&quot;))</span>
+<span class="fc" id="L121">                .findFirst()</span>
+<span class="fc" id="L122">                .orElse( null);</span>
+    }
+    public Persona getAgresor() {
+<span class="fc" id="L125">        return personasAsociadas.stream()</span>
+<span class="fc" id="L126">                .filter(persona -&gt; persona.get_tipoRol().equals(&quot;agresor&quot;))</span>
+<span class="fc" id="L127">                .findFirst()</span>
+<span class="fc" id="L128">                .orElse(null);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

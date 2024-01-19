@@ -1,12 +1,13 @@
 com\ucab\cmcapp\implementation\EventoService.class
+com\ucab\cmcapp\implementation\AuthService.class
 com\ucab\cmcapp\implementation\QuerellaService.class
 com\ucab\cmcapp\implementation\PersonaService.class
 com\ucab\cmcapp\implementation\DispositivoService.class
 com\ucab\cmcapp\implementation\ZonaSeguridadService.class
-com\ucab\cmcapp\implementation\Historial_ConexionService.class
+com\ucab\cmcapp\implementation\filter\AccessControlResponseFilter.class
 com\ucab\cmcapp\implementation\PosicionamientoService.class
+com\ucab\cmcapp\implementation\filter\CorsFilter.class
 com\ucab\cmcapp\implementation\UsuarioService.class
 com\ucab\cmcapp\implementation\HistorialService.class
-com\ucab\cmcapp\implementation\UserService.class
 com\ucab\cmcapp\implementation\AlertaService.class
 com\ucab\cmcapp\implementation\BaseService.class

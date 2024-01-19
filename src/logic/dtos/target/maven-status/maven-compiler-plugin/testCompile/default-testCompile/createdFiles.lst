@@ -1,0 +1,9 @@
+com\ucab\cmcapp\logic\dtos\PersonaDtoTest.class
+com\ucab\cmcapp\logic\dtos\Historial_ConexionDtoTest.class
+com\ucab\cmcapp\logic\dtos\PosicionamientoDtoTest.class
+com\ucab\cmcapp\logic\dtos\DispositivoDtoTest.class
+com\ucab\cmcapp\logic\dtos\UsuarioDtoTest.class
+com\ucab\cmcapp\logic\dtos\EventoDtoTest.class
+com\ucab\cmcapp\logic\dtos\QuerellaDtoTest.class
+com\ucab\cmcapp\logic\dtos\ZonaSeguridadDtoTest.class
+com\ucab\cmcapp\logic\dtos\AlertaDtoTest.class

@@ -17,7 +17,6 @@ public class Persona {
 
     @Id
     @Column (name = "id_persona")
-    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private long _id_persona;
 
 

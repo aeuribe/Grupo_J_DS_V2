@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Persona.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">entities</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.common.entities</a> &gt; <span class="el_source">Persona.java</span></div><h1>Persona.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.common.entities;
+import javax.persistence.*;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+//import com.ucab.cmcapp.common.entities;
+
+/**
+ * Name:                Persona.
+ * Description:         Entity Persona.
+ */
+
+@Entity
+@Table(name = &quot;PERSONA&quot;)
+public class Persona {
+
+
+    @Id
+    @Column (name = &quot;id_persona&quot;)
+    private long _id_persona;
+
+
+    @Column (name = &quot;p_nombre&quot;)
+    private String _primer_nombre;
+
+    @Column (name = &quot;p_apellido&quot;)
+    private String _primer_apellido;
+
+    @Column (name = &quot;s_nombre&quot;)
+    private String _segundo_nombre;
+
+    @Column (name = &quot;s_apellido&quot;)
+    private String _segundo_apellido;
+
+    @Column (name = &quot;sexo&quot;)
+    private char _sexo;
+
+    @Column (name = &quot;fec_nac&quot;)
+    private Date fec_nac;
+
+    @Column (name = &quot;tipoRol&quot;)
+    private String _tipoRol;
+
+
+<span class="fc" id="L45">    public Persona(long _id_persona, String _primer_nombre, String _primer_apellido, String _segundo_nombre, String _segundo_apellido, char _sexo, Date fec_nac, String _tipoRol) {</span>
+<span class="fc" id="L46">        this._id_persona = _id_persona;</span>
+<span class="fc" id="L47">        this._primer_nombre = _primer_nombre;</span>
+<span class="fc" id="L48">        this._primer_apellido = _primer_apellido;</span>
+<span class="fc" id="L49">        this._segundo_nombre = _segundo_nombre;</span>
+<span class="fc" id="L50">        this._segundo_apellido = _segundo_apellido;</span>
+<span class="fc" id="L51">        this._sexo = _sexo;</span>
+<span class="fc" id="L52">        this.fec_nac = fec_nac;</span>
+<span class="fc" id="L53">        this._tipoRol = _tipoRol;</span>
+<span class="fc" id="L54">    }</span>
+
+<span class="fc" id="L56">    public Persona() {</span>
+<span class="fc" id="L57">    }</span>
+
+    public String get_tipoRol() {
+<span class="fc" id="L60">        return _tipoRol;</span>
+    }
+
+    public void set_tipoRol(String _tipoRol) {
+<span class="fc" id="L64">        this._tipoRol = _tipoRol;</span>
+<span class="fc" id="L65">    }</span>
+
+<span class="fc" id="L67">    public Persona(Long _id_persona) {</span>
+<span class="fc" id="L68">        this._id_persona = _id_persona;</span>
+<span class="fc" id="L69">    }</span>
+
+    public void set_id_persona(long _id_persona) {
+<span class="fc" id="L72">        this._id_persona = _id_persona;</span>
+<span class="fc" id="L73">    }</span>
+
+    public Long get_id_persona() {
+<span class="fc" id="L76">        return _id_persona;</span>
+    }
+
+    public String get_primer_nombre() {
+<span class="fc" id="L80">        return _primer_nombre;</span>
+    }
+
+    public String get_primer_apellido() {
+<span class="fc" id="L84">        return _primer_apellido;</span>
+    }
+
+    public String get_segundo_nombre() {
+<span class="fc" id="L88">        return _segundo_nombre;</span>
+    }
+
+    public String get_segundo_apellido() {
+<span class="fc" id="L92">        return _segundo_apellido;</span>
+    }
+
+    public char get_sexo() {
+<span class="fc" id="L96">        return _sexo;</span>
+    }
+
+    public Date getFec_nac() {
+<span class="fc" id="L100">        return fec_nac;</span>
+    }
+
+    public void set_id_persona(Long _id_persona) {
+<span class="nc" id="L104">        this._id_persona = _id_persona;</span>
+<span class="nc" id="L105">    }</span>
+
+    public void set_primer_nombre(String _primer_nombre) {
+<span class="fc" id="L108">        this._primer_nombre = _primer_nombre;</span>
+<span class="fc" id="L109">    }</span>
+
+    public void set_primer_apellido(String _primer_apellido) {
+<span class="fc" id="L112">        this._primer_apellido = _primer_apellido;</span>
+<span class="fc" id="L113">    }</span>
+
+    public void set_segundo_nombre(String _segundo_nombre) {
+<span class="fc" id="L116">        this._segundo_nombre = _segundo_nombre;</span>
+<span class="fc" id="L117">    }</span>
+
+    public void set_segundo_apellido(String _segundo_apellido) {
+<span class="fc" id="L120">        this._segundo_apellido = _segundo_apellido;</span>
+<span class="fc" id="L121">    }</span>
+
+    public void set_sexo(char _sexo) {
+<span class="fc" id="L124">        this._sexo = _sexo;</span>
+<span class="fc" id="L125">    }</span>
+
+    public void setFec_nac(Date fec_nac) {
+<span class="fc" id="L128">        this.fec_nac = fec_nac;</span>
+<span class="fc" id="L129">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

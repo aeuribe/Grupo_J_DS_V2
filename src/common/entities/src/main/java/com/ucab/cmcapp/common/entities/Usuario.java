@@ -3,12 +3,12 @@ package com.ucab.cmcapp.common.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "USUARIO")
+@Table(name = "USUARIO", uniqueConstraints = @UniqueConstraint(columnNames = "correo_electronico"))
 public class Usuario {
 
     @Id
     @Column (name = "id_usuario")
-    @GeneratedValue( strategy = GenerationType.IDENTITY )
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long _id_usuario;
 
     @Column (name = "correo_electronico")

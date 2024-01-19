@@ -33,6 +33,13 @@ public class ZonaSeguridadMapper extends BaseMapper
         entity.set_longitud_3(dto.get_longitud_3());
 
 
+        if ( Objects.nonNull( dto.get_id_dispositivo() ) )
+        {
+            entity.set_id_dispositivo ( DispositivoMapper.mapDtoToEntity( dto.get_id_dispositivo() ) );
+        }
+
+
+
         //region Instrumentation DEBUG
         _logger.debug( "Leaving ZonaSeguridadMapper.mapDtoToEntity: entity {}", entity );
         //endregion
@@ -57,6 +64,11 @@ public class ZonaSeguridadMapper extends BaseMapper
         dto.set_latitud_3(entity.get_latitud_3());
         dto.set_longitud_3(entity.get_longitud_3());
 
+
+        if ( Objects.nonNull( entity.get_id_dispositivo() ) )
+        {
+            dto.set_id_dispositivo ( DispositivoMapper.mapEntityToDto( entity.get_id_dispositivo() ) );
+        }
         //region Instrumentation DEBUG
         _logger.debug( "Leaving ZonaSeguridadMapper.mapEntityToDto: dto {}", dto );
         //endregion

@@ -13,7 +13,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.validation.constraints.PositiveOrZero;
 public class AlertaDao extends BaseDao<Alerta>{
-    private static Logger _logger = LoggerFactory.getLogger( UserDao.class );
+    private static Logger _logger = LoggerFactory.getLogger( EventoDao.class );
     private EntityManager _em;
     private CriteriaBuilder _builder;
 

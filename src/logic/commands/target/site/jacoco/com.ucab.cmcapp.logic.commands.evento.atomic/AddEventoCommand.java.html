@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AddEventoCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">command</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.logic.commands.evento.atomic</a> &gt; <span class="el_source">AddEventoCommand.java</span></div><h1>AddEventoCommand.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.logic.commands.evento.atomic;
+
+import com.ucab.cmcapp.common.entities.*;
+import com.ucab.cmcapp.logic.commands.Command;
+import com.ucab.cmcapp.persistence.DBHandler;
+import com.ucab.cmcapp.persistence.DaoFactory;
+import com.ucab.cmcapp.persistence.dao.EventoDao;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.awt.*;
+
+public class AddEventoCommand extends Command&lt;Evento&gt;
+{
+<span class="nc" id="L15">    private static Logger _logger = LoggerFactory.getLogger( AddEventoCommand.class );</span>
+    private Evento _evento;
+    private EventoDao _dao;
+
+    public AddEventoCommand( Evento evento, DBHandler handler )
+<span class="nc" id="L20">    {</span>
+        //region Instrumentation DEBUG
+<span class="nc" id="L22">        _logger.debug( String.format( &quot;Get in AddEventoCommand.ctor: parameter {%s}&quot;,</span>
+<span class="nc" id="L23">                evento.toString() ) );</span>
+<span class="nc" id="L24">        setHandler(handler);</span>
+<span class="nc" id="L25">        _evento = evento;</span>
+<span class="nc" id="L26">        _dao = DaoFactory.createEventoDao(getHandler());</span>
+
+
+        //region Instrumentation DEBUG
+<span class="nc" id="L30">        _logger.debug( String.format( &quot;Leaving AddEventoCommand.ctor: attribute {%s}&quot;,</span>
+<span class="nc" id="L31">                _evento.toString() ) );</span>
+        //endregion
+<span class="nc" id="L33">    }</span>
+
+    public AddEventoCommand( Evento evento )
+<span class="nc" id="L36">    {</span>
+        //region Instrumentation DEBUG
+<span class="nc" id="L38">        _logger.debug( String.format( &quot;Get in AddEventoCommand.ctor: parameter {%s}&quot;,</span>
+<span class="nc" id="L39">                evento.toString() ) );</span>
+<span class="nc" id="L40">        _evento = evento;</span>
+<span class="nc" id="L41">        setHandler(new DBHandler());</span>
+<span class="nc" id="L42">        _dao = DaoFactory.createEventoDao(getHandler());</span>
+
+
+        //region Instrumentation DEBUG
+<span class="nc" id="L46">        _logger.debug( String.format( &quot;Leaving AddEventoCommand.ctor: attribute {%s}&quot;,</span>
+<span class="nc" id="L47">                _evento.toString() ) );</span>
+        //endregion
+<span class="nc" id="L49">    }</span>
+
+    @Override
+    public void execute()
+    {
+        //region Instrumentation DEBUG
+<span class="nc" id="L55">        _logger.debug( &quot;Get in  AddEventoCommand.execute&quot; );</span>
+        //endregion
+
+<span class="nc" id="L58">        _evento = _dao.insert( _evento);</span>
+
+        //region Instrumentation DEBUG
+<span class="nc" id="L61">        _logger.debug( &quot;Get in  AddEventoCommand.execute&quot; );</span>
+        //endregion
+<span class="nc" id="L63">    }</span>
+
+    @Override
+    public Evento getReturnParam()
+    {
+<span class="nc" id="L68">        return _evento;</span>
+    }
+
+    @Override
+    public void closeHandlerSession()
+    {
+<span class="nc" id="L74">        getHandler().closeSession();</span>
+<span class="nc" id="L75">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

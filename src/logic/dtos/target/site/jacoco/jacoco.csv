@@ -1,0 +1,11 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+dtos,com.ucab.cmcapp.logic.dtos,QuerellaDto,0,56,0,0,0,24,0,16,0,16
+dtos,com.ucab.cmcapp.logic.dtos,UsuarioDto,0,35,0,0,0,16,0,10,0,10
+dtos,com.ucab.cmcapp.logic.dtos,BaseDto,7,21,1,1,1,9,1,4,0,4
+dtos,com.ucab.cmcapp.logic.dtos,Historial_ConexionDto,0,42,0,0,0,19,0,12,0,12
+dtos,com.ucab.cmcapp.logic.dtos,ZonaSeguridadDto,0,63,0,0,0,28,0,18,0,18
+dtos,com.ucab.cmcapp.logic.dtos,PersonaDto,0,56,0,0,0,25,0,16,0,16
+dtos,com.ucab.cmcapp.logic.dtos,PosicionamientoDto,0,35,0,0,0,15,0,10,0,10
+dtos,com.ucab.cmcapp.logic.dtos,AlertaDto,0,28,0,0,0,13,0,8,0,8
+dtos,com.ucab.cmcapp.logic.dtos,EventoDto,0,35,0,0,0,16,0,10,0,10
+dtos,com.ucab.cmcapp.logic.dtos,DispositivoDto,0,52,0,0,0,23,0,15,0,15

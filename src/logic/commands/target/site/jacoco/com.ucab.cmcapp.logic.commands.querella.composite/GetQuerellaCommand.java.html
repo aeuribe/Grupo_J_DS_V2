@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GetQuerellaCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">command</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.logic.commands.querella.composite</a> &gt; <span class="el_source">GetQuerellaCommand.java</span></div><h1>GetQuerellaCommand.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.logic.commands.querella.composite;
+
+import com.ucab.cmcapp.common.entities.*;
+import com.ucab.cmcapp.logic.commands.Command;
+import com.ucab.cmcapp.logic.commands.CommandFactory;
+import com.ucab.cmcapp.logic.commands.querella.atomic.GetQuerellaByIdCommand;
+import com.ucab.cmcapp.logic.commands.querella.composite.GetQuerellaCommand;
+import com.ucab.cmcapp.persistence.DBHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class GetQuerellaCommand extends Command&lt;Querella&gt;
+{
+<span class="nc" id="L14">    private static Logger _logger = LoggerFactory.getLogger( GetQuerellaCommand.class );</span>
+    private Querella _querella;
+    long _id;
+
+    public GetQuerellaCommand( Querella querella )
+<span class="nc" id="L19">    {</span>
+        //region Instrumentation DEBUG
+<span class="nc" id="L21">        _logger.debug( String.format( &quot;Get in GetQuerellaCommand.ctor: parameter {%s}&quot;,</span>
+<span class="nc" id="L22">                querella.toString() ) );</span>
+<span class="nc" id="L23">        _id = querella.get_id_querella();</span>
+<span class="nc" id="L24">        _querella = querella;</span>
+<span class="nc" id="L25">        setHandler(new DBHandler());</span>
+
+        //region Instrumentation DEBUG
+<span class="nc" id="L28">        _logger.debug( String.format( &quot;Leaving GetQuerellaCommand.ctor: attribute {%s}&quot;,</span>
+<span class="nc" id="L29">                _querella.toString() ) );</span>
+        //endregion
+<span class="nc" id="L31">    }</span>
+
+    @Override
+    public void execute()
+    {
+        try
+        {
+<span class="nc" id="L38">            GetQuerellaByIdCommand getQuerellaByIdCommand = CommandFactory.createGetQuerellaByIdCommand(getHandler(), _id);</span>
+<span class="nc" id="L39">            getQuerellaByIdCommand.execute();</span>
+<span class="nc" id="L40">            _querella = getQuerellaByIdCommand.getReturnParam();</span>
+        }
+<span class="nc" id="L42">        catch (Exception e)</span>
+        {
+<span class="nc" id="L44">            getHandler().rollbackTransaction();</span>
+<span class="nc" id="L45">            getHandler().closeSession();</span>
+<span class="nc" id="L46">            throw e;</span>
+<span class="nc" id="L47">        }</span>
+<span class="nc" id="L48">    }</span>
+
+    @Override
+    public Querella getReturnParam()
+    {
+<span class="nc" id="L53">        return _querella;</span>
+    }
+
+    @Override
+    public void closeHandlerSession()
+    {
+<span class="nc" id="L59">        getHandler().closeSession();</span>
+<span class="nc" id="L60">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

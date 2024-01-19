@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Historial_Conexion.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">entities</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.common.entities</a> &gt; <span class="el_source">Historial_Conexion.java</span></div><h1>Historial_Conexion.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.common.entities;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+@Entity
+@Table( name = &quot;Historial_Conexion&quot; )
+public class Historial_Conexion implements Serializable
+{
+
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY )
+    @Column (name = &quot;id_historial&quot;)
+    private long _id_historial;
+    @Column (name = &quot;hora_conexion&quot;)
+    private Date _hora_conexion;
+    @Column (name = &quot;hora_desconexion&quot;)
+    private Date _hora_desconexion;
+    @Column (name = &quot;_fecha&quot;)
+    private Date _fecha;
+    @Column (name = &quot;_estado&quot;)
+    private String _estado;
+    @ManyToOne
+    @JoinColumn ( name = &quot;id_dispositivo&quot;)
+    private Dispositivo _id_dispositivo;
+
+<span class="fc" id="L28">    public Historial_Conexion() {</span>
+<span class="fc" id="L29">    }</span>
+
+<span class="fc" id="L31">    public Historial_Conexion(long _id_historial, Date _hora_conexion, Date _hora_desconexion, Date _fecha, String _estado, Dispositivo _id_dispositivo) {</span>
+<span class="fc" id="L32">        this._id_historial = _id_historial;</span>
+<span class="fc" id="L33">        this._hora_conexion = _hora_conexion;</span>
+<span class="fc" id="L34">        this._hora_desconexion = _hora_desconexion;</span>
+<span class="fc" id="L35">        this._fecha = _fecha;</span>
+<span class="fc" id="L36">        this._estado = _estado;</span>
+<span class="fc" id="L37">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L38">    }</span>
+
+<span class="fc" id="L40">    public Historial_Conexion(long _id_historial) {</span>
+<span class="fc" id="L41">        this._id_historial = _id_historial;</span>
+<span class="fc" id="L42">    }</span>
+
+    public long get_id_historial() {
+<span class="fc" id="L45">        return _id_historial;</span>
+    }
+
+    public void set_id_historial(long _id_historial) {
+<span class="fc" id="L49">        this._id_historial = _id_historial;</span>
+<span class="fc" id="L50">    }</span>
+
+    public Date get_hora_conexion() {
+<span class="fc" id="L53">        return _hora_conexion;</span>
+    }
+
+    public void set_hora_conexion(Date _hora_conexion) {
+<span class="fc" id="L57">        this._hora_conexion = _hora_conexion;</span>
+<span class="fc" id="L58">    }</span>
+
+    public Date get_hora_desconexion() {
+<span class="fc" id="L61">        return _hora_desconexion;</span>
+    }
+
+    public void set_hora_desconexion(Date _hora_desconexion) {
+<span class="fc" id="L65">        this._hora_desconexion = _hora_desconexion;</span>
+<span class="fc" id="L66">    }</span>
+
+    public Date get_fecha() {
+<span class="fc" id="L69">        return _fecha;</span>
+    }
+
+    public void set_fecha(Date _fecha) {
+<span class="fc" id="L73">        this._fecha = _fecha;</span>
+<span class="fc" id="L74">    }</span>
+
+    public String get_estado() {
+<span class="fc" id="L77">        return _estado;</span>
+    }
+
+    public void set_estado(String _estado) {
+<span class="fc" id="L81">        this._estado = _estado;</span>
+<span class="fc" id="L82">    }</span>
+
+    public Dispositivo get_id_dispositivo() {
+<span class="fc" id="L85">        return _id_dispositivo;</span>
+    }
+    public void set_id_dispositivo(Dispositivo _id_dispositivo) {
+<span class="fc" id="L88">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L89">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

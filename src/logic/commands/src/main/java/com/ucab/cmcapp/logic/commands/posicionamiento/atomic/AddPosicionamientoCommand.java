@@ -1,13 +1,10 @@
 package com.ucab.cmcapp.logic.commands.posicionamiento.atomic;
 
 import com.ucab.cmcapp.common.entities.Posicionamiento;
-import com.ucab.cmcapp.common.entities.User;
 import com.ucab.cmcapp.logic.commands.Command;
-import com.ucab.cmcapp.logic.commands.user.atomic.AddUserCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
 import com.ucab.cmcapp.persistence.DaoFactory;
 import com.ucab.cmcapp.persistence.dao.PosicionamientoDao;
-import com.ucab.cmcapp.persistence.dao.UserDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

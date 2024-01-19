@@ -3,15 +3,17 @@ package com.ucab.cmcapp.logic.mappers;
 
 import com.ucab.cmcapp.common.EntityFactory;
 import com.ucab.cmcapp.common.entities.Dispositivo;
-import com.ucab.cmcapp.common.entities.Evento;
+import com.ucab.cmcapp.common.entities.Usuario;
 import com.ucab.cmcapp.logic.dtos.AlertaDto;
 import com.ucab.cmcapp.logic.dtos.DispositivoDto;
-import com.ucab.cmcapp.logic.dtos.ZonaSeguridadDto;
+import com.ucab.cmcapp.logic.dtos.UsuarioDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.text.ParseException;
 import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class DispositivoMapper extends BaseMapper{
     private static Logger _logger = LoggerFactory.getLogger( DispositivoMapper.class );
@@ -28,24 +30,12 @@ public class DispositivoMapper extends BaseMapper{
         entity.set_id_dispositivo(dto.getId());
         entity.set_marca(dto.get_marca());
         entity.set_modelo(dto.get_modelo());
-        entity.set_numero_telefonico(dto.get_nunero_telefonico());
+        entity.set_numero_telefonico(dto.get_numero_telefonico());
 
 
-        if ( Objects.nonNull( dto.get_id_usuario() ) )
+        if ( Objects.nonNull( dto.getId() ) )
         {
             entity.set_id_usuario( UsuarioMapper.mapDtoToEntity( dto.get_id_usuario() ) );
-        }
-
-        if (Objects.nonNull(dto.get_zonaAsociada())) {
-            for (ZonaSeguridadDto zonaDto : dto.get_zonaAsociada()) {
-                entity.addZonasAsociadas(ZonaSeguridadMapper.mapDtoToEntity(zonaDto));
-            }
-        }
-
-        if (Objects.nonNull(dto.get_alertas())) {
-            for (AlertaDto alertaDto : dto.get_alertas()) {
-                entity.addAlertasAsociadas(AlertaMapper.mapDtoToEntity(alertaDto));
-            }
         }
 
         //region Instrumentation DEBUG
@@ -66,14 +56,14 @@ public class DispositivoMapper extends BaseMapper{
         dto.setId(entity.get_id_dispositivo() );
         dto.set_marca( entity.get_marca() );
         dto.set_modelo( entity.get_modelo() );
-        dto.set_nunero_telefonico( entity.get_numero_telefonico() );
+        dto.set_numero_telefonico( entity.get_numero_telefonico() );
 
 
         if(Objects.nonNull(entity.get_id_usuario()))
             dto.set_id_usuario( UsuarioMapper.mapEntityToDto( entity.get_id_usuario() ) );
 
         //region Instrumentation DEBUG
-        _logger.debug( "Leaving UserMapper.mapEntityToDto: dto {}", dto );
+        _logger.debug( "Leaving DispositivoMapper.mapEntityToDto: dto {}", dto );
         //endregion
         return dto;
     }
@@ -111,4 +101,55 @@ public class DispositivoMapper extends BaseMapper{
 
         return entity;
     }
+
+    public static DispositivoDto mapEntityAlertaToDto (Dispositivo entity){
+        DispositivoDto dto = new DispositivoDto();
+
+        dto = mapEntityToDto(entity);
+        if (entity.getAlertasAsociadas() != null){
+            Set<AlertaDto> alertasDto = entity.getAlertasAsociadas().stream()
+                    .map(AlertaMapper::mapEntityToDto)
+                    .collect(Collectors.toSet());
+            dto.set_alertas(alertasDto);
+        }
+
+        return dto;
+    }
+
+
+    public static Dispositivo mapDtoToEntityNumber(String number )
+    {
+        Dispositivo entity = EntityFactory.createDispositivo();
+
+        //region Instrumentation DEBUG
+        _logger.debug( "Get in DispositivoMapper.mapDtoToEntityNumber: email {}", number );
+        //endregion
+
+        entity.set_numero_telefonico(number);
+
+        //region Instrumentation DEBUG
+        _logger.debug( "Leaving DispositivoMapper.mapDtoToEntityNumber: entity {}", entity );
+        //endregion
+
+        return entity;
+    }
+
+    public static Dispositivo mapDtoToEntityUsuario(Usuario usuario ){
+        Dispositivo entity = EntityFactory.createDispositivo();
+
+        //region Instrumentation DEBUG
+        _logger.debug( "Get in DispositivoMapper.mapDtoToEntityNumber: usuario {}", usuario );
+        //endregion
+
+        entity.set_id_usuario(usuario);
+
+        //region Instrumentation DEBUG
+        _logger.debug( "Leaving DispositivoMapper.mapDtoToEntityUsuario: usuario {}", usuario );
+        //endregion
+
+        return entity;
+
+
+    }
+
 }

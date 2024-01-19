@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Dispositivo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">entities</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.common.entities</a> &gt; <span class="el_source">Dispositivo.java</span></div><h1>Dispositivo.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.common.entities;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+@Table ( name = &quot;Dispositivo&quot;,  uniqueConstraints = @UniqueConstraint(columnNames = &quot;_numero_telefonico&quot;))
+public class Dispositivo {
+
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY )
+    @Column (name = &quot;id_dispositivo&quot;)
+    private long _id_dispositivo;
+    @Column (name = &quot;modelo&quot;)
+    private String _modelo;
+    @Column (name = &quot;marca&quot;)
+    private String _marca;
+
+
+    @Column (name = &quot;_numero_telefonico&quot;, nullable = false)
+    private String _numero_telefonico;
+
+    @OneToOne
+    @JoinColumn ( name = &quot;id_usuario&quot;)
+    private Usuario _id_usuario;
+
+
+<span class="fc" id="L28">    @OneToMany (fetch = FetchType.EAGER)</span>
+    @JoinColumn (name = &quot;id_alerta&quot;)
+    private Set&lt;Alerta&gt; _alertasAsociadas = new HashSet&lt;&gt;();
+
+<span class="fc" id="L32">    @OneToMany (fetch = FetchType.EAGER)</span>
+    @JoinColumn (name = &quot;id_evento&quot;)
+    private Set&lt;Evento&gt; _eventosAsociados = new HashSet&lt;&gt;();
+
+<span class="fc" id="L36">    @OneToMany (fetch = FetchType.EAGER)</span>
+    @JoinColumn (name = &quot;id_posicionamiento&quot;)
+    private Set&lt;Evento&gt; _posAsociado = new HashSet&lt;&gt;();
+
+<span class="fc" id="L40">    public Dispositivo() {</span>
+<span class="fc" id="L41">    }</span>
+
+<span class="fc" id="L43">    public Dispositivo(long _id_dispositivo, String _modelo, String _marca, String _numero_telefonico, Usuario _id_usuario) {</span>
+<span class="fc" id="L44">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L45">        this._modelo = _modelo;</span>
+<span class="fc" id="L46">        this._marca = _marca;</span>
+<span class="fc" id="L47">        this._numero_telefonico = _numero_telefonico;</span>
+<span class="fc" id="L48">        this._id_usuario = _id_usuario;</span>
+<span class="fc" id="L49">    }</span>
+
+    public void addEventosAsociados(Evento evento)
+    {
+<span class="fc" id="L53">        _eventosAsociados.add(evento);</span>
+<span class="fc" id="L54">    }</span>
+
+    public Set&lt;Evento&gt; getEventosAsociados() {
+<span class="fc" id="L57">        return _eventosAsociados;</span>
+    }
+
+    public void setEventosAsociados(Set&lt;Evento&gt; eventosAsociados) {
+<span class="fc" id="L61">        this._eventosAsociados = eventosAsociados;</span>
+<span class="fc" id="L62">    }</span>
+
+    public void addAlertasAsociadas(Alerta alerta)
+    {
+<span class="fc" id="L66">        _alertasAsociadas.add(alerta);</span>
+<span class="fc" id="L67">    }</span>
+
+    public Set&lt;Alerta&gt; getAlertasAsociadas() {
+<span class="fc" id="L70">        return _alertasAsociadas;</span>
+    }
+
+    public void setAlertasAsociadas(Set&lt;Alerta&gt; alertasAsociadas) {
+<span class="fc" id="L74">        this._alertasAsociadas = alertasAsociadas;</span>
+<span class="fc" id="L75">    }</span>
+
+<span class="fc" id="L77">    public Dispositivo(long _id_dispositivo) {</span>
+<span class="fc" id="L78">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L79">    }</span>
+
+    public long get_id_dispositivo() {
+<span class="fc" id="L82">        return _id_dispositivo;</span>
+    }
+
+    public void set_id_dispositivo(long _id_dispositivo) {
+<span class="fc" id="L86">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L87">    }</span>
+
+    public String get_modelo() {
+<span class="fc" id="L90">        return _modelo;</span>
+    }
+
+    public void set_modelo(String _modelo) {
+<span class="fc" id="L94">        this._modelo = _modelo;</span>
+<span class="fc" id="L95">    }</span>
+
+    public String get_marca() {
+<span class="fc" id="L98">        return _marca;</span>
+    }
+
+    public void set_marca(String _marca) {
+<span class="fc" id="L102">        this._marca = _marca;</span>
+<span class="fc" id="L103">    }</span>
+
+    public String get_numero_telefonico() {
+<span class="fc" id="L106">        return _numero_telefonico;</span>
+    }
+
+    public void set_numero_telefonico(String _numero_telefonico) {
+<span class="fc" id="L110">        this._numero_telefonico = _numero_telefonico;</span>
+<span class="fc" id="L111">    }</span>
+
+    public Usuario get_id_usuario() {
+<span class="fc" id="L114">        return _id_usuario;</span>
+    }
+
+    public void set_id_usuario(Usuario _id_usuario) {
+<span class="fc" id="L118">        this._id_usuario = _id_usuario;</span>
+<span class="fc" id="L119">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

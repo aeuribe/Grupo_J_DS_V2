@@ -1,11 +1,9 @@
-com\ucab\cmcapp\logic\dtos\UserTypeDto.class
 com\ucab\cmcapp\logic\dtos\DispositivoDto.class
 com\ucab\cmcapp\logic\dtos\EventoDto.class
 com\ucab\cmcapp\logic\dtos\PersonaDto.class
 com\ucab\cmcapp\logic\dtos\Historial_ConexionDto.class
 com\ucab\cmcapp\logic\dtos\AlertaDto.class
 com\ucab\cmcapp\logic\dtos\PosicionamientoDto.class
-com\ucab\cmcapp\logic\dtos\UserDto.class
 com\ucab\cmcapp\logic\dtos\QuerellaDto.class
 com\ucab\cmcapp\logic\dtos\UsuarioDto.class
 com\ucab\cmcapp\logic\dtos\BaseDto.class

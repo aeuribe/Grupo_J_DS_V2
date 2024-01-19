@@ -1,0 +1,11 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+entities,com.ucab.cmcapp.common.entities,Historial_Conexion,0,72,0,0,0,31,0,15,0,15
+entities,com.ucab.cmcapp.common.entities,Alerta,0,52,0,0,0,23,0,11,0,11
+entities,com.ucab.cmcapp.common.entities,Evento,0,62,0,0,0,27,0,13,0,13
+entities,com.ucab.cmcapp.common.entities,Persona,5,94,0,0,2,39,1,19,1,19
+entities,com.ucab.cmcapp.common.entities,Posicionamiento,0,62,0,0,0,27,0,13,0,13
+entities,com.ucab.cmcapp.common.entities,ZonaSeguridad,33,66,0,0,13,29,2,19,2,19
+entities,com.ucab.cmcapp.common.entities,Querella,0,130,0,0,0,44,0,22,0,22
+entities,com.ucab.cmcapp.common.entities,Usuario,0,68,0,0,0,30,0,14,0,14
+entities,com.ucab.cmcapp.common.entities,Dispositivo,0,133,0,0,0,40,0,19,0,19
+entities,com.ucab.cmcapp.common,EntityFactory,89,0,0,0,20,0,20,0,20,0
