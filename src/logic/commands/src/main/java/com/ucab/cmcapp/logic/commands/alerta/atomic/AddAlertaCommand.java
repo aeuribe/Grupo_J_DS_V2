@@ -13,6 +13,7 @@ public class AddAlertaCommand extends Command<Alerta>
     private Alerta _alerta;
     private AlertaDao _dao;
 
+
     public AddAlertaCommand( Alerta alerta, DBHandler handler )
     {
         //region Instrumentation DEBUG

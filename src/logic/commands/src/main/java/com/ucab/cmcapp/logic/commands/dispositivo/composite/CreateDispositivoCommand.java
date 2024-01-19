@@ -1,7 +1,6 @@
 package com.ucab.cmcapp.logic.commands.dispositivo.composite;
 
 import com.ucab.cmcapp.common.entities.Dispositivo;
-import com.ucab.cmcapp.common.entities.User;
 import com.ucab.cmcapp.logic.commands.Command;
 import com.ucab.cmcapp.logic.commands.CommandFactory;
 import com.ucab.cmcapp.logic.commands.dispositivo.atomic.AddDispositivoCommand;

@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table ( name = "Dispositivo")
+@Table ( name = "Dispositivo",  uniqueConstraints = @UniqueConstraint(columnNames = "_numero_telefonico"))
 public class Dispositivo {
 
     @Id
@@ -15,21 +15,15 @@ public class Dispositivo {
     private String _modelo;
     @Column (name = "marca")
     private String _marca;
-    @Column (name = "_numero_telefonico")
+
+
+    @Column (name = "_numero_telefonico", nullable = false)
     private String _numero_telefonico;
 
     @OneToOne
     @JoinColumn ( name = "id_usuario")
     private Usuario _id_usuario;
 
-
-    @ManyToMany (fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "Dispositivo_Zona",
-            joinColumns = @JoinColumn(name = "id_dispositivo"),
-            inverseJoinColumns = @JoinColumn(name = "id_zona")
-    )
-    private Set<ZonaSeguridad> _zonasAsociadas = new HashSet<>();
 
     @OneToMany (fetch = FetchType.EAGER)
     @JoinColumn (name = "id_alerta")
@@ -38,6 +32,10 @@ public class Dispositivo {
     @OneToMany (fetch = FetchType.EAGER)
     @JoinColumn (name = "id_evento")
     private Set<Evento> _eventosAsociados = new HashSet<>();
+
+    @OneToMany (fetch = FetchType.EAGER)
+    @JoinColumn (name = "id_posicionamiento")
+    private Set<Evento> _posAsociado = new HashSet<>();
 
     public Dispositivo() {
     }
@@ -74,19 +72,6 @@ public class Dispositivo {
 
     public void setAlertasAsociadas(Set<Alerta> alertasAsociadas) {
         this._alertasAsociadas = alertasAsociadas;
-    }
-
-    public void addZonasAsociadas(ZonaSeguridad zona)
-    {
-        _zonasAsociadas.add(zona);
-    }
-
-    public Set<ZonaSeguridad> getZonasAsociadas() {
-        return _zonasAsociadas;
-    }
-
-    public void setZonasAsociadas(Set<ZonaSeguridad> zonasAsociadas) {
-        this._zonasAsociadas = zonasAsociadas;
     }
 
     public Dispositivo(long _id_dispositivo) {

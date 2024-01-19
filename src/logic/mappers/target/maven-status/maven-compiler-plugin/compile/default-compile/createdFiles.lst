@@ -5,8 +5,6 @@ com\ucab\cmcapp\logic\mappers\PersonaMapper.class
 com\ucab\cmcapp\logic\mappers\PosicionamientoMapper.class
 com\ucab\cmcapp\logic\mappers\UsuarioMapper.class
 com\ucab\cmcapp\logic\mappers\BaseMapper.class
-com\ucab\cmcapp\logic\mappers\UserMapper.class
 com\ucab\cmcapp\logic\mappers\EventoMapper.class
 com\ucab\cmcapp\logic\mappers\QuerellaMapper.class
 com\ucab\cmcapp\logic\mappers\DispositivoMapper.class
-com\ucab\cmcapp\logic\mappers\UserTypeMapper.class

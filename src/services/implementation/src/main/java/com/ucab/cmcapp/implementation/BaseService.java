@@ -7,10 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.container.ContainerRequestContext;
+import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Response;
 import java.util.HashSet;
 import java.util.Set;
+
 
 @ApplicationPath( "/api/v1" )
 public class BaseService extends Application

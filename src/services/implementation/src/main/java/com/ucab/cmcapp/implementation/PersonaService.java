@@ -2,19 +2,12 @@ package com.ucab.cmcapp.implementation;
 
 import com.ucab.cmcapp.common.entities.*;
 import com.ucab.cmcapp.logic.commands.CommandFactory;
-import com.ucab.cmcapp.logic.commands.persona.atomic.GetPersonaByIdCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.CreatePersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.GetAllPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.GetPersonaCommand;
 import com.ucab.cmcapp.logic.commands.persona.composite.ModifyPersonaCommand;
-import com.ucab.cmcapp.logic.commands.user.composite.CreateUserCommand;
-import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.logic.dtos.PersonaDto;
-import com.ucab.cmcapp.logic.dtos.UserDto;
-import com.ucab.cmcapp.logic.dtos.UsuarioDto;
 import com.ucab.cmcapp.logic.mappers.PersonaMapper;
-import com.ucab.cmcapp.logic.mappers.UserMapper;
-import com.ucab.cmcapp.logic.mappers.UsuarioMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

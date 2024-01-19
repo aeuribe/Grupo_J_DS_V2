@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EventoDto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dtos</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.logic.dtos</a> &gt; <span class="el_source">EventoDto.java</span></div><h1>EventoDto.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.logic.dtos;
+
+import java.util.Date;
+
+public class EventoDto extends BaseDto
+{
+    private DispositivoDto _id_dispositivo;
+    private Date _fecha;
+    private String _hora;
+    private String _tipo;
+
+<span class="fc" id="L12">    public EventoDto() {</span>
+<span class="fc" id="L13">    }</span>
+
+    public EventoDto(long id) {
+<span class="fc" id="L16">        super(id);</span>
+<span class="fc" id="L17">    }</span>
+
+    public DispositivoDto get_id_dispositivo() {
+<span class="fc" id="L20">        return _id_dispositivo;</span>
+    }
+
+    public void set_id_dispositivo(DispositivoDto _id_dispositivo) {
+<span class="fc" id="L24">        this._id_dispositivo = _id_dispositivo;</span>
+<span class="fc" id="L25">    }</span>
+
+    public Date get_fecha() {
+<span class="fc" id="L28">        return _fecha;</span>
+    }
+
+    public void set_fecha(Date _fecha) {
+<span class="fc" id="L32">        this._fecha = _fecha;</span>
+<span class="fc" id="L33">    }</span>
+
+    public String get_hora() {
+<span class="fc" id="L36">        return _hora;</span>
+    }
+
+    public void set_hora(String _hora) {
+<span class="fc" id="L40">        this._hora = _hora;</span>
+<span class="fc" id="L41">    }</span>
+
+    public String get_tipo() {
+<span class="fc" id="L44">        return _tipo;</span>
+    }
+
+    public void set_tipo(String _tipo) {
+<span class="fc" id="L48">        this._tipo = _tipo;</span>
+<span class="fc" id="L49">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

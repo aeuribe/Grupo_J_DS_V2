@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DispositivoDto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dtos</a> &gt; <a href="index.source.html" class="el_package">com.ucab.cmcapp.logic.dtos</a> &gt; <span class="el_source">DispositivoDto.java</span></div><h1>DispositivoDto.java</h1><pre class="source lang-java linenums">package com.ucab.cmcapp.logic.dtos;
+
+import java.util.Set;
+
+public class DispositivoDto extends BaseDto{
+
+    private String _modelo;
+    private String _marca;
+    private String _numero_telefonico;
+    private UsuarioDto _id_usuario;
+    private Set&lt;ZonaSeguridadDto&gt; _zonas;
+    private Set&lt;AlertaDto&gt; _alertas;
+    private Set&lt;EventoDto&gt; _eventos;
+
+    public Set&lt;ZonaSeguridadDto&gt; get_zonas() {
+<span class="fc" id="L16">        return _zonas;</span>
+    }
+
+    public void set_zonas(Set&lt;ZonaSeguridadDto&gt; _zonas) {
+<span class="fc" id="L20">        this._zonas = _zonas;</span>
+<span class="fc" id="L21">    }</span>
+
+    public Set&lt;AlertaDto&gt; get_alertas() {
+<span class="fc" id="L24">        return _alertas;</span>
+    }
+
+    public void set_alertas(Set&lt;AlertaDto&gt; _alertas) {
+<span class="fc" id="L28">        this._alertas = _alertas;</span>
+<span class="fc" id="L29">    }</span>
+
+    public Set&lt;EventoDto&gt; get_eventos() {
+<span class="fc" id="L32">        return _eventos;</span>
+    }
+
+    public void set_eventos(Set&lt;EventoDto&gt; _eventos) {
+<span class="fc" id="L36">        this._eventos = _eventos;</span>
+<span class="fc" id="L37">    }</span>
+
+<span class="fc" id="L39">    public DispositivoDto() {</span>
+<span class="fc" id="L40">    }</span>
+
+
+    public String get_modelo() {
+<span class="fc" id="L44">        return _modelo;</span>
+    }
+
+    public void set_modelo(String _modelo) {
+<span class="fc" id="L48">        this._modelo = _modelo;</span>
+<span class="fc" id="L49">    }</span>
+
+    public String get_marca() {
+<span class="fc" id="L52">        return _marca;</span>
+    }
+
+    public void set_marca(String _marca) {
+<span class="fc" id="L56">        this._marca = _marca;</span>
+<span class="fc" id="L57">    }</span>
+
+    public String get_numero_telefonico() {
+<span class="fc" id="L60">        return _numero_telefonico;</span>
+    }
+
+    public void set_numero_telefonico(String _numero_telefonico) {
+<span class="fc" id="L64">        this._numero_telefonico = _numero_telefonico;</span>
+<span class="fc" id="L65">    }</span>
+
+    public UsuarioDto get_id_usuario() {
+<span class="fc" id="L68">        return _id_usuario;</span>
+    }
+
+    public void set_id_usuario(UsuarioDto _id_usuario) {
+<span class="fc" id="L72">        this._id_usuario = _id_usuario;</span>
+<span class="fc" id="L73">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

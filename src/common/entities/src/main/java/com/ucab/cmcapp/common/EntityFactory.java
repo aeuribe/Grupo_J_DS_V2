@@ -8,34 +8,6 @@ public class EntityFactory
     /**
      * Method that returns an instance of User class
      */
-    public static User createUser()
-    {
-        return new User();
-    }
-
-    /**
-     * Method that returns an instance of User class
-     */
-    public static User createUser(long id)
-    {
-        return new User(id);
-    }
-
-    /**
-     * Method that returns an instance of UserType class
-     */
-    public static UserType createUserType()
-    {
-        return new UserType();
-    }
-
-    /**
-     * Method that returns an instance of UserType class
-     */
-    public static UserType createUserType(long id)
-    {
-        return new UserType(id);
-    }
 
     public static Persona createPersona(){
         return new Persona();
@@ -82,6 +54,7 @@ public class EntityFactory
     public static Historial_Conexion createHistorial_Conexion (long id_historial){
         return new Historial_Conexion(id_historial);
     }
+
 
     public static ZonaSeguridad createZonaSeguridad (){
         return new ZonaSeguridad();

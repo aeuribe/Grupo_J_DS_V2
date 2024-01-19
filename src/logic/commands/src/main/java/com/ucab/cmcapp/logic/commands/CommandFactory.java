@@ -11,9 +11,7 @@ import com.ucab.cmcapp.logic.commands.alerta.atomic.AddAlertaCommand;
 import com.ucab.cmcapp.logic.commands.alerta.atomic.GetAlertaByIdCommand;
 import com.ucab.cmcapp.logic.commands.alerta.composite.CreateAlertaCommand;
 import com.ucab.cmcapp.logic.commands.alerta.composite.GetAlertaCommand;
-import com.ucab.cmcapp.logic.commands.dispositivo.atomic.AddDispositivoCommand;
-import com.ucab.cmcapp.logic.commands.dispositivo.atomic.GetDispositivoByIdCommand;
-import com.ucab.cmcapp.logic.commands.dispositivo.atomic.UpdateDispositivoCommand;
+import com.ucab.cmcapp.logic.commands.dispositivo.atomic.*;
 import com.ucab.cmcapp.logic.commands.dispositivo.composite.CreateDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.dispositivo.composite.GetDispositivoCommand;
 import com.ucab.cmcapp.logic.commands.evento.atomic.AddEventoCommand;
@@ -48,15 +46,8 @@ import com.ucab.cmcapp.logic.commands.querella.composite.CreateQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.querella.composite.GetAllQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.querella.composite.GetQuerellaCommand;
 import com.ucab.cmcapp.logic.commands.querella.composite.ModifyQuerellaCommand;
-import com.ucab.cmcapp.logic.commands.user.atomic.AddUserCommand;
-import com.ucab.cmcapp.logic.commands.usuario.atomic.AddUsuarioCommand;
-import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByEmailCommand;
-import com.ucab.cmcapp.logic.commands.usuario.atomic.GetUsuarioByIdCommand;
-import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByIdCommand;
-import com.ucab.cmcapp.logic.commands.user.composite.CreateUserCommand;
-import com.ucab.cmcapp.logic.commands.user.composite.GetUserCommand;
-import com.ucab.cmcapp.logic.commands.user.atomic.GetUserByEmailCommand;
-import com.ucab.cmcapp.logic.commands.usuario.atomic.UpdateUsuarioCommand;
+import com.ucab.cmcapp.logic.commands.usuario.atomic.*;
+import com.ucab.cmcapp.logic.commands.usuario.composite.AuthenticateUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.GetUsuarioCommand;
 import com.ucab.cmcapp.logic.commands.usuario.composite.ModifyUsuarioCommand;
 import com.ucab.cmcapp.persistence.DBHandler;
@@ -64,36 +55,6 @@ import com.ucab.cmcapp.logic.commands.dispositivo.composite.ModifyDispositivoCom
 import com.ucab.cmcapp.logic.commands.usuario.composite.CreateUsuarioCommand;
 
 public class CommandFactory {
-
-    public static GetUserCommand createGetUserCommand(User user) {
-        return new GetUserCommand(user);
-    }
-
-    public static GetUserByEmailCommand createGetUserByEmailCommand(User user) {
-        return new GetUserByEmailCommand(user);
-    }
-
-    public static GetUserByEmailCommand createGetUserByEmailCommand(User user, DBHandler handler) {
-        return new GetUserByEmailCommand(user, handler);
-    }
-
-    public static GetUserByIdCommand createGetUserByIdCommand(DBHandler handler, long userId) {
-        return new GetUserByIdCommand(handler, userId);
-    }
-
-
-    public static AddUserCommand createAddUserCommand(User user, DBHandler handler) {
-        return new AddUserCommand(user, handler);
-    }
-
-    public static AddUserCommand createAddUserCommand(User user) {
-        return new AddUserCommand(user);
-    }
-
-    public static CreateUserCommand createCreateUserCommand(User user) {
-        return new CreateUserCommand(user);
-    }
-
     //historial
     public static GetHistorial_ConexionByIdCommand createGetHistorial_ConexionByIdCommand(DBHandler handler, long id)
     {
@@ -105,6 +66,9 @@ public class CommandFactory {
     }
     //usuario
 
+    public static AuthenticateUsuarioCommand createAuthenticateUsuarioCommand ( Usuario usuario){
+        return new AuthenticateUsuarioCommand(usuario);
+    }
     public static ModifyUsuarioCommand createModifyUsuarioCommand(Usuario usuario) {
         return new ModifyUsuarioCommand(usuario);
     }
@@ -139,6 +103,14 @@ public class CommandFactory {
 
     public static UpdateUsuarioCommand createUpdateUsuarioCommand(Usuario usuario) {
         return new UpdateUsuarioCommand(usuario);
+    }
+
+    public static GetUsuarioByIdPersonaCommand createGetUsuarioByIdPersonaCommand (Usuario usuario){
+        return new GetUsuarioByIdPersonaCommand(usuario);
+    }
+
+public static GetUsuarioByIdPersonaCommand createGetUsuarioByIdPersonaCommand (DBHandler handler, Usuario usuario){
+        return new GetUsuarioByIdPersonaCommand(usuario,handler);
     }
 
     //dispositivo
@@ -342,6 +314,14 @@ public class CommandFactory {
         return new GetDispositivoCommand(dispositivo);
     }
 
+    public static GetDispositivoByUsuarioCommand createGetDispositivoByUsuarioCommand(Dispositivo dispositivo, DBHandler handler){
+        return new GetDispositivoByUsuarioCommand(dispositivo, handler);
+    }
+
+    public static GetDispositivoByUsuarioCommand createGetDispositivoByUsuarioCommand(Dispositivo dispositivo){
+        return new GetDispositivoByUsuarioCommand(dispositivo);
+    }
+
     public static CreateDispositivoCommand createCreateDispositivoCommand(Dispositivo dispositivo) {
         return new CreateDispositivoCommand(dispositivo);
     }
@@ -358,5 +338,15 @@ public class CommandFactory {
 
         return new ModifyDispositivoCommand(dispositivo);
     }
+
+    public static GetDispositivoByNumberCommand createGetDispositivoByNumberCommand(Dispositivo dispositivo, DBHandler handler) {
+        return new GetDispositivoByNumberCommand(dispositivo, handler);
+    }
+
+    public static GetDispositivoByNumberCommand createGetDispositivoByNumberCommand(Dispositivo dispositivo) {
+        return new GetDispositivoByNumberCommand(dispositivo);
+    }
+
+
 }
 

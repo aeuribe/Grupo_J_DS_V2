@@ -58,4 +58,35 @@ public class UsuarioDao extends BaseDao<Usuario>{
 
         return result;
     }
+
+
+    public Usuario getUsuarioByIdPersona( Persona persona )
+    {
+        Usuario result = EntityFactory.createUsuario();
+        _logger.debug( String.format( "Get in UsuarioDao.getUsuarioByEmail: parameter {%s}", persona ) );
+        try
+        {
+            CriteriaQuery<Usuario> query = _builder.createQuery( Usuario.class );
+            Root<Usuario> root = query.from( Usuario.class );
+
+            query.select( root );
+            query.where( _builder.equal( root.get( "_persona" ), persona ) );
+
+            result = _em.createQuery( query ).getSingleResult();
+        }
+        catch ( NoResultException e )
+        {
+            _logger.error( String.format( "Error UsuarioDao.getUsuarioByEmail: No Result {%s}", e.getMessage() ) );
+        }
+        catch ( Exception e )
+        {
+            _logger.error( String.format( "Error UsuarioDao.getUsuarioByEmail: {%s}", e.getMessage() ) );
+            throw new CupraException( e.getMessage() );
+        }
+        //region Instrumentation
+        _logger.debug( String.format( "Leavin UsuarioDao.getUsuarioByEmail: result {%s}", result ) );
+        //endregion
+
+        return result;
+    }
 }

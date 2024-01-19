@@ -17,6 +17,16 @@ public class ZonaSeguridadDto extends BaseDto{
 
     private Double _longitud_3;
 
+    private DispositivoDto _id_dispositivo;
+
+    public DispositivoDto get_id_dispositivo() {
+        return _id_dispositivo;
+    }
+
+    public void set_id_dispositivo(DispositivoDto _id_dispositivo) {
+        this._id_dispositivo = _id_dispositivo;
+    }
+
     public ZonaSeguridadDto() {
     }
 
